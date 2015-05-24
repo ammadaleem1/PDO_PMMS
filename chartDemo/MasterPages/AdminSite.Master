@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite.Master.cs" Inherits="TemplatePdoAspx.MasterPages.AdminSite" %>
+<%@ Register Src="~/Controls/LeftNavigation.ascx" TagPrefix="uc1" TagName="Navigation" %>
+<%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Charting" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>Pdo</title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/timeline.css" rel="stylesheet" />
+   <link href="../Assets/css/sb-admin-2.css" rel="stylesheet" />
+   <!--<link href="../Assets/css/plugins/morris.css" rel="stylesheet" />-->
+   <link href="../Assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/dataTables.bootstrap.css" rel="stylesheet" />
+   <script src="../../Assets/js/jquery-1.11.0.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 280px;
+    margin-top: 51px;
+    </style>
+</head>
+
+<body>
+    <form id="form2" runat="server">
+    <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+           <uc1:Header ID="ucHeader" runat="server" />
+
+             <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Admin Module<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../../AdminModule/MFMAxisDataViews/DataView.aspx">MFM Axis Data</a>
+                                </li>
+                                <li>
+                                    <a href="../../AdminModule/MFMGVFViews/DataView.aspx">MFM GVF Data</a>
+                                </li>
+                                <li>
+                                    <a href="../../AdminModule/MFMPointsViews/DataView.aspx">MFM Points</a>
+                                </li>
+                                <li>
+                                    <a href="../../AdminModule/MeterNoteCategoryViews/DataView.aspx">Meter Note Categories</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+                <div class="row">
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /.row -->
+
+          </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+        <!-- jQuery Version 1.11.0 -->
+        
+        
+        <!-- Bootstrap Core JavaScript -->
+       
+        <script src="../../Assets/js/bootstrap.min.js"></script>
+        <script src="../../Assets/js/plugins/metisMenu/metisMenu.min.js"></script>
+        
+        <!-- Morris Charts JavaScript -->
+        <script src="../../Assets/js/plugins/morris/raphael.min.js"></script>
+        <!--<script src="../Assets/js/plugins/morris/morris.min.js"></script>
+        <script src="../Assets/js/plugins/morris/morris-data.js"></script>-->
+        
+        <script src="../../Assets/js/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="../../Assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+        <script src="../../Assets/js/sb-admin-2.js"></script>
+
+        </form>
+</body>
+
+</html>

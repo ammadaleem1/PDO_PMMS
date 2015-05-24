@@ -1,0 +1,975 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OSIsoft.PISDK.Controls.PIArchiveEditor</name>
+    </assembly>
+    <members>
+        <member name="T:OSIsoft.PISDK.Controls.DataGridComboBox">
+            <summary>
+                Derived to expose the CurrencyManager for the 
+                ComboBox 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBox.ComboBoxCurrencyManager">
+            <summary>
+                Returns the CurrencyManager
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle">
+            <summary>
+            Column style that represents a combobox
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.#ctor">
+            <summary>
+              Creates an new DataGridComboBoxColumnStyle
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Abort(System.Int32)">
+            <summary>
+                Called when the user or the Grid aborts an edit 
+                For example hits the Escape key
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Commit(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Called for the 'from' cell, when the current cell changes. 
+            This is called whether there are changes to commit or not. 
+            If the user has not edited the value we simply hide the combobox. 
+            InEdit is used to track whether the cell has been edited or not.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.ConcedeFocus">
+            <summary>
+                Called when the Column (not the Grid just the column) is
+                readonly to take focus away from the Combobox
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+                Edit is called when a cell column is made the active cell
+                We don't put the Grid into edit mode here - we wait for 
+                the user to change something before going into edit mode
+                because we don't want to dirty the data model unecessarily
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.EnterNullValue">
+            <summary>
+                Called when the user presses Ctrl+0 to enter a null
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.GetMinimumHeight">
+            <summary>
+                Called to get the minimum height that rows this column 
+                can be
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.GetPreferredHeight(System.Drawing.Graphics,System.Object)">
+            <summary>
+                Called to get the preferred height of the cell 
+                
+                This called to calculate the preferred height for a row when a 
+                row is auto-resized by double-clicking on the row border in 
+                the row header 
+            
+                Its also used to paint the parent row when drilled into a child, however 
+                in both cases only the width is used never the height
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.GetPreferredSize(System.Drawing.Graphics,System.Object)">
+            <summary>
+                Called to get the preferred size of the cell 
+                
+                This called to calculate the preferred width for a column when a 
+                column is auto-resized by double-clicking on the column border in 
+                the header 
+            
+                Its also used to paint the parent row when drilled into a child, however 
+                in both cases only the width is used never the height
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Brush,System.Drawing.Brush,System.Boolean)">
+            <summary>
+                Paint 1: Called to paint the contents of a particular cell. 
+                
+                This is the rountine that is most commonly called to paint the contents 
+                of the cell. 
+                
+                Paint 2 and Paint 3 are funnelled into this routine
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+                Paint 2: Called to paint the contents of a particular cell. 
+                This simply calls Paint 3.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Boolean)">
+            <summary>
+                Paint 3: Called to paint the contents of a particular cell. 
+                This simply calls Paint 1.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.SetDataGridInColumn(System.Windows.Forms.DataGrid)">
+            <summary>
+                Called to parent the column to the datagrid
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.UpdateUI(System.Windows.Forms.CurrencyManager,System.Int32,System.String)">
+            <summary>
+                Called when the datasource is updated programatically
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.comboKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+                Event Handler for the ComboBox key down event - when the user presses an input
+                key tell the grid to go into edit mode. We only go into edit mode when the user 
+                starts to type in to avoid marking the datasource value as dirty when it has 
+                not been updated
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.comboSelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+                Event Handler for the ComboBox selected index changed event - if the user changes the selected
+                value using the mouse we need to mark the datasource as dirty
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.comboDisplayMemberChanged(System.Object,System.EventArgs)">
+            <summary>
+                The ComboBox DisplayMember has changed - Cache the DisplayMember PropertyDescriptor so that we don't 
+                have to keep looking it up
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.comboValueMemberChanged(System.Object,System.EventArgs)">
+            <summary>
+                The ComboBox ValueMember has changed - Cache the ValueMember PropertyDescriptor so that we don't 
+                have to keep looking it up
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.EndEdit">
+            <summary>
+                Called when we stop editing a value 
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.HideComboBox">
+            <summary>
+                Hide the ComboBox
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.InitializeDisplayMemberPropertyDescriptor">
+            <summary>
+                Initialize the DisplayMember property descriptor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.InitializeValueMemberPropertyDescriptor">
+            <summary>
+                Initialize the ValueMember property descriptor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.LookupDisplayText(System.Object)">
+            <summary>
+                Lookup the display text for the given value.
+                
+                We use the value and ValueMember to look up the row in the 
+                ComboBox datasource. we then use DisplayMember to get the 
+                text to display
+                
+                This look up occurs everytime a cell is painted. If the Combobox datasource 
+                is not large then this is probably ok as it stands but this could probably 
+                benefit from caching 
+                
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.RollBack">
+            <summary>
+                Rollback any changes to the cell
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.RowObjectFromComboBoxDataSource(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+                Find the row in the ComboBox currency manager for the current cell
+                This can be horribly inefficient and it uses reflection which makes it expensive 
+                - ripe for optimization
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.DataSource">
+            <summary>
+            The DataSource for list of values displayed 
+            in the ComboBox. 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.DisplayMember">
+            <summary>
+            The name of the property to display for each 
+            item in the Combobox. This is optional
+            e.g. CBItem.LongName
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.ValueMember">
+            <summary>
+             The name of the property that will be pushed into
+             the current row
+             e.g. CBItem.ShortName
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.InEdit">
+            <summary>
+                Notify the grid that we are going into edit mode
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.DataGridComboBoxColumnStyle.RealReadOnly">
+            <summary>
+                Returns true if the grid, the tablestyle or the column
+                or the datasource are readonly
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIAnnotationEditDlg">
+            <summary>
+            This form allows user to maintain the annotations collection for a given PIEvent.
+            It is possible to add new annotations, delete existing ones and/or modify them.
+            Detailed information on PIAnnotations collection and individual PIAnnotation objects is
+            available in PISDK help.
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.errorEvent">
+            <summary>
+            Error event. This is used to report internal errors to the host.
+            NOTE: This is currently internal because public would expose the event
+            to COM, which in turn would require PISKDCtrlDlg.dll to be registered to COM.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.ReadOnly">
+            <summary>
+            Sets or get the read-only mode. Disables all changes when set to true
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.CurrentValue">
+            <summary>
+            Gets or sets the PIValue object whose annotations are edited/viewed
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.AllowNavigation">
+            <summary>
+            Enables/disables tagserach and event navigation buttons. 
+            NOT IMPLEMENTED.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.UpdateArchValue">
+            <summary>
+            Determines if the changes in the annotations should be commited to the archive (true).
+            If the value is false, the caller/user has to update the changes in the 
+            PIValue.ValueAttributes collection.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.DataChanged">
+            <summary>
+            Gets a value that indicates if any changes were made to the PIAnnotations.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag) or PIAlias.
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.Annotations">
+            <summary>
+            An alternative method to define the logical "event". This property can be used only
+            when there's no PIValue associated with the annotations. This happens only when the
+            container is creating a new PIValue. 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating annotations(data).
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.IsOldStyle">
+            <summary>
+            Determines if all annotations have to be "old style" variants instead of PIAnnotations.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditDlg.UseServerTime">
+            <summary>
+            Use server time/timezone when displaying or interpreting dates. 
+            Default is false (use local time). NOT IMPLEMENTED
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIAnnotationEditor">
+            <summary>
+            This form allows user to maintain the annotations collection for a given PIEvent.
+            It is possible to add new annotations, delete existing ones and/or modify them.
+            Detailed information on PIAnnotations collection and individual PIAnnotation objects is
+            available in PISDK help.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditor.#ctor">
+            <summary>
+            Default constructor - returns a new instance of the class
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditor.SaveChanges">
+            <summary>
+            Saves all changes that has been made since initialization or last save
+            </summary>
+            <returns>true if save OK</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIAnnotationEditor.resetAll">
+            <summary>
+            Resets the control to default state.
+            </summary>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.PIAnnotationEditor.errorEvent">
+            <summary>
+            Error event. This is used to report internal errors to the host.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.ReadOnly">
+            <summary>
+            Sets or get the read-only mode. Disables all changes when set to true
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.CurrentValue">
+            <summary>
+            Gets or sets the PIValue object whose annotations are edited/viewed.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.AllowNavigation">
+            <summary>
+            Enables/disables tagserach and event navigation buttons.
+            NOT IMPLEMENTED
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.UpdateArchValue">
+            <summary>
+            Determines if the changes in the annotations should be commited to the archive (true).
+            If the value is false, the caller/user has to update the changes in the 
+            PIValue.ValueAttributes collection.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.DataChanged">
+            <summary>
+            Gets a value that indicates if any changes were made to the PIAnnotations.
+            This is a combination of saved and pending changes.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.IsDirty">
+            <summary>
+            Gets a value that indicates if there are unsaved changes.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag) or PIAlias.
+            The tagname is used as information and also when saving the annotations
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.Annotations">
+            <summary>
+            An alternative method to define the logical "event". This property can be used 
+            when there's no PIValue associated with the annotations. This happens only when the
+            container is creating a new PIValue. 
+            Other possible usage is that the annotation object has been modified but the 
+            change is not (yet) reflected in PIValue. In this case you need to set this property
+            AFTER the PIValue property. 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating annotations(data).
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.IsOldStyle">
+            <summary>
+            Determines if all annotations have to be "old style" variants instead of PIAnnotations.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIAnnotationEditor.UseServerTime">
+            <summary>
+            Use server time/timezone when displaying or interpreting dates. 
+            Default is false (use local time). NOT IMPLEMENTED
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIArchiveEditDlg">
+            <summary>
+            Main PI archive editor form. Contains the archive editor control.
+            This class is exposed to COM and provides few COM visible methods
+            that make these .NET based dialogs available to COM clients
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchiveEditDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.setTimeRange(System.Object,System.Object)">
+            <summary>
+            Defines the (intial) timerange for the event data. The start and end range parameters
+            are defined to be objects but they have to resolve into one of the following:
+            - PITime
+            - A valid PITimeFormat input string
+            - DateTime
+            Note that the argumenets are eventually converted to PITime objects and all applicable
+            restrictions apply.
+            Throws <exception cref="T:System.ArgumentException"> if times are invalid.</exception>
+            </summary>
+            <param name="rangeStart">defines the start time for the data fetch</param>
+            <param name="rangeEnd">defines the end time for the data fetch</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.saveChanges">
+            <summary>
+            Saves all changes
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <returns>true if save ok</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.modifyServerList(System.String,System.Boolean)">
+            <summary>
+            Adds or removes one server to/from the currently defined servers list.
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <param name="serverName">Name of the server</param>
+            <param name="addServer">True if server is added, False if removed</param>
+            <returns>0 if OK, negative number if failed. </returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditDlg.refreshData">
+            <summary>
+            Refreshes the event list based on current settings.
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <returns>0 if call succeedeed</returns>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag) or PIAlias.
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.AllowValueEdit">
+            <summary>
+            Gets or sets the value that determines if user can edit data values
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.AllowAnnotations">
+            <summary>
+            Gets or sets the value that determines the control is read-only. Affects annotations and values
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating data.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.RemovalConstants">
+            <summary>
+            Gets or sets the value that determines how to remove events.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.ServerList">
+            <summary>
+            Gets or sets a list of PIServers to be used. Settings this disables the PickList. 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.ExpandCollectives">
+            <summary>
+            A value that determines if the highly available PI Collectives 
+            should be expanded to show individual member servers instead of 
+            the collective itself (admin feature)
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditDlg.UseServerTime">
+            <summary>
+            Use server time/timezone when displaying or interpreting dates. 
+            Default is false (use local time). NOT IMPLEMENTED
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIArchiveEditor">
+            <summary>
+            A common control to maintain annotations and archive values.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.#ctor">
+            <summary>
+            Default contructor - create the class
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.setTimeRange(System.Object,System.Object)">
+            <summary>
+            Defines the (intial) timerange for the event data. The start and end range parameters
+            are defined to be objects but they have to resolve into one of the following:
+            - PITime
+            - A valid PITimeFormat input string
+            - DateTime
+            Note that the argumenets are eventually converted to PITime objects and all applicable
+            restrictions apply.
+            Throws <exception cref="T:System.ArgumentException"> if times are invalid.</exception>
+            </summary>
+            <param name="rangeStart">defines the start time for the data fetch</param>
+            <param name="rangeEnd">defines the end time for the data fetch or max event count (integer)</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.saveChanges">
+            <summary>
+            Saves all changes
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <returns>true if save ok</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.modifyServerList(System.String,System.Boolean)">
+            <summary>
+            Adds or removes one server to/from the currently defined servers list.
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <param name="serverName">Name of the server</param>
+            <param name="addServer">True if server is added, False if removed</param>
+            <returns>0 if OK, negative number if failed. </returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.addServerTagList(System.String,PISDK.PointList)">
+            <summary>
+            Defines a list of tags for a given server. Server is added if not yet in the list.
+            The current taglist is removed first.
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <param name="servName">Name of the server</param>
+            <param name="pList">Predefined PointList for this server</param>
+            <returns>0 if OK, negative number if failed. </returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.refreshData">
+            <summary>
+            Refreshes the event list based on current settings.
+            Throws <exception cref="T:System.ObjectDisposedException"> when calling this method
+            when object is already disposed.</exception>
+            </summary>
+            <returns>0 if call succeedeed</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEditor.asyncStatusChangeHandler(PISDKCommon.CallStatusConstants)">
+            <summary>
+            Async call status has changed. Start updating the UI when call completes
+            </summary>
+            <param name="csc"></param>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.PIArchiveEditor.errorEvent">
+            <summary>
+            Error event. This is used to report internal errors to the host.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag), PIAlias or PIProperty.
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.StartTime">
+            <summary>
+            Gets the currently defined start time as PITime
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.EndTime">
+            <summary>
+            Gets the currently defined end time as PITime
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.AllowValueEdit">
+            <summary>
+            Gets or sets the value that determines if user can edit data values
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.AllowAnnotations">
+            <summary>
+            Gets or sets the value that determines if the control can create/modify annotatins.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.IsOldStyle">
+            <summary>
+            Determines if all annotations have to be "old style" variants instead of PIAnnotations.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.EndTimeIsCount">
+            <summary>
+            Determines if timerange end is defined as event count as opposed to a time.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating data.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.RemovalConstants">
+            <summary>
+            Gets or sets the value that determines how to remove events.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.BoundaryType">
+            <summary>
+            Gets or sets the value that defines the boundary type when gettings the data.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.FilteredView">
+            <summary>
+            Gets or sets the value that defines the filter type when gettings the data.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.FilterExpression">
+            <summary>
+            Gets or sets the the filter expression for recorded values.
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.UseSrvPickList">
+            <summary>
+            Enables/Disables the PickList. User must set the ServerList property if picklist is disabled. 
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.ServerList">
+            <summary>
+            Gets or sets a list of PIServers to be used. Settings this disables the PickList. 
+            Throws <exception cref="T:System.ObjectDisposedException"> if object is disposed.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.ExpandCollectives">
+            <summary>
+            A value that determines if the highly available PI Collectives 
+            should be expanded to show individual member servers instead of 
+            the collective itself (admin feature)
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.UseServerTime">
+            <summary>
+            Use server time/timezone when displaying or interpreting dates. 
+            Default is false (use local time). NOT IMPLEMENTED
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.CurrentValue">
+            <summary>
+            Get the currently selected PIValue object. The value may not exist in the server
+            if new value was created but not committed to the database.
+            Returns null if nothing is selected.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.EventList">
+            <summary>
+            Gets the current archive event list. The returned class contains an ArrayList
+            that in turn contains the individual events as "PIArchEventData" structures
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEditor.HelpNamespace">
+            <summary> 
+            Gets or sets the help context (full name of the help-file).
+            Throws <exception cref="T:System.ObjectDisposedException"> when trying to access the property
+            when object is already disposed</exception>
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIArchEventData">
+            <summary>
+            Structure that stores a single PI event
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchEventData.eventValue">
+            <summary>
+            Event value as an object. Consult PISDK/PIServer documents for valid types.
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchEventData.eventTime">
+            <summary>
+            Event timestamp
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchEventData.substituted">
+            <summary>
+            Is this value substituted?
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchEventData.questionable">
+            <summary>
+            Is this value questionable?
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.PIArchEventData.annotation">
+            <summary>
+            The annotation object/collection for the value. 
+            A non-null value implies that this event is annotated
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchEventData.#ctor">
+            <summary>
+            default constructor - empty
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchEventData.#ctor(System.Object,PITimeServer.PITime,System.Boolean,System.Boolean,System.Object)">
+            <summary>
+            Constructor with all data
+            </summary>
+            <param name="data">event data</param>
+            <param name="ts">timestamp</param>
+            <param name="substituted">subs. flag</param>
+            <param name="questionable">questionable flag</param>
+            <param name="annotation">annotation object, null = no annotations</param>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIArchiveEventList">
+            <summary>
+            A class that represent archive values over a time period
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.#ctor">
+            <summary>
+            default contructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.addEvent(OSIsoft.PISDK.Controls.PIArchEventData)">
+            <summary>
+            Adds an event to the list
+            </summary>
+            <param name="evData">Event data structure</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.GetEnumerator">
+            <summary>
+            Returns the enumerator for this list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEventList.Item(System.Int32)">
+            <summary>
+            Event data indexer []
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEventList.eventCount">
+            <summary>
+            Returns the number of events
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PIArchiveEventList.PIArchEventsEnum">
+            <summary>
+            Enumerator for the archive events
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.PIArchEventsEnum.#ctor(OSIsoft.PISDK.Controls.PIArchiveEventList)">
+            <summary>
+            Returns a new enumerator and initializes the collection
+            </summary>
+            <param name="coll">The collection</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.PIArchEventsEnum.Reset">
+            <summary>         /// Reset the list (back to start)
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.PIArchiveEventList.PIArchEventsEnum.MoveNext">
+            <summary>
+            Move to next element in the list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.PIArchiveEventList.PIArchEventsEnum.Current">
+            <summary>
+            Get current element
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.ShowArchiveEditor">
+            <summary>
+            This class exposes the TimeZone editor control to COM. 
+            One COM compatible method, ShowTZEditDlg, is implemented, which will
+            create a modal dialog form to house the editor control
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ShowArchiveEditor.#ctor">
+            <summary>
+            Default contructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ShowArchiveEditor.ShowArchiveEditDlg(System.Boolean)">
+            <summary>
+            Invoke the dialog form that houses the annotation editor
+            </summary>
+            <param name="isModal">Show modally.</param>
+            <returns>The dialog result (DialogResult) as int</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ShowArchiveEditor.setTimeRange(System.Object,System.Object)">
+            <summary>
+            Defines the (intial) timerange for the event data. The start and end range parameters
+            are defined to be objects but they have to resolve into one of the following:
+            - PITime
+            - A valid PITimeFormat input string
+            - DateTime
+            Note that the argumenets are eventually converted to PITime objects and all applicable
+            restrictions apply.
+            Throws <exception cref="T:System.ArgumentException"> if times are invalid.</exception>
+            </summary>
+            <param name="rangeStart">defines the start time for the data fetch</param>
+            <param name="rangeEnd">defines the end time for the data fetch</param>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag) or PIAlias.
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.AllowValueEdit">
+            <summary>
+            Gets or sets the value that determines if user can edit data values
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.AllowAnnotations">
+            <summary>
+            Gets or sets the value that determines the control is read-only. Affects annotations and values
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating data.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.RemovalConstants">
+            <summary>
+            Gets or sets the value that determines how to remove events.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.ServerList">
+            <summary>
+            Gets or sets a list of PIServers to be used. Settings this disables the PickList. 
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowArchiveEditor.ExpandCollectives">
+            <summary>
+            A value that determines if the highly available PI Collectives 
+            should be expanded to show individual member servers instead of 
+            the collective itself (admin feature)
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.ShowAnnotationEditor">
+            <summary>
+            This class exposes the Annotation editor control to COM. 
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ShowAnnotationEditor.#ctor">
+            <summary>
+            Default contructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ShowAnnotationEditor.ShowAnnotationEditDlg(System.Boolean)">
+            <summary>
+            Invoke the dialog form that houses the control
+            </summary>
+            <param name="isModal">Show modally.</param>
+            <returns>The dialog result (DialogResult) as int</returns>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.ReadOnly">
+            <summary>
+            Sets or get the read-only mode. Disables all changes when set to true
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.CurrentValue">
+            <summary>
+            Gets or sets the PIValue object whose annotations are edited/viewed
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.UpdateArchValue">
+            <summary>
+            Determines if the changes in the annotations should be commited to the archive (true).
+            If the value is false, the caller/user has to update the changes in the 
+            PIValue.ValueAttributes collection.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.DataChanged">
+            <summary>
+            Gets a value that indicates if any changes were made to the PIAnnotations.
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.PITag">
+            <summary>
+            Sets of gets the object that resolves to PIPoint object.
+            This object can be a PIPoint, a full tagname (\\server\tag) or PIAlias.
+            Throws <exception cref="T:System.ArgumentException"> if tag is invalid.</exception>
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.MergeConstants">
+            <summary>
+            Gets or sets the value that determines how to merge the events when updating annotations(data).
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ShowAnnotationEditor.IsOldStyle">
+            <summary>
+            Determines if all annotations have to be "old style" variants instead of PIAnnotations.
+            </summary>
+        </member>
+    </members>
+</doc>
+                                                                                                                               

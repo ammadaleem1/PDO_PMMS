@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.Report" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" />
+  <xs:element name="GetTestDevicesExtn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestDevicesExtnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetTestDevicesExtnResult" nillable="true" type="q1:ArrayOfTestDeviceInfoExtn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestDevicesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LstTestDevices" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestDevicesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetTestDevicesInfoResult" nillable="true" type="q3:ArrayOfTestDeviceInfoExtn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetTestDevicesResult" nillable="true" type="q4:ArrayOfTestDeviceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMSVs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMSVsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetMSVsResult" nillable="true" type="q5:ArrayOfMSVInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWells">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWellsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.Report" minOccurs="0" name="GetWellsResult" nillable="true" type="q6:ArrayOfBasicElementInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestSkid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SkidName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestSkidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetTestSkidResult" nillable="true" type="q7:ArrayOfTestSkidItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestSkidByMSVName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MSVName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestSkidByMSVNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetTestSkidByMSVNameResult" nillable="true" type="q8:ArrayOfTestSkidItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitWellTestConfigRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="configRequest" nillable="true" type="q9:WellTestConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitWellTestConfigRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="SubmitWellTestConfigRequestResult" nillable="true" type="q10:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWellTestConfigRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreConfigRequestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWellTestConfigRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetWellTestConfigRequestResult" nillable="true" type="q11:WellTestConfigRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ActionCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="ApproveRequestResult" nillable="true" type="q12:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushToNibras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushToNibrasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="PushToNibrasResult" nillable="true" type="q13:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOPCTagsForRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOPCTagsForRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="GetOPCTagsForRequestResult" nillable="true" type="q14:ArrayOfOPCTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOPCTagsForRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="lstTags" nillable="true" type="q15:ArrayOfOPCTag" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOPCTagsForRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="UpdateOPCTagsForRequestResult" nillable="true" type="q16:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPITagsForRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPITagsForRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetPITagsForRequestResult" nillable="true" type="q17:ArrayOfTestAssetPITags" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTestAssetPITags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="lstPITags" nillable="true" type="q18:ArrayOfPITagAttributes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTestAssetPITagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="SaveTestAssetPITagsResult" nillable="true" type="q19:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAttributesForRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAttributesForRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="SearchAttributesForRequestResult" nillable="true" type="q20:ArrayOfAFAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMissingTagsForTestAsset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="lstAF" nillable="true" type="q21:ArrayOfAFAttributeInfo" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="lstPI" nillable="true" type="q22:ArrayOfPITagAttributes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMissingTagsForTestAssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="FindMissingTagsForTestAssetResult" nillable="true" type="q23:ArrayOfAFAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingPITagsForTestAsset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="attributes" nillable="true" type="q24:ArrayOfAFAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingPITagsForTestAssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="AddMissingPITagsForTestAssetResult" nillable="true" type="q25:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushToFieldware">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PreconfigRequestID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PushToFieldwareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="PushToFieldwareResult" nillable="true" type="q26:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="preConfigRequestID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsNibras" type="xs:int" />
+        <xs:element minOccurs="0" name="IsOPC" type="xs:int" />
+        <xs:element minOccurs="0" name="IsPI" type="xs:int" />
+        <xs:element minOccurs="0" name="IsFW" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="ProcessRequestResult" nillable="true" type="q27:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOPCTagsForElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="elementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="elementName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOPCTagsForElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="GetOPCTagsForElementResult" nillable="true" type="q28:ArrayOfOPCTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMissingPITagsForElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="elementType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="elementName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMissingPITagsForElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="FindMissingPITagsForElementResult" nillable="true" type="q29:ArrayOfAFAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReInitializeTestDevices">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReInitializeTestDevicesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReInitializaMSVs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReInitializaMSVsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingOPCTagsForElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="equipName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingOPCTagsForElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="AddMissingOPCTagsForElementResult" nillable="true" type="q30:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingPITagsForElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="equipName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMissingPITagsForElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="AddMissingPITagsForElementResult" nillable="true" type="q31:NibrasActionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDuplicateCommHost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDuplicateCommHostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsDuplicateCommHostResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUnScreenedWellTestCache">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUnScreenedWellTestCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UpdateUnScreenedWellTestCacheResult" nillable="true" type="q32:ArrayOfArrayOfKeyValueOfstringint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDuplicateCommHostPort">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Port" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDuplicateCommHostPortResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsDuplicateCommHostPortResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultPITags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="equipType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="equipName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultPITagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="GetDefaultPITagsResult" nillable="true" type="q33:ArrayOfPITagAttributes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldwareWellTestInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestUnitName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldwareWellTestInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFieldwareWellTestInfoResult" nillable="true" type="q34:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldwareWellDensities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestUnitName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldwareWellDensitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFieldwareWellDensitiesResult" nillable="true" type="q35:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWellAttributesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWellAttributesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" minOccurs="0" name="GetWellAttributesInfoResult" nillable="true" type="q36:ArrayOfWellAttributesInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

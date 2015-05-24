@@ -1,0 +1,1597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39735284-A2B4-4694-99A6-759E59ACEB70}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>chartDemo</RootNamespace>
+    <AssemblyName>chartDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30512.20315, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=7.0.4335.3, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="Indx.Xhq.Client.Common, Version=100.38.0.5, Culture=neutral, PublicKeyToken=145342ae5acb8abb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Indx.Xhq.Client.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Indx.Xhq.Client.Model, Version=100.38.0.5, Culture=neutral, PublicKeyToken=145342ae5acb8abb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Indx.Xhq.Client.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Indx.Xhq.Client.Pm, Version=100.38.0.5, Culture=neutral, PublicKeyToken=145342ae5acb8abb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Indx.Xhq.Client.Pm.dll</HintPath>
+    </Reference>
+    <Reference Include="Indx.Xhq.Client.Solution, Version=100.38.0.5, Culture=neutral, PublicKeyToken=145342ae5acb8abb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Indx.Xhq.Client.Solution.dll</HintPath>
+    </Reference>
+    <Reference Include="Indx.Xhq.Data.XhqClient, Version=100.0.0.0, Culture=neutral, PublicKeyToken=9017d79b6ce91688, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Indx.Xhq.Data.XhqClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>dll\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="NCalc">
+      <HintPath>dll\NCalc.dll</HintPath>
+    </Reference>
+    <Reference Include="Obout.Ajax.UI">
+      <HintPath>dll\Obout.Ajax.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_AJAXPage">
+      <HintPath>dll\obout_AJAXPage.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Calendar2_Net">
+      <HintPath>dll\obout_Calendar2_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_ComboBox">
+      <HintPath>dll\obout_ComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_EasyMenu_Pro">
+      <HintPath>dll\obout_EasyMenu_Pro.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Flyout2_NET">
+      <HintPath>dll\obout_Flyout2_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Grid_NET">
+      <HintPath>dll\obout_Grid_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_ImageZoom_NET">
+      <HintPath>dll\obout_ImageZoom_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Interface">
+      <HintPath>dll\obout_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_ListBox">
+      <HintPath>dll\obout_ListBox.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Show_Net">
+      <HintPath>dll\obout_Show_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_SlideMenu3_Pro_NET">
+      <HintPath>dll\obout_SlideMenu3_Pro_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Splitter2_Net">
+      <HintPath>dll\obout_Splitter2_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_SuperForm">
+      <HintPath>dll\obout_SuperForm.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_TextMenu">
+      <HintPath>dll\obout_TextMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Tree_DB_Net">
+      <HintPath>dll\obout_Tree_DB_Net.dll</HintPath>
+    </Reference>
+    <Reference Include="obout_Window_NET">
+      <HintPath>dll\obout_Window_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.AXMDBTREE, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSIsoft.AXMDBTREE.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.AXPISDKCTL, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSIsoft.AXPISDKCTL.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.MDBTree, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.MDBTree.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDK, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.PISDK.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDK.Controls.MDBTreeNet, Version=1.3.0.1, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSIsoft.PISDK.Controls.MDBTreeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDK.Controls.PIArchiveEditor, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSIsoft.PISDK.Controls.PIArchiveEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDK.Controls.PISDKCtrlDlg, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSIsoft.PISDK.Controls.PISDKCtrlDlg.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDKCommon, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.PISDKCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDKCtl, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.PISDKCtl.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PISDKDlg, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.PISDKDlg.dll</HintPath>
+    </Reference>
+    <Reference Include="OSIsoft.PITimeServer, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c3309f0734ba2805, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\OSIsoft.PITimeServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Telerik.Web.Design, Version=2009.1.527.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2010.1.309.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="AdminModule\MeterNoteCategoryViews\AddorEdit.aspx" />
+    <Content Include="AdminModule\MeterNoteCategoryViews\DataView.aspx" />
+    <Content Include="AdminModule\MeterNoteCategoryViews\ImportData.aspx" />
+    <Content Include="AdminModule\MeterNote\AddorEdit.aspx" />
+    <Content Include="AdminModule\MeterNote\DataView.aspx" />
+    <Content Include="AdminModule\MeterNote\ImportData.aspx" />
+    <Content Include="AdminModule\MFMPointsViews\AddorEdit.aspx" />
+    <Content Include="AdminModule\MFMPointsViews\DataView.aspx" />
+    <Content Include="AdminModule\MFMPointsViews\ImportData.aspx" />
+    <Content Include="AdminModule\MFMGVFViews\AddorEdit.aspx" />
+    <Content Include="AdminModule\MFMGVFViews\DataView.aspx" />
+    <Content Include="AdminModule\MFMGVFViews\ImportData.aspx" />
+    <Content Include="AdminModule\MFMAxisDataViews\AddorEdit.aspx" />
+    <Content Include="AdminModule\MFMAxisDataViews\DataView.aspx" />
+    <Content Include="AdminModule\MFMAxisDataViews\ImportData.aspx" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\plugins\dataTables.bootstrap.css" />
+    <Content Include="Assets\css\plugins\metisMenu\metisMenu.css" />
+    <Content Include="Assets\css\plugins\metisMenu\metisMenu.min.css" />
+    <Content Include="Assets\css\plugins\morris.css" />
+    <Content Include="Assets\css\plugins\social-buttons.css" />
+    <Content Include="Assets\css\plugins\timeline.css" />
+    <Content Include="Assets\css\sb-admin-2.css" />
+    <Content Include="Assets\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="Assets\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="Assets\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\images\Banner.jpg" />
+    <Content Include="Assets\images\device_1.JPG" />
+    <Content Include="Assets\images\device_2.JPG" />
+    <Content Include="Assets\images\device_3.JPG" />
+    <Content Include="Assets\images\device_4.JPG" />
+    <Content Include="Assets\images\device_g1o1.JPG" />
+    <Content Include="Assets\images\device_g1o2.JPG" />
+    <Content Include="Assets\images\device_g2o1.JPG" />
+    <Content Include="Assets\images\device_g2o2.JPG" />
+    <Content Include="Assets\images\ico_bend.jpg" />
+    <Content Include="Assets\images\ico_Circle.jpg" />
+    <Content Include="Assets\images\ico_infinite.jpg" />
+    <Content Include="Assets\images\ico_tri.jpg" />
+    <Content Include="Assets\images\ico_u.jpg" />
+    <Content Include="Assets\images\ico_vortex.jpg" />
+    <Content Include="Assets\images\ico_water.jpg" />
+    <Content Include="Assets\images\ico_wave.jpg" />
+    <Content Include="Assets\images\ico_wave1.jpg" />
+    <Content Include="Assets\images\PDOLogo16x16.png" />
+    <Content Include="Assets\images\PDOLogo32x32.png" />
+    <Content Include="Assets\images\pdo_icon.jpg" />
+    <Content Include="Assets\images\pdo_logo.jpg" />
+    <Content Include="Assets\images\pdo_logo_main.gif" />
+    <Content Include="Assets\js\bootstrap.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery-1.11.0.js" />
+    <Content Include="Assets\js\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Assets\js\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="Assets\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Assets\js\plugins\flot\flot-data.js" />
+    <Content Include="Assets\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Assets\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Assets\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\js\plugins\metisMenu\metisMenu.js" />
+    <Content Include="Assets\js\plugins\metisMenu\metisMenu.min.js" />
+    <Content Include="Assets\js\plugins\morris\morris-data.js" />
+    <Content Include="Assets\js\plugins\morris\morris.js" />
+    <Content Include="Assets\js\plugins\morris\morris.min.js" />
+    <Content Include="Assets\js\plugins\morris\raphael.min.js" />
+    <Content Include="Assets\js\sb-admin-2.js" />
+    <Content Include="CAD.aspx" />
+    <Content Include="ChartDemo_old.aspx" />
+    <Content Include="AddMaterialBalance.aspx" />
+    <Content Include="AggregateStats.aspx" />
+    <Content Include="ChartDemo.aspx" />
+    <Content Include="Controls\Footer.ascx" />
+    <Content Include="Controls\Header.ascx" />
+    <Content Include="Controls\LeftNavigation.ascx" />
+    <Content Include="Controls\MechanicalDetails.ascx" />
+    <Content Include="Controls\TestDevice.ascx" />
+    <Content Include="FunctionalHierarcy\HierarcyGrid.aspx" />
+    <Content Include="GeneralPages\CoriolisDataSheet.aspx" />
+    <Content Include="GeneralPages\UltraSonicDataSheet.aspx" />
+    <Content Include="GeneralPages\OrificeDataSheet.aspx" />
+    <Content Include="GeneralPages\VConeDataSheet.aspx" />
+    <Content Include="GeneralPages\WGMeterDataSheet.aspx" />
+    <Content Include="GeneralPages\MagneticDataSheet.aspx" />
+    <Content Include="GeneralPages\VenturiDataSheet.aspx" />
+    <Content Include="GeneralPages\LandingPage.aspx" />
+    <Content Include="GeneralPages\Schematics.aspx" />
+    <Content Include="IntermediateLinks.aspx" />
+    <Content Include="JQuery\jquery-1.2.6.min.js" />
+    <Content Include="JQuery\jquery.contextMenu.js" />
+    <Content Include="JQuery\jquery.simplemodal-1.1.1.js" />
+    <Content Include="LandingPages\Home.aspx" />
+    <Content Include="MasterPages\AdminSite.Master" />
+    <None Include="Assets\ExcelTemplates\MFMAxisData_Sample.xlsx" />
+    <None Include="Assets\ExcelTemplates\MFMGVF_Sample.xlsx" />
+    <None Include="Assets\ExcelTemplates\MFMPoints_Sample.xlsx" />
+    <Content Include="MasterPages\PopUp.Master" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Service References\XHQService\chartDemo.XHQService.MemberInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XHQService\chartDemo.XHQService.PathAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XHQService\chartDemo.XHQService.VTQ.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XHQService\XhqWse.disco" />
+    <None Include="Service References\XHQService\configuration91.svcinfo" />
+    <None Include="Service References\XHQService\configuration.svcinfo" />
+    <None Include="Service References\XHQService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Mockups\RelibilityManagement.aspx" />
+    <Content Include="MonitoringDashboards\CollectionMonitoringDashboard.aspx" />
+    <Content Include="noaccess.html" />
+    <Content Include="OperatingEnvelop.aspx" />
+    <Content Include="PITagsList.aspx" />
+    <Content Include="WellDetails.aspx" />
+    <Content Include="WGMDetails.aspx" />
+    <Content Include="MasterPages\Site.Master" />
+    <None Include="Assets\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <None Include="Assets\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="Assets\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <None Include="Assets\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <None Include="Assets\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\core.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\fixed-width.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\font-awesome.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\icons.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\larger.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\list.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\mixins.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\path.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\spinning.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\stacked.less" />
+    <None Include="Assets\font-awesome-4.1.0\less\variables.less" />
+    <None Include="Assets\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_core.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_icons.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_larger.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_list.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_mixins.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_path.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_spinning.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_stacked.scss" />
+    <None Include="Assets\font-awesome-4.1.0\scss\_variables.scss" />
+    <None Include="Assets\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="MasterPages\SiteNoNavigation.Master" />
+    <EntityDeploy Include="DataSource\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.AFAttributeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.BasicElementInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.MSVInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.NibrasActionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.OPCTag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.PITagAttributes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.TestAssetPITags.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.TestDeviceInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.TestDeviceInfoExtn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.TestSkidItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.WellAttributesInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\chartDemo.NibrasService.WellTestConfigRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway.disco" />
+    <None Include="Service References\NibrasService\configuration91.svcinfo" />
+    <None Include="Service References\NibrasService\configuration.svcinfo" />
+    <None Include="Service References\NibrasService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Images\006-QR-001-PID.png" />
+    <Content Include="TagHistogram.aspx" />
+    <Content Include="MaterialBalanceChart.aspx" />
+    <Content Include="MFMDetails.aspx" />
+    <Content Include="MaterialBalance.aspx" />
+    <Content Include="TelerikSample.aspx" />
+    <Content Include="DeviceDetails.aspx" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="JQuery\jquery.blockUI.js" />
+    <Content Include="Scripts\ini.js" />
+    <Content Include="Scripts\library.js" />
+    <Content Include="Styles\ini.css" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutDropDownList\style.css" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\style.css" />
+    <Content Include="Styles\premiere_blue\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="TestDetails.aspx" />
+    <Content Include="Data\envelopes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\GraphPoints.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\BannerBar.gif" />
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\first.jpg" />
+    <Content Include="Images\image001.jpg" />
+    <Content Include="Images\last.jpg" />
+    <Content Include="Images\next.jpg" />
+    <Content Include="Images\previous.jpg" />
+    <Content Include="Images\titlegraphic.gif" />
+    <Content Include="JQuery\jquery-1.9.1.js" />
+    <Content Include="JQuery\jquery-ui.css" />
+    <Content Include="JQuery\jquery-ui.js" />
+    <Content Include="localization\bg.xml" />
+    <Content Include="localization\ca.xml" />
+    <Content Include="localization\cn.xml" />
+    <Content Include="localization\ct.xml" />
+    <Content Include="localization\de.xml" />
+    <Content Include="localization\dk.xml" />
+    <Content Include="localization\en.xml" />
+    <Content Include="localization\es.xml" />
+    <Content Include="localization\fa.xml" />
+    <Content Include="localization\fr.xml" />
+    <Content Include="localization\gr.xml" />
+    <Content Include="localization\he.xml" />
+    <Content Include="localization\hu.xml" />
+    <Content Include="localization\it.xml" />
+    <Content Include="localization\jp.xml" />
+    <Content Include="localization\nl.xml" />
+    <Content Include="localization\no.xml" />
+    <Content Include="localization\pl.xml" />
+    <Content Include="localization\pt.xml" />
+    <Content Include="localization\ro.xml" />
+    <Content Include="localization\ru.xml" />
+    <Content Include="localization\Schema.xml" />
+    <Content Include="localization\se.xml" />
+    <Content Include="localization\sr.xml" />
+    <Content Include="localization\tr.xml" />
+    <Content Include="resources\custom-styles\black_glass\asc.gif" />
+    <Content Include="resources\custom-styles\black_glass\desc.gif" />
+    <Content Include="resources\custom-styles\black_glass\details_btn_close.gif" />
+    <Content Include="resources\custom-styles\black_glass\details_btn_open.gif" />
+    <Content Include="resources\custom-styles\black_glass\filter.png" />
+    <Content Include="resources\custom-styles\black_glass\first_disabled.gif" />
+    <Content Include="resources\custom-styles\black_glass\first_normal.gif" />
+    <Content Include="resources\custom-styles\black_glass\first_over.gif" />
+    <Content Include="resources\custom-styles\black_glass\first_pressed.gif" />
+    <Content Include="resources\custom-styles\black_glass\footer.png" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_left.gif" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_left.png" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_middle.gif" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_middle.png" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_right.gif" />
+    <Content Include="resources\custom-styles\black_glass\footer_corner_right.png" />
+    <Content Include="resources\custom-styles\black_glass\form_bgr.png" />
+    <Content Include="resources\custom-styles\black_glass\grid_body_left.png" />
+    <Content Include="resources\custom-styles\black_glass\grid_body_right.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_dragging.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_dragging.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_left.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_left.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_left_dragging.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_left_dragging.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_right.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_right.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_right_dragging.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_right_dragging.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_column_spacer.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_left.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_left.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_right.gif" />
+    <Content Include="resources\custom-styles\black_glass\grouping_area_right.png" />
+    <Content Include="resources\custom-styles\black_glass\grouping_dragged_column.png" />
+    <Content Include="resources\custom-styles\black_glass\group_arrow_bottom.gif" />
+    <Content Include="resources\custom-styles\black_glass\group_arrow_bottom.png" />
+    <Content Include="resources\custom-styles\black_glass\group_arrow_top.gif" />
+    <Content Include="resources\custom-styles\black_glass\group_arrow_top.png" />
+    <Content Include="resources\custom-styles\black_glass\group_btn_close.gif" />
+    <Content Include="resources\custom-styles\black_glass\group_btn_open.gif" />
+    <Content Include="resources\custom-styles\black_glass\group_summary.png" />
+    <Content Include="resources\custom-styles\black_glass\header.png" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_left.gif" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_left.png" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_middle.gif" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_middle.png" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_right.gif" />
+    <Content Include="resources\custom-styles\black_glass\header_corner_right.png" />
+    <Content Include="resources\custom-styles\black_glass\header_pressed.png" />
+    <Content Include="resources\custom-styles\black_glass\header_without_grouping.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutDropDownList\style.css" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\style.css" />
+    <Content Include="resources\custom-styles\black_glass\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="resources\custom-styles\black_glass\last_disabled.gif" />
+    <Content Include="resources\custom-styles\black_glass\last_normal.gif" />
+    <Content Include="resources\custom-styles\black_glass\last_over.gif" />
+    <Content Include="resources\custom-styles\black_glass\last_pressed.gif" />
+    <Content Include="resources\custom-styles\black_glass\left_side.gif" />
+    <Content Include="resources\custom-styles\black_glass\left_side.png" />
+    <Content Include="resources\custom-styles\black_glass\next_disabled.gif" />
+    <Content Include="resources\custom-styles\black_glass\next_normal.gif" />
+    <Content Include="resources\custom-styles\black_glass\next_over.gif" />
+    <Content Include="resources\custom-styles\black_glass\next_pressed.gif" />
+    <Content Include="resources\custom-styles\black_glass\page_number_normal.png" />
+    <Content Include="resources\custom-styles\black_glass\page_number_over.png" />
+    <Content Include="resources\custom-styles\black_glass\page_number_selected.png" />
+    <Content Include="resources\custom-styles\black_glass\placeholder.gif" />
+    <Content Include="resources\custom-styles\black_glass\placeholder_empty.gif" />
+    <Content Include="resources\custom-styles\black_glass\previous_disabled.gif" />
+    <Content Include="resources\custom-styles\black_glass\previous_normal.gif" />
+    <Content Include="resources\custom-styles\black_glass\previous_over.gif" />
+    <Content Include="resources\custom-styles\black_glass\previous_pressed.gif" />
+    <Content Include="resources\custom-styles\black_glass\record_group_header.png" />
+    <Content Include="resources\custom-styles\black_glass\record_group_header_padding.png" />
+    <Content Include="resources\custom-styles\black_glass\record_group_header_padding_right.png" />
+    <Content Include="resources\custom-styles\black_glass\right_side.gif" />
+    <Content Include="resources\custom-styles\black_glass\right_side.png" />
+    <Content Include="resources\custom-styles\black_glass\row1.png" />
+    <Content Include="resources\custom-styles\black_glass\row2.png" />
+    <Content Include="resources\custom-styles\black_glass\row_hover.png" />
+    <Content Include="resources\custom-styles\black_glass\row_selected.png" />
+    <Content Include="resources\custom-styles\black_glass\style.css" />
+    <Content Include="resources\custom-styles\black_glass\summary.png" />
+    <Content Include="resources\custom-styles\global-nav-treatment1v12r.css" />
+    <Content Include="resources\custom-styles\grand_gray\asc.gif" />
+    <Content Include="resources\custom-styles\grand_gray\desc.gif" />
+    <Content Include="resources\custom-styles\grand_gray\details_btn_close.gif" />
+    <Content Include="resources\custom-styles\grand_gray\details_btn_open.gif" />
+    <Content Include="resources\custom-styles\grand_gray\filter.gif" />
+    <Content Include="resources\custom-styles\grand_gray\first_disabled.gif" />
+    <Content Include="resources\custom-styles\grand_gray\first_normal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\first_over.gif" />
+    <Content Include="resources\custom-styles\grand_gray\first_pressed.gif" />
+    <Content Include="resources\custom-styles\grand_gray\footer.gif" />
+    <Content Include="resources\custom-styles\grand_gray\footer_corner_left.gif" />
+    <Content Include="resources\custom-styles\grand_gray\footer_corner_middle.gif" />
+    <Content Include="resources\custom-styles\grand_gray\footer_corner_right.gif" />
+    <Content Include="resources\custom-styles\grand_gray\form_bgr.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_dragging.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_left.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_left_dragging.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_right.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_right_dragging.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_column_spacer.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_left.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_area_right.gif" />
+    <Content Include="resources\custom-styles\grand_gray\grouping_dragged_column.png" />
+    <Content Include="resources\custom-styles\grand_gray\group_arrow_bottom.gif" />
+    <Content Include="resources\custom-styles\grand_gray\group_arrow_top.gif" />
+    <Content Include="resources\custom-styles\grand_gray\group_btn_close.gif" />
+    <Content Include="resources\custom-styles\grand_gray\group_btn_open.gif" />
+    <Content Include="resources\custom-styles\grand_gray\group_summary.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header_corner_left.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header_corner_middle.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header_corner_right.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header_pressed.gif" />
+    <Content Include="resources\custom-styles\grand_gray\header_without_grouping.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutDropDownList\style.css" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\style.css" />
+    <Content Include="resources\custom-styles\grand_gray\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="resources\custom-styles\grand_gray\last_disabled.gif" />
+    <Content Include="resources\custom-styles\grand_gray\last_normal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\last_over.gif" />
+    <Content Include="resources\custom-styles\grand_gray\last_pressed.gif" />
+    <Content Include="resources\custom-styles\grand_gray\next_disabled.gif" />
+    <Content Include="resources\custom-styles\grand_gray\next_normal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\next_over.gif" />
+    <Content Include="resources\custom-styles\grand_gray\next_pressed.gif" />
+    <Content Include="resources\custom-styles\grand_gray\page_number_normal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\page_number_over.gif" />
+    <Content Include="resources\custom-styles\grand_gray\placeholder.gif" />
+    <Content Include="resources\custom-styles\grand_gray\placeholder_empty.gif" />
+    <Content Include="resources\custom-styles\grand_gray\previous_disabled.gif" />
+    <Content Include="resources\custom-styles\grand_gray\previous_normal.gif" />
+    <Content Include="resources\custom-styles\grand_gray\previous_over.gif" />
+    <Content Include="resources\custom-styles\grand_gray\previous_pressed.gif" />
+    <Content Include="resources\custom-styles\grand_gray\record_group_header.gif" />
+    <Content Include="resources\custom-styles\grand_gray\record_group_header_padding.gif" />
+    <Content Include="resources\custom-styles\grand_gray\record_group_header_padding_right.gif" />
+    <Content Include="resources\custom-styles\grand_gray\row1.gif" />
+    <Content Include="resources\custom-styles\grand_gray\row2.gif" />
+    <Content Include="resources\custom-styles\grand_gray\row_hover.gif" />
+    <Content Include="resources\custom-styles\grand_gray\row_selected.gif" />
+    <Content Include="resources\custom-styles\grand_gray\style.css" />
+    <Content Include="resources\custom-styles\grand_gray\summary.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\asc.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\desc.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\details_btn_close.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\details_btn_open.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\filter.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\first_disabled.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\first_normal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\first_over.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\first_pressed.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\footer.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\footer_corner_left.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\footer_corner_middle.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\footer_corner_right.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\form_bgr.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_dragging.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_left.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_left_dragging.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_right.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_right_dragging.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_column_spacer.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_left.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_area_right.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\grouping_dragged_column.png" />
+    <Content Include="resources\custom-styles\premiere_blue\group_arrow_bottom.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\group_arrow_top.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\group_btn_close.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\group_btn_open.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\group_summary.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header_corner_left.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header_corner_middle.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header_corner_right.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header_pressed.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\header_without_grouping.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-horizontal.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\drop-down-vertical.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\horizontal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\horizontal.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\lighted.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\lighted.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\vertical.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\images\vertical.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutDropDownList\style.css" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-horizontal.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textarea-vertical.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textbox.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\images\textbox.png" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\style.css" />
+    <Content Include="resources\custom-styles\premiere_blue\interface\OboutTextBox\style_multiline.css" />
+    <Content Include="resources\custom-styles\premiere_blue\last_disabled.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\last_normal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\last_over.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\last_pressed.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\next_disabled.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\next_normal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\next_over.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\next_pressed.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\page_number_normal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\page_number_over.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\placeholder.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\placeholder_empty.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\previous_disabled.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\previous_normal.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\previous_over.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\previous_pressed.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\record_group_header.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\record_group_header_padding.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\record_group_header_padding_right.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\row1.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\row2.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\row_hover.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\row_selected.gif" />
+    <Content Include="resources\custom-styles\premiere_blue\style.css" />
+    <Content Include="resources\custom-styles\premiere_blue\summary.gif" />
+    <Content Include="resources\custom_scripts\column-set\column-set.css" />
+    <Content Include="resources\custom_scripts\column-set\column-set.js" />
+    <Content Include="resources\custom_scripts\column-set\column-set.png" />
+    <Content Include="resources\custom_scripts\dndFromGridToGrid.js" />
+    <Content Include="resources\custom_scripts\dndFromGridToTree.js" />
+    <Content Include="resources\custom_scripts\endRequest.js" />
+    <Content Include="resources\custom_scripts\excel-style\excel-style.css" />
+    <Content Include="resources\custom_scripts\excel-style\excel-style.js" />
+    <Content Include="resources\custom_scripts\fixed-rows\fixed-rows.css" />
+    <Content Include="resources\custom_scripts\fixed-rows\fixed-rows.js" />
+    <Content Include="resources\custom_scripts\fixed-rows\fixed-rows.png" />
+    <Content Include="resources\custom_scripts\row-reorder\row-reorder.css" />
+    <Content Include="resources\custom_scripts\row-reorder\row-reorder.js" />
+    <Content Include="resources\FileBrowser\Documents\Others\alert_red_bg.gif" />
+    <Content Include="resources\FileBrowser\Documents\Others\bullet_gol.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\bullet_plin.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\button1.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\button2.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\ClaudiaTest.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\Graphic1.jpg" />
+    <Content Include="resources\FileBrowser\Documents\Others\Graphic11.jpg" />
+    <Content Include="resources\FileBrowser\Favorites.xml" />
+    <Content Include="resources\FileBrowser\Music\! Dos Amigos - Mambo.MP3" />
+    <Content Include="resources\FileBrowser\Music\! INNER CIRCLE - Da Bomb.mp3" />
+    <Content Include="resources\FileBrowser\Music\! KAOMA - Lambada%28ORIGINAL%29.mp3" />
+    <Content Include="resources\FileBrowser\Music\%28Joe Dassin%29-05 - Ce soir.mp3" />
+    <Content Include="resources\FileBrowser\Music\01 - Kalasnjikov.mp3" />
+    <Content Include="resources\FileBrowser\Music\Somebody to love.mp3" />
+    <Content Include="resources\FileBrowser\Music\Who wants to live forever.mp3" />
+    <Content Include="resources\FileBrowser\Pictures\baloane.jpg" />
+    <Content Include="resources\FileBrowser\Pictures\banana.jpg" />
+    <Content Include="resources\FileBrowser\Pictures\clovn.jpg" />
+    <Content Include="resources\FileBrowser\Pictures\masa.jpg" />
+    <Content Include="resources\images\2.gif" />
+    <Content Include="resources\images\Add.png" />
+    <Content Include="resources\images\attachment.gif" />
+    <Content Include="resources\images\attachment_old.gif" />
+    <Content Include="resources\images\Delete.png" />
+    <Content Include="resources\images\down.gif" />
+    <Content Include="resources\images\Edit.png" />
+    <Content Include="resources\images\False.gif" />
+    <Content Include="resources\images\filebrowser\File.gif" />
+    <Content Include="resources\images\filebrowser\Folder.gif" />
+    <Content Include="resources\images\header.gif" />
+    <Content Include="resources\images\header_buttons.gif" />
+    <Content Include="resources\images\icon.gif" />
+    <Content Include="resources\images\open_folder.gif" />
+    <Content Include="resources\images\plusik.gif" />
+    <Content Include="resources\images\products\image1.jpg" />
+    <Content Include="resources\images\products\image10.jpg" />
+    <Content Include="resources\images\products\image11.jpg" />
+    <Content Include="resources\images\products\image12.jpg" />
+    <Content Include="resources\images\products\image13.jpg" />
+    <Content Include="resources\images\products\image14.jpg" />
+    <Content Include="resources\images\products\image15.jpg" />
+    <Content Include="resources\images\products\image16.jpg" />
+    <Content Include="resources\images\products\image17.jpg" />
+    <Content Include="resources\images\products\image18.jpg" />
+    <Content Include="resources\images\products\image19.jpg" />
+    <Content Include="resources\images\products\image2.jpg" />
+    <Content Include="resources\images\products\image20.jpg" />
+    <Content Include="resources\images\products\image21.jpg" />
+    <Content Include="resources\images\products\image22.jpg" />
+    <Content Include="resources\images\products\image23.jpg" />
+    <Content Include="resources\images\products\image24.jpg" />
+    <Content Include="resources\images\products\image25.jpg" />
+    <Content Include="resources\images\products\image26.jpg" />
+    <Content Include="resources\images\products\image27.jpg" />
+    <Content Include="resources\images\products\image3.jpg" />
+    <Content Include="resources\images\products\image4.jpg" />
+    <Content Include="resources\images\products\image5.jpg" />
+    <Content Include="resources\images\products\image6.jpg" />
+    <Content Include="resources\images\products\image7.jpg" />
+    <Content Include="resources\images\products\image8.jpg" />
+    <Content Include="resources\images\products\image9.jpg" />
+    <Content Include="resources\images\question.gif" />
+    <Content Include="resources\images\read.gif" />
+    <Content Include="resources\images\read_dot.gif" />
+    <Content Include="resources\images\read_header.gif" />
+    <Content Include="resources\images\replied.gif" />
+    <Content Include="resources\images\Save.png" />
+    <Content Include="resources\images\square_yellowS.gif" />
+    <Content Include="resources\images\tick.gif" />
+    <Content Include="resources\images\True.gif" />
+    <Content Include="resources\images\unread.gif" />
+    <Content Include="resources\images\unread_dot.gif" />
+    <Content Include="resources\images\up.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-down-grad.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-down-l.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-down-r.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-up-grad.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-up-l.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-button-holder-up-r.gif" />
+    <Content Include="resources\img-sliding-editor\edit-row-grad.gif" />
+    <Content Include="resources\loading_icons\1.gif" />
+    <Content Include="SampleData.asmx" />
+    <None Include="resources\custom-styles\grand_gray\interface\OboutTextBox\images\Thumbs.db" />
+    <None Include="resources\exports\OboutGrid_Excel.xls" />
+    <Content Include="resources\FileBrowser\Documents\feedback.zip" />
+    <Content Include="resources\FileBrowser\Documents\MyProjects.zip" />
+    <None Include="resources\FileBrowser\Documents\stock.doc" />
+    <None Include="resources\FileBrowser\Music\Beethoven.wma" />
+    <None Include="resources\FileBrowser\Music\New Stories.wma" />
+    <None Include="resources\FileBrowser\Shapes\Favorites.tmp" />
+    <Content Include="Styles\premiere_blue\asc.gif" />
+    <Content Include="Styles\premiere_blue\desc.gif" />
+    <Content Include="Styles\premiere_blue\details_btn_close.gif" />
+    <Content Include="Styles\premiere_blue\details_btn_open.gif" />
+    <Content Include="Styles\premiere_blue\filter.gif" />
+    <Content Include="Styles\premiere_blue\first_disabled.gif" />
+    <Content Include="Styles\premiere_blue\first_disabled_top.gif" />
+    <Content Include="Styles\premiere_blue\first_normal.gif" />
+    <Content Include="Styles\premiere_blue\first_normal_top.gif" />
+    <Content Include="Styles\premiere_blue\first_over.gif" />
+    <Content Include="Styles\premiere_blue\first_over_top.gif" />
+    <Content Include="Styles\premiere_blue\first_pressed.gif" />
+    <Content Include="Styles\premiere_blue\first_pressed_top.gif" />
+    <Content Include="Styles\premiere_blue\footer.gif" />
+    <Content Include="Styles\premiere_blue\footer_corner_left.gif" />
+    <Content Include="Styles\premiere_blue\footer_corner_middle.gif" />
+    <Content Include="Styles\premiere_blue\footer_corner_right.gif" />
+    <Content Include="Styles\premiere_blue\form_bgr.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_dragging.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_left.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_left_dragging.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_right.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_right_dragging.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_column_spacer.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_left.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_left_wtop.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_right.gif" />
+    <Content Include="Styles\premiere_blue\grouping_area_right_wtop.gif" />
+    <Content Include="Styles\premiere_blue\grouping_dragged_column.png" />
+    <Content Include="Styles\premiere_blue\group_arrow_bottom.gif" />
+    <Content Include="Styles\premiere_blue\group_arrow_top.gif" />
+    <Content Include="Styles\premiere_blue\group_btn_close.gif" />
+    <Content Include="Styles\premiere_blue\group_btn_open.gif" />
+    <Content Include="Styles\premiere_blue\group_summary.gif" />
+    <Content Include="Styles\premiere_blue\header.gif" />
+    <Content Include="Styles\premiere_blue\header_corner_left.gif" />
+    <Content Include="Styles\premiere_blue\header_corner_middle.gif" />
+    <Content Include="Styles\premiere_blue\header_corner_right.gif" />
+    <Content Include="Styles\premiere_blue\header_pressed.gif" />
+    <Content Include="Styles\premiere_blue\header_without_grouping.gif" />
+    <Content Include="Styles\premiere_blue\last_disabled.gif" />
+    <Content Include="Styles\premiere_blue\last_disabled_top.gif" />
+    <Content Include="Styles\premiere_blue\last_normal.gif" />
+    <Content Include="Styles\premiere_blue\last_normal_top.gif" />
+    <Content Include="Styles\premiere_blue\last_over.gif" />
+    <Content Include="Styles\premiere_blue\last_over_top.gif" />
+    <Content Include="Styles\premiere_blue\last_pressed.gif" />
+    <Content Include="Styles\premiere_blue\last_pressed_top.gif" />
+    <Content Include="Styles\premiere_blue\next_disabled.gif" />
+    <Content Include="Styles\premiere_blue\next_disabled_top.gif" />
+    <Content Include="Styles\premiere_blue\next_normal.gif" />
+    <Content Include="Styles\premiere_blue\next_normal_top.gif" />
+    <Content Include="Styles\premiere_blue\next_over.gif" />
+    <Content Include="Styles\premiere_blue\next_over_top.gif" />
+    <Content Include="Styles\premiere_blue\next_pressed.gif" />
+    <Content Include="Styles\premiere_blue\next_pressed_top.gif" />
+    <Content Include="Styles\premiere_blue\page_number_normal.gif" />
+    <Content Include="Styles\premiere_blue\page_number_over.gif" />
+    <Content Include="Styles\premiere_blue\placeholder.gif" />
+    <Content Include="Styles\premiere_blue\placeholder_empty.gif" />
+    <Content Include="Styles\premiere_blue\previous_disabled.gif" />
+    <Content Include="Styles\premiere_blue\previous_disabled_top.gif" />
+    <Content Include="Styles\premiere_blue\previous_normal.gif" />
+    <Content Include="Styles\premiere_blue\previous_normal_top.gif" />
+    <Content Include="Styles\premiere_blue\previous_over.gif" />
+    <Content Include="Styles\premiere_blue\previous_over_top.gif" />
+    <Content Include="Styles\premiere_blue\previous_pressed.gif" />
+    <Content Include="Styles\premiere_blue\previous_pressed_top.gif" />
+    <Content Include="Styles\premiere_blue\record_group_header.gif" />
+    <Content Include="Styles\premiere_blue\record_group_header_padding.gif" />
+    <Content Include="Styles\premiere_blue\record_group_header_padding_right.gif" />
+    <Content Include="Styles\premiere_blue\row1.gif" />
+    <Content Include="Styles\premiere_blue\row2.gif" />
+    <Content Include="Styles\premiere_blue\row_hover.gif" />
+    <Content Include="Styles\premiere_blue\row_selected.gif" />
+    <Content Include="Styles\premiere_blue\style.css" />
+    <Content Include="Styles\premiere_blue\summary.gif" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\NibrasService\WellTestServiceGateway.wsdl" />
+    <None Include="Service References\NibrasService\WellTestServiceGateway.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NibrasService\WellTestServiceGateway6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XHQService\XhqWse.wsdl" />
+    <None Include="Service References\XHQService\XhqWse.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XHQService\XhqWse1.wsdl" />
+    <None Include="Service References\XHQService\XhqWse1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XHQService\XhqWse2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\XHQService\XhqWse3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\AddorEdit.aspx.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\AddorEdit.aspx.designer.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNoteCategoryViews\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\AddorEdit.aspx.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\AddorEdit.aspx.designer.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MeterNote\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\AddorEdit.aspx.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\AddorEdit.aspx.designer.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMPointsViews\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\AddorEdit.aspx.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\AddorEdit.aspx.designer.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMGVFViews\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\AddorEdit.aspx.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\AddorEdit.aspx.designer.cs">
+      <DependentUpon>AddorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule\MFMAxisDataViews\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CAD.aspx.cs">
+      <DependentUpon>CAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CAD.aspx.designer.cs">
+      <DependentUpon>CAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChartDemo_old.aspx.cs">
+      <DependentUpon>ChartDemo_old.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChartDemo_old.aspx.designer.cs">
+      <DependentUpon>ChartDemo_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddMaterialBalance.aspx.cs">
+      <DependentUpon>AddMaterialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMaterialBalance.aspx.designer.cs">
+      <DependentUpon>AddMaterialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AggregateStats.aspx.cs">
+      <DependentUpon>AggregateStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AggregateStats.aspx.designer.cs">
+      <DependentUpon>AggregateStats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChartDemo.aspx.cs">
+      <DependentUpon>ChartDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChartDemo.aspx.designer.cs">
+      <DependentUpon>ChartDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LeftNavigation.ascx.cs">
+      <DependentUpon>LeftNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LeftNavigation.ascx.designer.cs">
+      <DependentUpon>LeftNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MechanicalDetails.ascx.cs">
+      <DependentUpon>MechanicalDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MechanicalDetails.ascx.designer.cs">
+      <DependentUpon>MechanicalDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestDevice.ascx.cs">
+      <DependentUpon>TestDevice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TestDevice.ascx.designer.cs">
+      <DependentUpon>TestDevice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Collection.cs" />
+    <Compile Include="Entities\DataSheet.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\MeterDetail.cs" />
+    <Compile Include="FunctionalHierarcy\HierarcyGrid.aspx.cs">
+      <DependentUpon>HierarcyGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunctionalHierarcy\HierarcyGrid.aspx.designer.cs">
+      <DependentUpon>HierarcyGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\CoriolisDataSheet.aspx.cs">
+      <DependentUpon>CoriolisDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\CoriolisDataSheet.aspx.designer.cs">
+      <DependentUpon>CoriolisDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\UltraSonicDataSheet.aspx.cs">
+      <DependentUpon>UltraSonicDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\UltraSonicDataSheet.aspx.designer.cs">
+      <DependentUpon>UltraSonicDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\OrificeDataSheet.aspx.cs">
+      <DependentUpon>OrificeDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\OrificeDataSheet.aspx.designer.cs">
+      <DependentUpon>OrificeDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\VConeDataSheet.aspx.cs">
+      <DependentUpon>VConeDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\VConeDataSheet.aspx.designer.cs">
+      <DependentUpon>VConeDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\WGMeterDataSheet.aspx.cs">
+      <DependentUpon>WGMeterDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\WGMeterDataSheet.aspx.designer.cs">
+      <DependentUpon>WGMeterDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\MagneticDataSheet.aspx.cs">
+      <DependentUpon>MagneticDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\MagneticDataSheet.aspx.designer.cs">
+      <DependentUpon>MagneticDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\VenturiDataSheet.aspx.cs">
+      <DependentUpon>VenturiDataSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\VenturiDataSheet.aspx.designer.cs">
+      <DependentUpon>VenturiDataSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\LandingPage.aspx.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\LandingPage.aspx.designer.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPages\Schematics.aspx.cs">
+      <DependentUpon>Schematics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralPages\Schematics.aspx.designer.cs">
+      <DependentUpon>Schematics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ExcelHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="IntermediateLinks.aspx.cs">
+      <DependentUpon>IntermediateLinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntermediateLinks.aspx.designer.cs">
+      <DependentUpon>IntermediateLinks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingPages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingPages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\AdminSite.Master.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\AdminSite.Master.designer.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\PopUp.Master.cs">
+      <DependentUpon>PopUp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\PopUp.Master.designer.cs">
+      <DependentUpon>PopUp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\SiteNoNavigation.Master.cs">
+      <DependentUpon>SiteNoNavigation.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\SiteNoNavigation.Master.designer.cs">
+      <DependentUpon>SiteNoNavigation.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Mockups\RelibilityManagement.aspx.cs">
+      <DependentUpon>RelibilityManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mockups\RelibilityManagement.aspx.designer.cs">
+      <DependentUpon>RelibilityManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MonitoringDashboards\CollectionMonitoringDashboard.aspx.cs">
+      <DependentUpon>CollectionMonitoringDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MonitoringDashboards\CollectionMonitoringDashboard.aspx.designer.cs">
+      <DependentUpon>CollectionMonitoringDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperatingEnvelop.aspx.cs">
+      <DependentUpon>OperatingEnvelop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperatingEnvelop.aspx.designer.cs">
+      <DependentUpon>OperatingEnvelop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PITagsList.aspx.cs">
+      <DependentUpon>PITagsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PITagsList.aspx.designer.cs">
+      <DependentUpon>PITagsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NibrasService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XHQService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TagHistogram.aspx.cs">
+      <DependentUpon>TagHistogram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TagHistogram.aspx.designer.cs">
+      <DependentUpon>TagHistogram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialBalanceChart.aspx.cs">
+      <DependentUpon>MaterialBalanceChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialBalanceChart.aspx.designer.cs">
+      <DependentUpon>MaterialBalanceChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MFMDetails.aspx.cs">
+      <DependentUpon>MFMDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MFMDetails.aspx.designer.cs">
+      <DependentUpon>MFMDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialBalance.aspx.cs">
+      <DependentUpon>MaterialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialBalance.aspx.designer.cs">
+      <DependentUpon>MaterialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikSample.aspx.cs">
+      <DependentUpon>TelerikSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelerikSample.aspx.designer.cs">
+      <DependentUpon>TelerikSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceDetails.aspx.cs">
+      <DependentUpon>DeviceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeviceDetails.aspx.designer.cs">
+      <DependentUpon>DeviceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestDetails.aspx.cs">
+      <DependentUpon>TestDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestDetails.aspx.designer.cs">
+      <DependentUpon>TestDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Points.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleData.asmx.cs">
+      <DependentUpon>SampleData.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlConn.cs" />
+    <Compile Include="WellDetails.aspx.cs">
+      <DependentUpon>WellDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WellDetails.aspx.designer.cs">
+      <DependentUpon>WellDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WGMDetails.aspx.cs">
+      <DependentUpon>WGMDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WGMDetails.aspx.designer.cs">
+      <DependentUpon>WGMDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XhqServiceWrapper\APIWrapper.cs" />
+    <Compile Include="XhqServiceWrapper\ServiceWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="resources\FileBrowser\Documents\Personal\" />
+    <Folder Include="resources\FileBrowser\Music\Classic\" />
+    <Folder Include="resources\FileBrowser\Pictures\Desktop\" />
+    <Folder Include="resources\FileBrowser\Pictures\Landscape\" />
+    <Folder Include="resources\FileBrowser\Pictures\Trips\" />
+    <Folder Include="resources\FileBrowser\Pictures\Wallpapers\" />
+    <Folder Include="resources\FileBrowser\Videos\" />
+    <Folder Include="UploadedExcel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NibrasService\" />
+    <WCFMetadataStorage Include="Service References\XHQService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52909</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

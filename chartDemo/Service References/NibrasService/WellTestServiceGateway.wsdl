@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WellTestServiceGateway" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" />
+      <xsd:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.Report" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevicesExtn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevicesExtn" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevicesExtn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevicesExtnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevicesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevicesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevicesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevicesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevices" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetMSVs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMSVs" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetMSVs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMSVsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWells_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWells" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWells_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWellsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestSkid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSkid" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestSkid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSkidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestSkidByMSVName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSkidByMSVName" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetTestSkidByMSVName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestSkidByMSVNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SubmitWellTestConfigRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWellTestConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SubmitWellTestConfigRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWellTestConfigRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWellTestConfigRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWellTestConfigRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWellTestConfigRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWellTestConfigRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ApproveRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ApproveRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_PushToNibras_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushToNibras" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_PushToNibras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushToNibrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetOPCTagsForRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOPCTagsForRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetOPCTagsForRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOPCTagsForRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_UpdateOPCTagsForRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOPCTagsForRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_UpdateOPCTagsForRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOPCTagsForRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetPITagsForRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPITagsForRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetPITagsForRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPITagsForRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SaveTestAssetPITags_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTestAssetPITags" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SaveTestAssetPITags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTestAssetPITagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SearchAttributesForRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAttributesForRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_SearchAttributesForRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAttributesForRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_FindMissingTagsForTestAsset_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMissingTagsForTestAsset" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_FindMissingTagsForTestAsset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMissingTagsForTestAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingPITagsForTestAsset_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingPITagsForTestAsset" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingPITagsForTestAsset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingPITagsForTestAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_PushToFieldware_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushToFieldware" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_PushToFieldware_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushToFieldwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ProcessRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ProcessRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetOPCTagsForElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOPCTagsForElement" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetOPCTagsForElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOPCTagsForElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_FindMissingPITagsForElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMissingPITagsForElement" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_FindMissingPITagsForElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMissingPITagsForElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ReInitializeTestDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReInitializeTestDevices" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ReInitializeTestDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReInitializeTestDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ReInitializaMSVs_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReInitializaMSVs" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_ReInitializaMSVs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReInitializaMSVsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingOPCTagsForElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingOPCTagsForElement" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingOPCTagsForElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingOPCTagsForElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingPITagsForElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingPITagsForElement" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_AddMissingPITagsForElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMissingPITagsForElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_IsDuplicateCommHost_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateCommHost" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_IsDuplicateCommHost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateCommHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_UpdateUnScreenedWellTestCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnScreenedWellTestCache" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_UpdateUnScreenedWellTestCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnScreenedWellTestCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_IsDuplicateCommHostPort_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateCommHostPort" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_IsDuplicateCommHostPort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateCommHostPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetDefaultPITags_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultPITags" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetDefaultPITags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultPITagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetFieldwareWellTestInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldwareWellTestInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetFieldwareWellTestInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldwareWellTestInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetFieldwareWellDensities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldwareWellDensities" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetFieldwareWellDensities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldwareWellDensitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWellAttributesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWellAttributesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWellTestServiceGateway_GetWellAttributesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWellAttributesInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWellTestServiceGateway">
+    <wsdl:operation name="GetTestDevicesExtn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesExtn" message="tns:IWellTestServiceGateway_GetTestDevicesExtn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesExtnResponse" message="tns:IWellTestServiceGateway_GetTestDevicesExtn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDevicesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesInfo" message="tns:IWellTestServiceGateway_GetTestDevicesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesInfoResponse" message="tns:IWellTestServiceGateway_GetTestDevicesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDevices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevices" message="tns:IWellTestServiceGateway_GetTestDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesResponse" message="tns:IWellTestServiceGateway_GetTestDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMSVs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetMSVs" message="tns:IWellTestServiceGateway_GetMSVs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetMSVsResponse" message="tns:IWellTestServiceGateway_GetMSVs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWells">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWells" message="tns:IWellTestServiceGateway_GetWells_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWellsResponse" message="tns:IWellTestServiceGateway_GetWells_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSkid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestSkid" message="tns:IWellTestServiceGateway_GetTestSkid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestSkidResponse" message="tns:IWellTestServiceGateway_GetTestSkid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSkidByMSVName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestSkidByMSVName" message="tns:IWellTestServiceGateway_GetTestSkidByMSVName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetTestSkidByMSVNameResponse" message="tns:IWellTestServiceGateway_GetTestSkidByMSVName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWellTestConfigRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SubmitWellTestConfigRequest" message="tns:IWellTestServiceGateway_SubmitWellTestConfigRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SubmitWellTestConfigRequestResponse" message="tns:IWellTestServiceGateway_SubmitWellTestConfigRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWellTestConfigRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWellTestConfigRequest" message="tns:IWellTestServiceGateway_GetWellTestConfigRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWellTestConfigRequestResponse" message="tns:IWellTestServiceGateway_GetWellTestConfigRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ApproveRequest" message="tns:IWellTestServiceGateway_ApproveRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ApproveRequestResponse" message="tns:IWellTestServiceGateway_ApproveRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushToNibras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/PushToNibras" message="tns:IWellTestServiceGateway_PushToNibras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/PushToNibrasResponse" message="tns:IWellTestServiceGateway_PushToNibras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOPCTagsForRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForRequest" message="tns:IWellTestServiceGateway_GetOPCTagsForRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForRequestResponse" message="tns:IWellTestServiceGateway_GetOPCTagsForRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOPCTagsForRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/UpdateOPCTagsForRequest" message="tns:IWellTestServiceGateway_UpdateOPCTagsForRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/UpdateOPCTagsForRequestResponse" message="tns:IWellTestServiceGateway_UpdateOPCTagsForRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPITagsForRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetPITagsForRequest" message="tns:IWellTestServiceGateway_GetPITagsForRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetPITagsForRequestResponse" message="tns:IWellTestServiceGateway_GetPITagsForRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestAssetPITags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SaveTestAssetPITags" message="tns:IWellTestServiceGateway_SaveTestAssetPITags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SaveTestAssetPITagsResponse" message="tns:IWellTestServiceGateway_SaveTestAssetPITags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttributesForRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SearchAttributesForRequest" message="tns:IWellTestServiceGateway_SearchAttributesForRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/SearchAttributesForRequestResponse" message="tns:IWellTestServiceGateway_SearchAttributesForRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMissingTagsForTestAsset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/FindMissingTagsForTestAsset" message="tns:IWellTestServiceGateway_FindMissingTagsForTestAsset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/FindMissingTagsForTestAssetResponse" message="tns:IWellTestServiceGateway_FindMissingTagsForTestAsset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingPITagsForTestAsset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForTestAsset" message="tns:IWellTestServiceGateway_AddMissingPITagsForTestAsset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForTestAssetResponse" message="tns:IWellTestServiceGateway_AddMissingPITagsForTestAsset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushToFieldware">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/PushToFieldware" message="tns:IWellTestServiceGateway_PushToFieldware_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/PushToFieldwareResponse" message="tns:IWellTestServiceGateway_PushToFieldware_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ProcessRequest" message="tns:IWellTestServiceGateway_ProcessRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ProcessRequestResponse" message="tns:IWellTestServiceGateway_ProcessRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOPCTagsForElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForElement" message="tns:IWellTestServiceGateway_GetOPCTagsForElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForElementResponse" message="tns:IWellTestServiceGateway_GetOPCTagsForElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMissingPITagsForElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/FindMissingPITagsForElement" message="tns:IWellTestServiceGateway_FindMissingPITagsForElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/FindMissingPITagsForElementResponse" message="tns:IWellTestServiceGateway_FindMissingPITagsForElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReInitializeTestDevices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ReInitializeTestDevices" message="tns:IWellTestServiceGateway_ReInitializeTestDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ReInitializeTestDevicesResponse" message="tns:IWellTestServiceGateway_ReInitializeTestDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReInitializaMSVs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ReInitializaMSVs" message="tns:IWellTestServiceGateway_ReInitializaMSVs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/ReInitializaMSVsResponse" message="tns:IWellTestServiceGateway_ReInitializaMSVs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingOPCTagsForElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingOPCTagsForElement" message="tns:IWellTestServiceGateway_AddMissingOPCTagsForElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingOPCTagsForElementResponse" message="tns:IWellTestServiceGateway_AddMissingOPCTagsForElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingPITagsForElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForElement" message="tns:IWellTestServiceGateway_AddMissingPITagsForElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForElementResponse" message="tns:IWellTestServiceGateway_AddMissingPITagsForElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateCommHost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHost" message="tns:IWellTestServiceGateway_IsDuplicateCommHost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHostResponse" message="tns:IWellTestServiceGateway_IsDuplicateCommHost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnScreenedWellTestCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/UpdateUnScreenedWellTestCache" message="tns:IWellTestServiceGateway_UpdateUnScreenedWellTestCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/UpdateUnScreenedWellTestCacheResponse" message="tns:IWellTestServiceGateway_UpdateUnScreenedWellTestCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateCommHostPort">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHostPort" message="tns:IWellTestServiceGateway_IsDuplicateCommHostPort_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHostPortResponse" message="tns:IWellTestServiceGateway_IsDuplicateCommHostPort_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultPITags">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetDefaultPITags" message="tns:IWellTestServiceGateway_GetDefaultPITags_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetDefaultPITagsResponse" message="tns:IWellTestServiceGateway_GetDefaultPITags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldwareWellTestInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellTestInfo" message="tns:IWellTestServiceGateway_GetFieldwareWellTestInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellTestInfoResponse" message="tns:IWellTestServiceGateway_GetFieldwareWellTestInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldwareWellDensities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellDensities" message="tns:IWellTestServiceGateway_GetFieldwareWellDensities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellDensitiesResponse" message="tns:IWellTestServiceGateway_GetFieldwareWellDensities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWellAttributesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWellAttributesInfo" message="tns:IWellTestServiceGateway_GetWellAttributesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWellTestServiceGateway/GetWellAttributesInfoResponse" message="tns:IWellTestServiceGateway_GetWellAttributesInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWellTestServiceGateway" type="tns:IWellTestServiceGateway">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTestDevicesExtn">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesExtn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDevicesInfo">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetTestDevicesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDevices">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetTestDevices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMSVs">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetMSVs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWells">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetWells" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSkid">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetTestSkid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestSkidByMSVName">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetTestSkidByMSVName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWellTestConfigRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/SubmitWellTestConfigRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWellTestConfigRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetWellTestConfigRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/ApproveRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushToNibras">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/PushToNibras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOPCTagsForRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOPCTagsForRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/UpdateOPCTagsForRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPITagsForRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetPITagsForRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestAssetPITags">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/SaveTestAssetPITags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttributesForRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/SearchAttributesForRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMissingTagsForTestAsset">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/FindMissingTagsForTestAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingPITagsForTestAsset">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForTestAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushToFieldware">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/PushToFieldware" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRequest">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/ProcessRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOPCTagsForElement">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetOPCTagsForElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMissingPITagsForElement">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/FindMissingPITagsForElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReInitializeTestDevices">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/ReInitializeTestDevices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReInitializaMSVs">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/ReInitializaMSVs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingOPCTagsForElement">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/AddMissingOPCTagsForElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMissingPITagsForElement">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/AddMissingPITagsForElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateCommHost">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnScreenedWellTestCache">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/UpdateUnScreenedWellTestCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateCommHostPort">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/IsDuplicateCommHostPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultPITags">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetDefaultPITags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldwareWellTestInfo">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellTestInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldwareWellDensities">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetFieldwareWellDensities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWellAttributesInfo">
+      <soap:operation soapAction="http://tempuri.org/IWellTestServiceGateway/GetWellAttributesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WellTestServiceGateway">
+    <wsdl:port name="BasicHttpBinding_IWellTestServiceGateway" binding="tns:BasicHttpBinding_IWellTestServiceGateway">
+      <soap:address location="http://mus-ws-111:900/WellTestServiceGateway.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

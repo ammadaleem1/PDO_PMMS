@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.Report" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.Report" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBasicElementInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicElementInfo" nillable="true" type="tns:BasicElementInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicElementInfo" nillable="true" type="tns:ArrayOfBasicElementInfo" />
+  <xs:complexType name="BasicElementInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseWellType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelHostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelHostPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelHostTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommDeviceElementTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommDeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommDevicePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Directorate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Has_SupportException" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Has_WellException" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OEStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPCServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_Asset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_Sub_Asset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PPName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProtocolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reservoir" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Station" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportException_EBSStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SupportException_EBSState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportException_ExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportException_Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WellException_EBSStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WellException_EBSState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WellException_Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WellException_Priority" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicElementInfo" nillable="true" type="tns:BasicElementInfo" />
+</xs:schema>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PMMSModelStoreContainer" CdmEntityContainer="PMMSConnection">
+    <EntitySetMapping Name="PlantHierarchies">
+      <EntityTypeMapping TypeName="PMMSModel.PlantHierarchy">
+        <MappingFragment StoreEntitySet="PlantHierarchy">
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstrumentFunctionalHierarchies">
+      <EntityTypeMapping TypeName="PMMSModel.InstrumentFunctionalHierarchy">
+        <MappingFragment StoreEntitySet="InstFuncHierarchy">
+          <ScalarProperty Name="Vortex_Tert_Var_Description" ColumnName="Vortex_Tert_Var_Description" />
+          <ScalarProperty Name="Vortex_Trans_Tert_Var_T_N" ColumnName="Vortex_Trans_Tert_Var_T_N" />
+          <ScalarProperty Name="Vortex_Sec_Var_Description" ColumnName="Vortex_Sec_Var_Description" />
+          <ScalarProperty Name="Vortex_Trans_Sec_Var_Tag_N" ColumnName="Vortex_Trans_Sec_Var_Tag_N" />
+          <ScalarProperty Name="Vortex_Hydrostatic_Test" ColumnName="Vortex_Hydrostatic_Test" />
+          <ScalarProperty Name="Vortex_Local_Display_Units" ColumnName="Vortex_Local_Display_Units" />
+          <ScalarProperty Name="Vortex_Local_Display" ColumnName="Vortex_Local_Display" />
+          <ScalarProperty Name="Vortex_Cable_Type" ColumnName="Vortex_Cable_Type" />
+          <ScalarProperty Name="Vortex_Power_Supply" ColumnName="Vortex_Power_Supply" />
+          <ScalarProperty Name="Vortex_Local_Remt_Trans_T_No" ColumnName="Vortex_Local_Remt_Trans_T_No" />
+          <ScalarProperty Name="Vortex_Linearity_ref_to" ColumnName="Vortex_Linearity_ref_to" />
+          <ScalarProperty Name="Vortex_Linearity" ColumnName="Vortex_Linearity" />
+          <ScalarProperty Name="Vortex_Accuracy_ref_to" ColumnName="Vortex_Accuracy_ref_to" />
+          <ScalarProperty Name="Vortex_Accuracy" ColumnName="Vortex_Accuracy" />
+          <ScalarProperty Name="Vortex_K_Factor_Units" ColumnName="Vortex_K_Factor_Units" />
+          <ScalarProperty Name="Vortex_K_Fact_Stamped_mtr_bdy" ColumnName="Vortex_K_Fact_Stamped_mtr_bdy" />
+          <ScalarProperty Name="Vortex_Reference_Drawing" ColumnName="Vortex_Reference_Drawing" />
+          <ScalarProperty Name="Vortex_Str_pipe_req_Dnstream" ColumnName="Vortex_Str_pipe_req_Dnstream" />
+          <ScalarProperty Name="Vortex_Str_pipe_req_Upstream" ColumnName="Vortex_Str_pipe_req_Upstream" />
+          <ScalarProperty Name="Vortex_Pressure_Drop_Unit" ColumnName="Vortex_Pressure_Drop_Unit" />
+          <ScalarProperty Name="Vortex_Pressure_Drop_Max" ColumnName="Vortex_Pressure_Drop_Max" />
+          <ScalarProperty Name="Vortex_Pressure_Drop_Normal" ColumnName="Vortex_Pressure_Drop_Normal" />
+          <ScalarProperty Name="Vortex_Pressure_Drop_Min" ColumnName="Vortex_Pressure_Drop_Min" />
+          <ScalarProperty Name="Vortex_Materials_Shedder" ColumnName="Vortex_Materials_Shedder" />
+          <ScalarProperty Name="Vortex_Materials_Sensor" ColumnName="Vortex_Materials_Sensor" />
+          <ScalarProperty Name="Vortex_Materials_Body" ColumnName="Vortex_Materials_Body" />
+          <ScalarProperty Name="Vortex_Materials_Housing" ColumnName="Vortex_Materials_Housing" />
+          <ScalarProperty Name="Vortex_Cali_R_DCS_Disp_R_Unit" ColumnName="Vortex_Cali_R_DCS_Disp_R_Unit" />
+          <ScalarProperty Name="Vortex_Cali_R_DCS_Disp_R_Max" ColumnName="Vortex_Cali_R_DCS_Disp_R_Max" />
+          <ScalarProperty Name="Vortex_Cali_R_DCS_Disp_R_Min" ColumnName="Vortex_Cali_R_DCS_Disp_R_Min" />
+          <ScalarProperty Name="Vortex_Acc_Instr_R_Flow_Unit" ColumnName="Vortex_Acc_Instr_R_Flow_Unit" />
+          <ScalarProperty Name="Vortex_Acc_Instr_R_Mx_Flow" ColumnName="Vortex_Acc_Instr_R_Mx_Flow" />
+          <ScalarProperty Name="Vortex_Acc_Instr_R_Mn_Flow" ColumnName="Vortex_Acc_Instr_R_Mn_Flow" />
+          <ScalarProperty Name="Vortex_Inst_R_Flow_Unit" ColumnName="Vortex_Inst_R_Flow_Unit" />
+          <ScalarProperty Name="Vortex_Inst_R_Mx_Meas_Flow" ColumnName="Vortex_Inst_R_Mx_Meas_Flow" />
+          <ScalarProperty Name="Vortex_Inst_R_Mn_Cuttoff_Flow" ColumnName="Vortex_Inst_R_Mn_Cuttoff_Flow" />
+          <ScalarProperty Name="Vortex_Body_Conn_R_Units" ColumnName="Vortex_Body_Conn_R_Units" />
+          <ScalarProperty Name="Vortex_Body_Connection_Rating" ColumnName="Vortex_Body_Connection_Rating" />
+          <ScalarProperty Name="Vortex_End_Connection_Units" ColumnName="Vortex_End_Connection_Units" />
+          <ScalarProperty Name="Vortex_End_Connection" ColumnName="Vortex_End_Connection" />
+          <ScalarProperty Name="Vortex_Body_Size_Units" ColumnName="Vortex_Body_Size_Units" />
+          <ScalarProperty Name="Vortex_Body_Size" ColumnName="Vortex_Body_Size" />
+          <ScalarProperty Name="Vortex_Meter_Size_Units" ColumnName="Vortex_Meter_Size_Units" />
+          <ScalarProperty Name="Vortex_Meter_Size" ColumnName="Vortex_Meter_Size" />
+          <ScalarProperty Name="Vortex_Type_of_Element" ColumnName="Vortex_Type_of_Element" />
+          <ScalarProperty Name="Cluster" ColumnName="Cluster" />
+          <ScalarProperty Name="PITag" ColumnName="PITag" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="IO_Type_Name" ColumnName="IO_Type_Name" />
+          <ScalarProperty Name="Process_Function_Type" ColumnName="Process_Function_Type" />
+          <ScalarProperty Name="Loop_Name" ColumnName="Loop_Name" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Loop_Number" ColumnName="Loop_Number" />
+          <ScalarProperty Name="Function_Code" ColumnName="Function_Code" />
+          <ScalarProperty Name="Unit_Number" ColumnName="Unit_Number" />
+          <ScalarProperty Name="Inst_Datasheet_No" ColumnName="Inst_Datasheet_No" />
+          <ScalarProperty Name="PDO_ST_Final_Review_Report" ColumnName="PDO_ST_Final_Review_Report" />
+          <ScalarProperty Name="PDO_Remarks" ColumnName="PDO_Remarks" />
+          <ScalarProperty Name="PEFS_DWG_No" ColumnName="PEFS_DWG_No" />
+          <ScalarProperty Name="Proc_Remarks" ColumnName="Proc_Remarks" />
+          <ScalarProperty Name="OND_Task_Force_Remarks" ColumnName="OND_Task_Force_Remarks" />
+          <ScalarProperty Name="MG_Units_of_Measurement" ColumnName="MG_Units_of_Measurement" />
+          <ScalarProperty Name="MG_Inst_Range_Max" ColumnName="MG_Inst_Range_Max" />
+          <ScalarProperty Name="MG_Inst_Range_Min" ColumnName="MG_Inst_Range_Min" />
+          <ScalarProperty Name="MG_Inst_Size" ColumnName="MG_Inst_Size" />
+          <ScalarProperty Name="MG_Inst_Serial_No" ColumnName="MG_Inst_Serial_No" />
+          <ScalarProperty Name="MG_Model_No" ColumnName="MG_Model_No" />
+          <ScalarProperty Name="MG_Manufacturer" ColumnName="MG_Manufacturer" />
+          <ScalarProperty Name="MG_Inst_Type" ColumnName="MG_Inst_Type" />
+          <ScalarProperty Name="Gen_Inst_Type" ColumnName="Gen_Inst_Type" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Tag_No" ColumnName="Tag_No" />
+          <ScalarProperty Name="Measurement_Class_2" ColumnName="Measurement_Class_2" />
+          <ScalarProperty Name="Measurement_Class_1" ColumnName="Measurement_Class_1" />
+          <ScalarProperty Name="SubClass2" ColumnName="SubClass2" />
+          <ScalarProperty Name="SubClass1" ColumnName="SubClass1" />
+          <ScalarProperty Name="MainClass" ColumnName="MainClass" />
+          <ScalarProperty Name="Instrument_Type_Description" ColumnName="Instrument_Type_Description" />
+          <ScalarProperty Name="Cleaned_Mech_Eqpt_no" ColumnName="Cleaned_Mech_Eqpt_no" />
+          <ScalarProperty Name="Mech_Eqpt_no" ColumnName="Mech_Eqpt_no" />
+          <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+          <ScalarProperty Name="Functional_location" ColumnName="Functional location" />
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="Old_Station" ColumnName="Old_Station" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Instr_Data_ID" ColumnName="Instr_Data_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MFMAxisDatas">
+      <EntityTypeMapping TypeName="PMMSModel.MFMAxisData">
+        <MappingFragment StoreEntitySet="MFMAxisData">
+          <ScalarProperty Name="MeterName" ColumnName="MeterName" />
+          <ScalarProperty Name="Axis" ColumnName="Axis" />
+          <ScalarProperty Name="LogBase" ColumnName="LogBase" />
+          <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+          <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MFMGVFs">
+      <EntityTypeMapping TypeName="PMMSModel.MFMGVF">
+        <MappingFragment StoreEntitySet="MFMGVF">
+          <ScalarProperty Name="GVF" ColumnName="GVF" />
+          <ScalarProperty Name="MeterName" ColumnName="MeterName" />
+          <ScalarProperty Name="GVFID" ColumnName="GVFID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MFMPoints">
+      <EntityTypeMapping TypeName="PMMSModel.MFMPoints">
+        <MappingFragment StoreEntitySet="MFMPoints">
+          <ScalarProperty Name="PointOil" ColumnName="PointOil" />
+          <ScalarProperty Name="PointGas" ColumnName="PointGas" />
+          <ScalarProperty Name="MeasurementSection" ColumnName="MeasurementSection" />
+          <ScalarProperty Name="MeterName" ColumnName="MeterName" />
+          <ScalarProperty Name="MFMPointsID" ColumnName="MFMPointsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeterNotes">
+      <EntityTypeMapping TypeName="PMMSModel.MeterNote">
+        <MappingFragment StoreEntitySet="MeterNote">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="MeterNumber" ColumnName="MeterNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeterNoteCategories">
+      <EntityTypeMapping TypeName="PMMSModel.MeterNoteCategory">
+        <MappingFragment StoreEntitySet="MeterNoteCategory">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

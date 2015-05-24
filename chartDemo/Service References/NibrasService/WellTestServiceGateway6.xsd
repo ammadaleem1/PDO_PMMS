@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.WellTest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" />
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" />
+  <xs:complexType name="ArrayOfTestDeviceInfoExtn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestDeviceInfoExtn" nillable="true" type="tns:TestDeviceInfoExtn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestDeviceInfoExtn" nillable="true" type="tns:ArrayOfTestDeviceInfoExtn" />
+  <xs:complexType name="TestDeviceInfoExtn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectedDevices" nillable="true" type="tns:ArrayOfTestSkidItem" />
+      <xs:element minOccurs="0" name="ConnectionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InUse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OPAsset" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPSubAsset" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PITags" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestDeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestDeviceTemplateName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestDeviceInfoExtn" nillable="true" type="tns:TestDeviceInfoExtn" />
+  <xs:complexType name="ArrayOfTestSkidItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestSkidItem" nillable="true" type="tns:TestSkidItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestSkidItem" nillable="true" type="tns:ArrayOfTestSkidItem" />
+  <xs:complexType name="TestSkidItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SkidName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestSkidItem" nillable="true" type="tns:TestSkidItem" />
+  <xs:complexType name="ArrayOfTestDeviceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestDeviceInfo" nillable="true" type="tns:TestDeviceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestDeviceInfo" nillable="true" type="tns:ArrayOfTestDeviceInfo" />
+  <xs:complexType name="TestDeviceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="CommDevice" nillable="true" type="q2:CommDevice" />
+      <xs:element minOccurs="0" name="ConnectedDevices" nillable="true" type="tns:ArrayOfTestSkidItem" />
+      <xs:element minOccurs="0" name="ConnectionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsUpdated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestDeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestDeviceTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="TestDeviceTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestDeviceUniqueName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestDeviceInfo" nillable="true" type="tns:TestDeviceInfo" />
+  <xs:complexType name="ArrayOfMSVInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MSVInfo" nillable="true" type="tns:MSVInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMSVInfo" nillable="true" type="tns:ArrayOfMSVInfo" />
+  <xs:complexType name="MSVInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostIP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsUpdated" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="MSVCommDevice" nillable="true" type="q3:CommDevice" />
+      <xs:element minOccurs="0" name="MSVName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSVTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSVTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="MSVUniqueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port0" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port1" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port2" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port3" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port4" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port5" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port6" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port7" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="Port8" nillable="true" type="tns:TestSkidItem" />
+      <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MSVInfo" nillable="true" type="tns:MSVInfo" />
+  <xs:complexType name="WellTestConfigRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" base="q4:PreConfigDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LstMSVInfo" nillable="true" type="tns:ArrayOfMSVInfo" />
+          <xs:element minOccurs="0" name="LstPreConfigActions" nillable="true" type="q4:ArrayOfPreConfigAction" />
+          <xs:element minOccurs="0" name="LstTestSkidItems" nillable="true" type="tns:ArrayOfTestSkidItem" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" minOccurs="0" name="RtnStatus" nillable="true" type="q5:NibrasActionInfo" />
+          <xs:element minOccurs="0" name="TestUnit" nillable="true" type="tns:ArrayOfTestDeviceInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WellTestConfigRequest" nillable="true" type="tns:WellTestConfigRequest" />
+  <xs:complexType name="ArrayOfTestAssetPITags">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestAssetPITags" nillable="true" type="tns:TestAssetPITags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestAssetPITags" nillable="true" type="tns:ArrayOfTestAssetPITags" />
+  <xs:complexType name="TestAssetPITags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DevicePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementPath" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" minOccurs="0" name="LstPITags" nillable="true" type="q6:ArrayOfPITagAttributes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestAssetPITags" nillable="true" type="tns:TestAssetPITags" />
+  <xs:complexType name="ArrayOfWellAttributesInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WellAttributesInfo" nillable="true" type="tns:WellAttributesInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWellAttributesInfo" nillable="true" type="tns:ArrayOfWellAttributesInfo" />
+  <xs:complexType name="WellAttributesInfo">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WellAttributesInfoData" nillable="true" type="q7:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="WellName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WellAttributesInfo" nillable="true" type="tns:WellAttributesInfo" />
+</xs:schema>

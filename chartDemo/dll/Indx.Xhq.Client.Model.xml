@@ -1,0 +1,866 @@
+<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>Indx.Xhq.Client.Model</name>
+	</assembly>
+	<members>
+		<member name="T:com.indx.xhq.model.clientapi.Model">
+			<summary>The <c>Model</c> class is the main entry point into the
+ XHQ model (enterprise) server API infrastructure.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.Model.LOG_READ">
+			<summary>API Logging category: read (get) values from XHQ model server</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.Model.LOG_WRITE">
+			<summary>API Logging category: write (put) values to XHQ model server</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.Model.LOG_ALL">
+			<summary>API Logging category: all</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.#ctor">
+			<summary>Default constructor.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.#ctor(com.indx.xhq.model.clientapi.Model)">
+			<summary>Copy Constructor. Copies non connection-oriented settings.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.finalize">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.connect(System.String,System.Int32)">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.connect(System.String,System.Int32,System.String,System.String)">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClientModel">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClientUnits">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getConnection(System.String)">
+			<summary>Gets a shared instance of this class for interfacing with the XHQ
+ Model Server on the specified model server host.
+ The application is responsible for managing the life cycle of this
+ connection.  However, when no references to the shared
+ instance are present, the connection may be closed.</summary>
+			<param name="modelHost">the host on which the model server is running</param>
+			<returns>a shared instance</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getPrivateConnection(System.String)">
+			<summary>Gets a non-shared instance of this class for interfacing with the XHQ
+ Model Server on the specified model server host.
+ The caller is responsible for managing the life cycle of this connection.</summary>
+			<param name="modelHost">the host on which the model server is running</param>
+			<returns>a connection to the XHQ Model Server</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getPrivateConnection(System.String,System.String,System.String)">
+			<summary>Gets a non-shared instance of this class for interfacing with the XHQ
+ Model Server on the specified model server host.
+ The caller is responsible for managing the life cycle of this connection.</summary>
+			<param name="modelHost">the host on which the model server is running</param>
+			<param name="username">the username for the connection</param>
+			<param name="password">the password for the connection</param>
+			<returns>a connection to the XHQ Model Server</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.disconnect">
+			<summary>Disconnect from the XHQ Model Server.  Any subsequent API calls
+ fail. Any asynchronous updates are stopped.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getModelHost">
+			<summary>Returns the hostname that was used to connect to the model server.
+  If <c>disconnect</c> has been called, <c>null</c> is
+  returned instead.</summary>
+			<returns>the host name or <c>null</c></returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getModelTimeZone">
+			<summary>Returns current time zone being used for the model server host.<para><c>Since:</c> XHQ 4.1</para>
+</summary>
+			<returns>time zone information</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getModelUser">
+			<summary>Returns account information associated with the connection.</summary>
+			<returns>user account</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getSecurityEnabled">
+			<summary>Query model server to see if security is enabled.</summary>
+			<returns><c>true</c>, if security is enabled, <c>false</c> otherwise</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.setLogger(java.util.logging.Logger)">
+			<summary>Instruct API to use a specific logger to handle log messages.</summary>
+			<param name="logger">the logger to use</param>
+			<returns>previously defined logger</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.setLogLevel(java.util.logging.Level)">
+			<summary>Set the general logging level of API calls.</summary>
+			<param name="level">new logging level</param>
+			<returns>previously set logging level</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.enableLoggingCategory(System.Int32)">
+			<summary>Enable logging of API calls in a specific category.</summary>
+			<param name="category">logging category (any value from <c>LOG_</c>*)</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.disableLoggingCategory(System.Int32)">
+			<summary>Disable logging of API calls in a specific category.</summary>
+			<param name="category">logging category (any value from <c>LOG_</c>*)</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getLogLevel">
+			<summary>Get the general logging level of API calls.</summary>
+			<returns>logging level</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.log(java.util.logging.Level,System.String)">
+			<summary>Log a message via API logging infrastructure.</summary>
+			<param name="level">log level of the message</param>
+			<param name="msg">log message</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.log(java.util.logging.Level,System.String,System.Exception)">
+			<summary>Log exception/error information via API logging infrastructure.</summary>
+			<param name="level">log level of the message</param>
+			<param name="msg">log message</param>
+			<param name="t">an exception/error</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClass(System.String)">
+			<summary>Returns the latest revision of the class with the specified name.</summary>
+			<param name="name">Name of the class</param>
+			<returns>the model class</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClass(System.Int32)">
+			<summary>Returns the latest revision of the class with the specified ID.</summary>
+			<param name="cid">ID of the class</param>
+			<returns>the model class</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClass(System.Int32,System.Int32)">
+			<summary>Returns the specified revision of the class with the specified ID.</summary>
+			<param name="cid">ID of the class</param>
+			<param name="rev">Revision ID of the class</param>
+			<returns>the model class</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getClasses">
+			<summary>Returns a collection of the latest revisions of the model classes
+ available in the model.</summary>
+			<returns>latest revision of all classes</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getAllPages">
+			<summary>Returns all the Catalog pages in the form of collection
+ of ModelPage objects.</summary>
+			<returns>latest revision of all classes</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getModelRevID">
+			<summary>Returns the revision ID of the model.</summary>
+			<returns>the model revision ID</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getAllRoles">
+			<summary>Returns all roles defined in the model.</summary>
+			<returns>collection of roles</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getCurrentRoles">
+			<summary>Returns roles defined for current connection context.</summary>
+			<returns>collection of roles for current user</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.checkPermissions(System.Int32)">
+			<summary>Convenience function to check a set of permissions for the current
+ user.  Supply multiple permissions by OR&apos;ing together different
+ permissions.  If security is not enabled, or if no bits are set in the
+ parameter, the method returns <c>true</c>.</summary>
+			<param name="permissions">mask of permissions to check</param>
+			<returns>returns <c>true</c> if all permissions specified
+         are allowed in all roles associated with current user</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getVersionInfo">
+			<summary>Returns XHQ version information associated with the XHQ Model Server.<para><c>Since:</c> XHQ 4.1</para>
+</summary>
+			<returns>XhqVersionInfo instance with the version information</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getAllUnitsOfMeasure">
+			<summary>Returns a map of all units defined in XHQ Units of Measure system.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<returns>Map of all units of measure, keyed by name.</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getUnitsByCategory(System.String)">
+			<summary>Obtain a list of units defined in XHQ Units of Measure system,
+  filtered by catagory.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<param name="categoryName">name of units category</param>
+			<returns>Ordered set of unit-of-measure names</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.convertToUnits(System.Double,System.String,System.String)">
+			<summary>Convert the value from one units to another. If the units are not
+ compatible or undefined, the value Double.NaN is returned as an error.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getAllUOMCategories">
+			<summary>Return a sorted set of all UOM categories. This includes categories that
+ are simply base units if no category name is configured.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<returns>Ordered set of UOM categories</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getCommonUOMCategories">
+			<summary>Return a sorted set of common UOM categories. This does not include
+ categories that are simply base units.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<returns>Ordered set of UOM categories</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.geUOMCategoryMapping">
+			<summary>Return a mapping of base units to common UOM categories.
+ This does not include categories that are simply base units.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<returns>Mapping of base units to UOM categories</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.getCompatibleUnits(System.String)">
+			<summary>Return a sorted set of units compatible with those provided.<para><c>Since:</c> XHQ 4.5</para>
+</summary>
+			<returns>Ordered set of units</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.Model.checkConnection">
+			<summary>Check the connection to the model server<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelClass">
+			<summary>The <c>ModelClass</c> class is an abstract class that represents
+ model classes (components) in the XHQ model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelClass.LATEST_REVISION">
+			<summary>Special revision number indicating latest version</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getMembers">
+			<summary>Returns a collection of members (base type ModelMember).</summary>
+			<returns>Collection of members</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getClassID">
+			<summary>Returns the ID of the class.</summary>
+			<returns>the class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getClassRevID">
+			<summary>Returns the revision ID of the class.</summary>
+			<returns>the class rev ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getSuperClassID">
+			<summary>Returns the ID of the super class.</summary>
+			<returns>the super class ID or <c>0</c>, if none</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getAllowSubclassing">
+			<summary>Returns true if subclasses are allowed to be created from this class,
+ otherwise return false.<para><c>Since:</c> XHQ 4.5.1 build 24</para>
+</summary>
+			<returns>returns <c>true</c> if subclasses are allowed
+         to be created from this class</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.setAllowSubclassing(System.Boolean)">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getSuperClassName">
+			<summary>Returns the name of the super class.</summary>
+			<returns>the super class name or <c>null</c>, if none</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getSuperClassPath">
+			<summary>Returns comma-separated names of all super classes.<para><c>Since:</c> XHQ 4.5.1 build 24</para>
+</summary>
+			<returns>comma-separated names of all super classes or <c>null</c>, if none</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getViews">
+			<summary>Returns the views for the class.</summary>
+			<returns>collection of <c>ModelView</c> instances</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelClass.getRoles">
+			<summary>Returns a collection of roles.</summary>
+			<returns>Collection of roles</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelCommunicationException">
+			<summary>The <c>ModelCommunicationException</c> is the exception class for XHQ
+ Model Server client API that indicate that there has been a problem
+ communicating with the XHQ Model Server.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelCommunicationException.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelCommunicationException.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelCommunicationException.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelCommunicationException.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelItem">
+			<summary>The <c>ModelItem</c> class is an abstract class that provides common
+ baisic properties for many concrete classes in this package.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelItem.getModel">
+			<summary>Obtain the XHQ Model Server interface whence this item came.</summary>
+			<returns>the <c>Model</c> instance</returns>
+			<seealso cref="T:com.indx.xhq.model.clientapi.Model">com.indx.xhq.model.clientapi.Model</seealso>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelItem.getName">
+			<summary>Returns the name of the item</summary>
+			<returns>the name</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelItem.getDescription">
+			<summary>Returns the description of the item</summary>
+			<returns>the description</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelItem.compareTo(System.Object)">
+			<summary></summary>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelMember">
+			<summary>The <c>ModelMember</c> class is an abstract class that represents
+ members of model classes.
+ Concrete extensions of this class provide meaningful access to the
+ XHQ model class hierarchy.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMember.NO_MEMBER_ID">
+			<summary>A member ID representing an object itself.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getParentClass">
+			<summary>Returns the class</summary>
+			<returns>the class</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getMID">
+			<summary>Returns the ID of the member.</summary>
+			<returns>the MID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getClassID">
+			<summary>Returns the ID of the class.</summary>
+			<returns>the class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getContentsExposed">
+			<summary>Returns the indication that the contents of this member should be
+ exposed as instances.  The meaning of content depnends on the actual
+ member type.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>true when content of member is exposed</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getContentsExposureNodeName">
+			<summary>Returns name to use for the node when contents are exposed.
+ If the node is not traversable and the contents are exposed,
+ the contents are exposed under the member&apos;s parent.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>name when exposing contents and the member node is traverable,
+         null otherwise</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getClassRevID">
+			<summary>Returns the revision ID of the class.</summary>
+			<returns>the class revision ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.isHidden">
+			<summary>Returns the indication that member is hidden or not.
+ The hidden flag is used to control visibility of the member
+ when displayed in unser interface applications.</summary>
+			<returns>hidden flag</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.isRestricted">
+			<summary>Returns the indication that member is restricted for modification
+ (in the component editor).
+ If a member is marked as restricted, then it cannot be modified
+ by editing tools like the component editor.</summary>
+			<returns>restricted flag</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getDefiningClassID">
+			<summary>Returns the ID of the class that defines the member.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>the defining class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMember.getDefiningClassRevID">
+			<summary>Returns the revision ID of the class that defines the member.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>the defining class revision ID</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelMemberClass">
+			<summary>The <c>ModelMemberClass</c> class represents a member that is a
+ type of different class in the XHQ Model server.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberClass.getMembers">
+			<summary>Returns a sorted set of this members&apos;s members (base type ModelMember).</summary>
+			<returns>Collection of this reference class&apos;s members</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberClass.getRefClass">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberClass.getRefClassID">
+			<summary>Returns class ID of the class to which this member refers.</summary>
+			<returns>class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberClass.getRefClassRevID">
+			<summary>Returns class revision ID of the class to which this member refers.</summary>
+			<returns>class revision ID</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelMemberCollection">
+			<summary>The <c>ModelMemberCollection</c> class represents a member collection
+ of another class in the XHQ Model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberCollection.getMembers">
+			<summary>Returns a sorted set of this collections&apos;s members (base type ModelMember).</summary>
+			<returns>Collection of this collections&apos;s members</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if a problem is encountered
+         communicating with the XHQ Model Server.</exception>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberCollection.getRefClassID">
+			<summary>Returns class ID of the collection represented by the member</summary>
+			<returns>class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberCollection.getRefClassRevID">
+			<summary>Returns class revision ID of the object to which this member refers.</summary>
+			<returns>class revision ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberCollection.getContentsExposed">
+			<summary>Returns the indication that the contents of this member should be
+ exposed as instances.  The meaning of content depnends on the actual
+ member type.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>true when content of member is exposed</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberCollection.getContentsExposureNodeName">
+			<summary>Returns name to use for the node when contents are exposed.
+ If the node is not traversable and the contents are exposed,
+ the contents are exposed under the member&apos;s parent.<para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+			<returns>name when exposing contents and the member node is traverable,
+         null otherwise</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelMemberGroup">
+			<summary>The <c>ModelMemberGroup</c> class represents a member that is a
+ used for grouping other instances.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberGroup.getRefClassID">
+			<summary>Returns class ID of the class if the group member has a class type</summary>
+			<returns>class ID or <c>0</c>, if none defined</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberGroup.getRefClassRevID">
+			<summary>Returns class revision ID of the class, if <c>getRefClassID</c> is non-zero.</summary>
+			<returns>class revision ID</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelMemberPrimitive">
+			<summary>The <c>ModelMemberPrimitive</c> class represents a primitive member
+ of a class in the XHQ Model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_BOOLEAN">
+			<summary>Data values of <c>boolean</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_INT">
+			<summary>Data values of <c>int</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_LONG">
+			<summary>Data values of <c>long</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_FLOAT">
+			<summary>Data values of <c>float</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_DOUBLE">
+			<summary>Data values of <c>double</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_DECIMAL">
+			<summary>Data values of <c>BigDecimal</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_DATETIME">
+			<summary>Data values of <c>DateTime</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_INTERVAL">
+			<summary>Data values of <c>TimeInterval</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_STRING">
+			<summary>Data values of <c>String</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.TYPE_TEXT">
+			<summary>Data values of <c>String</c> type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_NONE">
+			<summary>Member has no attribute setting.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_VALUE">
+			<summary>Member is a value attribute.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_UNITS">
+			<summary>Member is a units attribute.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_DESCR">
+			<summary>Member is a description attribute.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_TAG_KEY">
+			<summary>Member is a tag key attribute.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelMemberPrimitive.ATTR_TAG_CONFIG">
+			<summary>Member is a tag configuration attribute.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberPrimitive.getDataType">
+			<summary>Returns the data type of the primitive member.  Types are any
+ of the <c>TYPE_</c>* constants.</summary>
+			<returns>data type</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelMemberPrimitive.getAttribute">
+			<summary>Returns the attribute setting of the primitive member.  Types are any
+ of the <c>ATTR_</c>* constants.</summary>
+			<returns>attribute setting</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelPage">
+			<summary>The <c>ModelPage</c> class is an abstract class that represents
+ model pages in the XHQ model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelPage.getPageID">
+			<summary>Returns the ID of the page.</summary>
+			<returns>the class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelPage.getClassIDs">
+			<summary>Return all component ids in this Page.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelPage.contains(com.indx.xhq.model.clientapi.ModelClass)">
+			<summary>Indicates whether the <c>ModelClass</c> given is on the page.</summary>
+			<param name="cls">a <c>ModelClass</c> instance to test.</param>
+			<returns><c>true</c> if the page contains the class</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelPage.contains(System.Int32)">
+			<summary>Indicates whether the class with the supplied ID is on the page.</summary>
+			<param name="clsid">a <c>ModelClass</c> ID</param>
+			<returns><c>true</c> if the page contains the class</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelPage.getClasses">
+			<summary>Returns a collection of the latest revisions of the model classes
+ available on the page</summary>
+			<returns>latest revision of all classes</returns>
+			<exception cref="T:com.indx.xhq.model.clientapi.ModelCommunicationException">if there is a problem communicating
+         with the XHQ Model Server</exception>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelRole">
+			<summary>The <c>ModelRole</c> class represents group roles in the XHQ model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_ADMIN">
+			<summary>Solution administration permission</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_ROLE_ADMIN">
+			<summary>Role administration permission</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_MODEL_ADMIN">
+			<summary>Model administration permission</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_CATALOG">
+			<summary>Permission to run the catalog application</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_SOLUTION">
+			<summary>Permission to run the solution builder application</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_COMPONENT">
+			<summary>Permission to edit components in the catalog application</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_CONNECTOR">
+			<summary>Permission to run the connector administration utility</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_VCR_CONTROL">
+			<summary>Permission to run the historical navigation utility</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_VIEW">
+			<summary>Permission to run the historical navigation utility</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_COLLECTION">
+			<summary>Permission to create, edit and delete global collections</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_MODEL_IMPORT">
+			<summary>Permission to import model configurations</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_SOLUTION_IMPORT">
+			<summary>Permission to import solution configurations</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_ROLE">
+			<summary>Permission to modify roles</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_VIEW_STAT">
+			<summary>Permission to access view statistics</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_VTC_ACCESS">
+			<summary>Permission to access visual tile composer views</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_VTC_PUBLISH">
+			<summary>Permission to publish visual tile composer views</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.PERMISSION_UOM_EDIT">
+			<summary>Permission to edit standard Units of Measure information</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.ROLE_EVERYONE">
+			<summary>Predefined role ID for &quot;Everyone&quot;</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.ROLE_SOLUTION_USER">
+			<summary>Predefined role ID for &quot;Solution User&quot;</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.ROLE_SOLUTION_ADMIN">
+			<summary>Predefined role ID for &quot;Solution Admin&quot;</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.ROLE_ROLE_ADMIN">
+			<summary>Predefined role ID for &quot;Role Admin&quot;</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelRole.ROLE_MODEL_ADMIN">
+			<summary>Predefined role ID for &quot;Model Admin&quot;</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelRole.getRoleID">
+			<summary>Returns the ID of the view.</summary>
+			<returns>the view ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelRole.getPermissions">
+			<summary>Returns the encoded permission mask.</summary>
+			<returns>the permissions</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelRole.getGroup">
+			<summary>Returns the associated group name.</summary>
+			<returns>the group</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelRole.isLocalGroup">
+			<summary>Indicates whether group is locally defined or system-wide.</summary>
+			<returns>the local group indication</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelUOM">
+			<summary>Unit of Measure object describing a unit of measure defined in the
+  XHQ Model Server.  This can be used to convert values from one
+  unit of measure to another, compatible unit of measure.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.compareTo(com.indx.xhq.model.clientapi.ModelUOM)">
+			<summary>Compares units of measure for per Comparable interface specification.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.equals(System.Object)">
+			<summary>Compares units of measure for equivalency.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getName">
+			<summary>The name of the unit of measure - this is case sensitive.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getBaseUnits">
+			<summary>The base units that this unit of measure uses to convert to other
+ compatible units of measure.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getCategory">
+			<summary>The category of the unit of measure.  If there is no category, the base
+ unit of measure is used.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getDefinition">
+			<summary>The definition of the unit of measure - informational only.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getSortOrder">
+			<summary>Alternate sort order for special ordering such as in pick-lists.
+ The convention is to only assign ordered values to <em>important</em>
+ units of measure and 0 to those which are not commonly used.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getFactorA">
+			<summary>The A factor in the conversion equation.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getFactorB">
+			<summary>The B factor in the conversion equation.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getFactorC">
+			<summary>The C factor in the conversion equation.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.getFactorD">
+			<summary>The D factor in the conversion equation.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.isBaseUnits">
+			<summary>Returns true if this unit of measure is a base unit of measure.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.normalize(System.Double)">
+			<summary>Converts the given value to the base unit of measure.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelUOM.denormalize(System.Double)">
+			<summary>Converts the given value from the base unit of measure.</summary>
+		</member>
+		<member name="T:com.indx.xhq.model.clientapi.ModelView">
+			<summary>The <c>ModelView</c> class represents views defined for classes
+ in the XHQ model.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_FLOW">
+			<summary>View can be used in a flow of collection items</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_NAVIGABLE">
+			<summary>View can be navigated by clicking on it</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_DRILLABLE">
+			<summary>Clicking on this view leads to a another detailed view</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_DEFAULT">
+			<summary>This is the default view that is displayed for instances of the class</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_POP_UP">
+			<summary>View is displayed in a new &quot;pop up&quot; window (does not replace current view)</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_TILE">
+			<summary>This is a &quot;Tile View&quot; for use in a composert-type view.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_REUSABLE">
+			<summary>This is a reusable (component-based) Visual Tile Composer view.</summary>
+		</member>
+		<member name="P:com.indx.xhq.model.clientapi.ModelView.PROPERTY_PUBLISHED">
+			<summary>This is a published  Visual Tile Composer view.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelView.getViewID">
+			<summary>Returns the ID of the view.</summary>
+			<returns>the view ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelView.getClassID">
+			<summary>Returns the ID of the class.</summary>
+			<returns>the class ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelView.getViewRevID">
+			<summary>Returns the revision ID of the view.</summary>
+			<returns>the view revision ID</returns>
+		</member>
+		<member name="M:com.indx.xhq.model.clientapi.ModelView.getProperties">
+			<summary>Returns the encoded property mask.</summary>
+			<returns>the properties</returns>
+		</member>
+		<member name="T:com.indx.xhq.model.ModelError">
+			<summary>The <c>ModelError</c> is the base error class for XHQ Model
+ Server packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelError.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelError.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelError.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelError.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.model.ModelException">
+			<summary>The <c>ModelException</c> is the base error class for XHQ Model
+ Server packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelException.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelException.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelException.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.model.ModelException.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+	</members>
+</doc>

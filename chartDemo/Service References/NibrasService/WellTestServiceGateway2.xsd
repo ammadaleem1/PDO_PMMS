@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AFElementInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AFElementBasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AbsoluteElementPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ArrayOfAFAttributeInfo" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentPath" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AFElementInfo" nillable="true" type="tns:AFElementInfo" />
+  <xs:complexType name="AFElementBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommDevicePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFElementBasicInfo" nillable="true" type="tns:AFElementBasicInfo" />
+  <xs:complexType name="ArrayOfAFAttributeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFAttributeInfo" nillable="true" type="tns:AFAttributeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFAttributeInfo" nillable="true" type="tns:ArrayOfAFAttributeInfo" />
+  <xs:complexType name="AFAttributeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AFUOMs" nillable="true" type="tns:ArrayOfAFUoM" />
+      <xs:element minOccurs="0" name="AFValue" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="AttributeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AttributeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfigString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ControlEditorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementTemplateName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EnumList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Error" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEditable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGood" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTrendable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SecurityWriteGroups" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SelectedAFUOMs" nillable="true" type="tns:AFUoM" />
+      <xs:element minOccurs="0" name="SourceUOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WCFLocation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFAttributeInfo" nillable="true" type="tns:AFAttributeInfo" />
+  <xs:complexType name="ArrayOfAFUoM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AFUoM" nillable="true" type="tns:AFUoM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAFUoM" nillable="true" type="tns:ArrayOfAFUoM" />
+  <xs:complexType name="AFUoM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbrevation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AFUoM" nillable="true" type="tns:AFUoM" />
+  <xs:complexType name="NibrasActionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sucess" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NibrasActionInfo" nillable="true" type="tns:NibrasActionInfo" />
+</xs:schema>

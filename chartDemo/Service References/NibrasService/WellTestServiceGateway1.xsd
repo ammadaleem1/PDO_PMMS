@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDO.Nibras.DataModel.NibrasAdmin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CommDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChannelType" type="xs:int" />
+      <xs:element minOccurs="0" name="CommChannelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommDeviceTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommDeviceTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceAddress" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPCServer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RTUBlockID" type="xs:int" />
+      <xs:element minOccurs="0" name="RTUBlockName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerProtocol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicePort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommDevice" nillable="true" type="tns:CommDevice" />
+  <xs:complexType name="PreConfigDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionList" nillable="true" type="tns:ArrayOfPreConfigAction" />
+      <xs:element minOccurs="0" name="Approved" type="xs:int" />
+      <xs:element minOccurs="0" name="ApprovedColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseElementTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="BaseElementTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comm" nillable="true" type="tns:CommDevice" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EBSCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="EBSStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementList" nillable="true" type="tns:ArrayOfElements" />
+      <xs:element minOccurs="0" name="ElementType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldwareCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="IsWellConnectedToMSV" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWellConnectedToTU" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LOWISCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="LOWISStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSVPortNo" type="xs:int" />
+      <xs:element minOccurs="0" name="MSVUniqueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NibrasCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="NibrasStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPCCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="OPCStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OverallSts" type="xs:int" />
+      <xs:element minOccurs="0" name="OverallStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PICompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="PIStsColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreConfigRequestID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReadyToCommission" type="xs:int" />
+      <xs:element minOccurs="0" name="ReadyToCommissionColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestType" type="tns:RequestType" />
+      <xs:element minOccurs="0" name="Requested" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WellTestCompleted" type="xs:int" />
+      <xs:element minOccurs="0" name="WellTestStsColor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreConfigDetails" nillable="true" type="tns:PreConfigDetails" />
+  <xs:complexType name="ArrayOfPreConfigAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreConfigAction" nillable="true" type="tns:PreConfigAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreConfigAction" nillable="true" type="tns:ArrayOfPreConfigAction" />
+  <xs:complexType name="PreConfigAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActionState" type="tns:ActionState" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreConfigRequestID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreConfigAction" nillable="true" type="tns:PreConfigAction" />
+  <xs:simpleType name="ActionState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="NotRequired" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionState" nillable="true" type="tns:ActionState" />
+  <xs:complexType name="ArrayOfElements">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Elements" nillable="true" type="tns:Elements" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElements" nillable="true" type="tns:ArrayOfElements" />
+  <xs:complexType name="Elements">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="ElementTemplateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScalingID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Elements" nillable="true" type="tns:Elements" />
+  <xs:simpleType name="RequestType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New" />
+      <xs:enumeration value="Edit" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestType" nillable="true" type="tns:RequestType" />
+  <xs:complexType name="ArrayOfOPCTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OPCTag" nillable="true" type="tns:OPCTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOPCTag" nillable="true" type="tns:ArrayOfOPCTag" />
+  <xs:complexType name="OPCTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DevicePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElementPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnggUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnggUnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCustomTag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLowisTag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsScan" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPCTagID" type="xs:int" />
+      <xs:element minOccurs="0" name="OPCTagTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="PollAlways" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Scaling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScalingID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScalingParameters" nillable="true" type="tns:ScalingParms" />
+      <xs:element minOccurs="0" name="SkipOPC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TagAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagID" type="xs:int" />
+      <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagRequestType" type="tns:RequestType" />
+      <xs:element minOccurs="0" name="TagShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateRate" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OPCTag" nillable="true" type="tns:OPCTag" />
+  <xs:complexType name="ScalingParms">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Parms" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScalingParms" nillable="true" type="tns:ScalingParms" />
+  <xs:complexType name="ArrayOfPITagAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PITagAttributes" nillable="true" type="tns:PITagAttributes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPITagAttributes" nillable="true" type="tns:ArrayOfPITagAttributes" />
+  <xs:complexType name="PITagAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AFAttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompDev" type="xs:int" />
+      <xs:element minOccurs="0" name="CompMax" type="xs:int" />
+      <xs:element minOccurs="0" name="CompMin" type="xs:int" />
+      <xs:element minOccurs="0" name="CompdevPercent" type="xs:int" />
+      <xs:element minOccurs="0" name="Compressing" type="xs:int" />
+      <xs:element minOccurs="0" name="Convers" type="xs:int" />
+      <xs:element minOccurs="0" name="DataSecurity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DigitalSet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngUnits" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExcDev" type="xs:int" />
+      <xs:element minOccurs="0" name="ExcDevPercent" type="xs:int" />
+      <xs:element minOccurs="0" name="ExcMax" type="xs:int" />
+      <xs:element minOccurs="0" name="ExcMin" type="xs:int" />
+      <xs:element minOccurs="0" name="InstrumentTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValidTag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location1" type="xs:int" />
+      <xs:element minOccurs="0" name="Location2" type="xs:int" />
+      <xs:element minOccurs="0" name="Location3" type="xs:int" />
+      <xs:element minOccurs="0" name="Location4" type="xs:int" />
+      <xs:element minOccurs="0" name="Location5" type="xs:int" />
+      <xs:element minOccurs="0" name="PIPointID" type="xs:int" />
+      <xs:element minOccurs="0" name="PITagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PrevAttributes" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="PtClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtSecurity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Scan" type="xs:int" />
+      <xs:element minOccurs="0" name="Shutdown" type="xs:int" />
+      <xs:element minOccurs="0" name="Span" type="xs:int" />
+      <xs:element minOccurs="0" name="Step" type="xs:int" />
+      <xs:element minOccurs="0" name="TypicalValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Zero" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PITagAttributes" nillable="true" type="tns:PITagAttributes" />
+</xs:schema>

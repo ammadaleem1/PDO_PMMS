@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PMMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PMMSConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PlantHierarchies" EntityType="PMMSModel.PlantHierarchy" />
+    <EntitySet Name="InstrumentFunctionalHierarchies" EntityType="PMMSModel.InstrumentFunctionalHierarchy" />
+    <EntitySet Name="MFMAxisDatas" EntityType="PMMSModel.MFMAxisData" />
+    <EntitySet Name="MFMGVFs" EntityType="PMMSModel.MFMGVF" />
+    <EntitySet Name="MFMPoints" EntityType="PMMSModel.MFMPoints" />
+    <EntitySet Name="MeterNotes" EntityType="PMMSModel.MeterNote" />
+    <EntitySet Name="MeterNoteCategories" EntityType="PMMSModel.MeterNoteCategory" />
+    <AssociationSet Name="FK_MeterNote_MeterNoteCategory" Association="PMMSModel.FK_MeterNote_MeterNoteCategory">
+      <End Role="MeterNoteCategory" EntitySet="MeterNoteCategories" />
+      <End Role="MeterNote" EntitySet="MeterNotes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PlantHierarchy">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ItemName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentID" />
+  </EntityType>
+  <EntityType Name="InstrumentFunctionalHierarchy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Instr_Data_ID" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Area" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Old_Station" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Station" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Functional_location" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Equipment" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mech_Eqpt_no" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Cleaned_Mech_Eqpt_no" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Instrument_Type_Description" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainClass" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubClass1" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubClass2" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Measurement_Class_1" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Measurement_Class_2" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tag_No" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Service" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gen_Inst_Type" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Inst_Type" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Manufacturer" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Model_No" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Inst_Serial_No" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Inst_Size" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Inst_Range_Min" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Inst_Range_Max" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MG_Units_of_Measurement" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OND_Task_Force_Remarks" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proc_Remarks" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PEFS_DWG_No" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PDO_Remarks" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PDO_ST_Final_Review_Report" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Inst_Datasheet_No" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit_Number" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Function_Code" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Loop_Number" />
+    <Property Type="String" Name="Suffix" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Loop_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Process_Function_Type" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IO_Type_Name" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Location" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PITag" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Cluster" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Vortex_Type_of_Element" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Meter_Size" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Meter_Size_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Body_Size" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Body_Size_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_End_Connection" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_End_Connection_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Body_Connection_Rating" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Body_Conn_R_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Inst_R_Mn_Cuttoff_Flow" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Inst_R_Mx_Meas_Flow" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Inst_R_Flow_Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Acc_Instr_R_Mn_Flow" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Acc_Instr_R_Mx_Flow" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Acc_Instr_R_Flow_Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Cali_R_DCS_Disp_R_Min" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Cali_R_DCS_Disp_R_Max" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Cali_R_DCS_Disp_R_Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Materials_Housing" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Materials_Body" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Materials_Sensor" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Materials_Shedder" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Pressure_Drop_Min" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Pressure_Drop_Normal" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Pressure_Drop_Max" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Pressure_Drop_Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Str_pipe_req_Upstream" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Str_pipe_req_Dnstream" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Reference_Drawing" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_K_Fact_Stamped_mtr_bdy" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_K_Factor_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Accuracy" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Accuracy_ref_to" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Linearity" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Linearity_ref_to" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Local_Remt_Trans_T_No" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Power_Supply" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Cable_Type" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Local_Display" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Local_Display_Units" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Hydrostatic_Test" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Trans_Sec_Var_Tag_N" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Sec_Var_Description" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Trans_Tert_Var_T_N" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vortex_Tert_Var_Description" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFMAxisData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="MinValue" Nullable="false" />
+    <Property Type="Int64" Name="MaxValue" Nullable="false" />
+    <Property Type="Int32" Name="LogBase" Nullable="false" />
+    <Property Type="String" Name="Axis" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MeterName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFMGVF">
+    <Key>
+      <PropertyRef Name="GVFID" />
+    </Key>
+    <Property Type="Int32" Name="GVFID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MeterName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="GVF" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFMPoints">
+    <Key>
+      <PropertyRef Name="MFMPointsID" />
+    </Key>
+    <Property Type="Int32" Name="MFMPointsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MeterName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MeasurementSection" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PointGas" Nullable="false" />
+    <Property Type="Int32" Name="PointOil" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MeterNote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MeterNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Comment" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="DateTime" Name="LastModifiedDate" />
+    <Property Type="String" Name="Username" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MeterNoteCategory" Relationship="PMMSModel.FK_MeterNote_MeterNoteCategory" FromRole="MeterNote" ToRole="MeterNoteCategory" />
+  </EntityType>
+  <EntityType Name="MeterNoteCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MeterNotes" Relationship="PMMSModel.FK_MeterNote_MeterNoteCategory" FromRole="MeterNoteCategory" ToRole="MeterNote" />
+  </EntityType>
+  <Association Name="FK_MeterNote_MeterNoteCategory">
+    <End Type="PMMSModel.MeterNoteCategory" Role="MeterNoteCategory" Multiplicity="1" />
+    <End Type="PMMSModel.MeterNote" Role="MeterNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeterNoteCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MeterNote">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

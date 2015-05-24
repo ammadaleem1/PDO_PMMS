@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6220ef70-0d8b-4823-bc31-8850a3dff3fb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/indx/xhqwse/xhqwse.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="XhqWse.xsd" MetadataType="Schema" ID="0e23cdf2-37f6-4331-94ee-65aac91b04f2" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd2" />
+    <MetadataFile FileName="XhqWse1.xsd" MetadataType="Schema" ID="72b6d8bd-a531-4f77-971b-a1d76b9bd273" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd3" />
+    <MetadataFile FileName="XhqWse2.xsd" MetadataType="Schema" ID="fcbebe48-c95f-4ab4-928a-771a7d22b20c" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd0" />
+    <MetadataFile FileName="XhqWse3.xsd" MetadataType="Schema" ID="8811a7cd-0c05-4442-874d-a9a833e54a4f" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd1" />
+    <MetadataFile FileName="XhqWse.disco" MetadataType="Disco" ID="c68acb4d-1bd9-4ebf-90e5-e53071242d29" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?disco" />
+    <MetadataFile FileName="XhqWse.wsdl" MetadataType="Wsdl" ID="7246a1c9-96a9-4bb4-93ea-0c6f36e4775d" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?wsdl" />
+    <MetadataFile FileName="XhqWse1.wsdl" MetadataType="Wsdl" ID="df31c938-723b-4d4e-b400-6b66b2f4ebad" SourceId="1" SourceUrl="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

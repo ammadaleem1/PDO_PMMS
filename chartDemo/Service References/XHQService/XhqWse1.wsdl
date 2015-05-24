@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://webservices.xhq.siemens.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices.xhq.siemens.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://webservices.xhq.siemens.com/Imports">
+      <xsd:import schemaLocation="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd0" namespace="http://webservices.xhq.siemens.com" />
+      <xsd:import schemaLocation="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://mus-ws-204.corp.pdo.om/indx/xhqwse/XhqWse.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Indx.Xhq.Wse" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IXhqService_GetRolesProvidingReadAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesProvidingReadAccess" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesProvidingReadAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesProvidingReadAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesProvidingWriteAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesProvidingWriteAccess" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesProvidingWriteAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesProvidingWriteAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnCount" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnMaximum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnMaximum" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnMaximum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnMaximumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnMinimum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnMinimum" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnMinimum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnMinimumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnSum" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionCount" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetGlobalCollections_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalCollections" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetGlobalCollections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalCollectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetSolutionRoot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolutionRoot" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetSolutionRoot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSolutionRootResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildPrimitiveMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildPrimitiveMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildPrimitiveMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildPrimitiveMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildComponentMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildComponentMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildComponentMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildComponentMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildCollectionMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildCollectionMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildCollectionMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildCollectionMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildCollectionMembersInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildCollectionMembersInfo" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetChildCollectionMembersInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildCollectionMembersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetAllChildMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetAllChildMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_WritePointValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePointValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_WritePointValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePointValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_WriteValuesToBackend_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteValuesToBackend" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_WriteValuesToBackend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteValuesToBackendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_InsertCollectionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollectionData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_InsertCollectionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollectionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_UpdateCollectionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_UpdateCollectionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ReplaceCollectionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReplaceCollectionData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ReplaceCollectionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReplaceCollectionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_DeleteCollectionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCollectionData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_DeleteCollectionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCollectionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ImportModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportModel" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ImportModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ImportModelWithCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportModelWithCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_ImportModelWithCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportModelWithCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_RefreshRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshRoles" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_RefreshRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_RefreshRolesWithCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshRolesWithCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_RefreshRolesWithCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefreshRolesWithCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetXhqciCommandOutput_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXhqciCommandOutput" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetXhqciCommandOutput_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXhqciCommandOutputResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPathListAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathListAccess" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPathListAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathListAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_CanReadMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanReadMember" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_CanReadMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanReadMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_CanWriteMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanWriteMember" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_CanWriteMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanWriteMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetReadableMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadableMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetReadableMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadableMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetWriteableMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWriteableMembers" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetWriteableMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWriteableMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetUserRoleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleList" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetUserRoleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_IsUserInRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRole" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_IsUserInRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesWithReadAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesWithReadAccess" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesWithReadAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesWithReadAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesWithWriteAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesWithWriteAccess" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetRolesWithWriteAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesWithWriteAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_IsSolutionAccessible_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSolutionAccessible" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_IsSolutionAccessible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSolutionAccessibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointCurrentData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointCurrentData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointCurrentData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointCurrentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointAtValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointAtValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointAtValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointAtValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointActualValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointActualValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointActualValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointActualValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointAverageValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointAverageValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointAverageValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointAverageValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointCountValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointCountValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointCountValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointCountValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointDeltaValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointDeltaValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointDeltaValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointDeltaValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointFirstValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointFirstValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointFirstValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointFirstValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointIntegralValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointIntegralValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointIntegralValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointIntegralValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointLastValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLastValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointLastValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLastValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointMaximumValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointMaximumValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointMaximumValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointMaximumValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointMinimumValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointMinimumValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointMinimumValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointMinimumValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointSumValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointSumValue" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetPointSumValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointSumValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkCurrentValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkCurrentValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkCurrentValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkCurrentValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkAtValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkAtValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkAtValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkAtValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkActualValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkActualValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkActualValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkActualValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkAverageValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkAverageValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkAverageValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkAverageValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkCountValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkCountValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkCountValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkCountValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkDeltaValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkDeltaValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkDeltaValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkDeltaValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkFirstValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkFirstValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkFirstValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkFirstValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkLastValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkLastValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkLastValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkLastValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkIntegralValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkIntegralValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkIntegralValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkIntegralValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkMaximumValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkMaximumValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkMaximumValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkMaximumValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkMinimumValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkMinimumValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkMinimumValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkMinimumValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkSumValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkSumValues" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetBulkSumValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBulkSumValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetTimeSeriesData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetTimeSeriesData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionData" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataWhere_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataWhere" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataWhere_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataWhereResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataOrderBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataOrderBy" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataOrderBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataOrderByResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataFilter" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionDataFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionDataFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnAverage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnAverage" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GetCollectionColumnAverage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionColumnAverageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GenerateSolutionTreeNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSolutionTreeNode" />
+  </wsdl:message>
+  <wsdl:message name="IXhqService_GenerateSolutionTreeNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSolutionTreeNodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IXhqService">
+    <wsdl:operation name="GetRolesProvidingReadAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingReadAccess" message="tns:IXhqService_GetRolesProvidingReadAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingReadAccessResponse" message="tns:IXhqService_GetRolesProvidingReadAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesProvidingWriteAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingWriteAccess" message="tns:IXhqService_GetRolesProvidingWriteAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingWriteAccessResponse" message="tns:IXhqService_GetRolesProvidingWriteAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnCount">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnCount" message="tns:IXhqService_GetCollectionColumnCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnCountResponse" message="tns:IXhqService_GetCollectionColumnCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnMaximum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMaximum" message="tns:IXhqService_GetCollectionColumnMaximum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMaximumResponse" message="tns:IXhqService_GetCollectionColumnMaximum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnMinimum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMinimum" message="tns:IXhqService_GetCollectionColumnMinimum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMinimumResponse" message="tns:IXhqService_GetCollectionColumnMinimum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnSum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnSum" message="tns:IXhqService_GetCollectionColumnSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnSumResponse" message="tns:IXhqService_GetCollectionColumnSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionCount">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionCount" message="tns:IXhqService_GetCollectionCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionCountResponse" message="tns:IXhqService_GetCollectionCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalCollections">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetGlobalCollections" message="tns:IXhqService_GetGlobalCollections_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetGlobalCollectionsResponse" message="tns:IXhqService_GetGlobalCollections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolutionRoot">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetSolutionRoot" message="tns:IXhqService_GetSolutionRoot_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetSolutionRootResponse" message="tns:IXhqService_GetSolutionRoot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildPrimitiveMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildPrimitiveMembers" message="tns:IXhqService_GetChildPrimitiveMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildPrimitiveMembersResponse" message="tns:IXhqService_GetChildPrimitiveMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildComponentMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildComponentMembers" message="tns:IXhqService_GetChildComponentMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildComponentMembersResponse" message="tns:IXhqService_GetChildComponentMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildCollectionMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembers" message="tns:IXhqService_GetChildCollectionMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersResponse" message="tns:IXhqService_GetChildCollectionMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildCollectionMembersInfo">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersInfo" message="tns:IXhqService_GetChildCollectionMembersInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersInfoResponse" message="tns:IXhqService_GetChildCollectionMembersInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChildMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetAllChildMembers" message="tns:IXhqService_GetAllChildMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetAllChildMembersResponse" message="tns:IXhqService_GetAllChildMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePointValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WritePointValue" message="tns:IXhqService_WritePointValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WritePointValueResponse" message="tns:IXhqService_WritePointValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteValuesToBackend">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WriteValuesToBackend" message="tns:IXhqService_WriteValuesToBackend_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WriteValuesToBackendResponse" message="tns:IXhqService_WriteValuesToBackend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/InsertCollectionData" message="tns:IXhqService_InsertCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/InsertCollectionDataResponse" message="tns:IXhqService_InsertCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/UpdateCollectionData" message="tns:IXhqService_UpdateCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/UpdateCollectionDataResponse" message="tns:IXhqService_UpdateCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ReplaceCollectionData" message="tns:IXhqService_ReplaceCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ReplaceCollectionDataResponse" message="tns:IXhqService_ReplaceCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/DeleteCollectionData" message="tns:IXhqService_DeleteCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/DeleteCollectionDataResponse" message="tns:IXhqService_DeleteCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportModel">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModel" message="tns:IXhqService_ImportModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelResponse" message="tns:IXhqService_ImportModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportModelWithCredentials">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelWithCredentials" message="tns:IXhqService_ImportModelWithCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelWithCredentialsResponse" message="tns:IXhqService_ImportModelWithCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshRoles">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRoles" message="tns:IXhqService_RefreshRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesResponse" message="tns:IXhqService_RefreshRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshRolesWithCredentials">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesWithCredentials" message="tns:IXhqService_RefreshRolesWithCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesWithCredentialsResponse" message="tns:IXhqService_RefreshRolesWithCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXhqciCommandOutput">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetXhqciCommandOutput" message="tns:IXhqService_GetXhqciCommandOutput_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetXhqciCommandOutputResponse" message="tns:IXhqService_GetXhqciCommandOutput_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPathListAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPathListAccess" message="tns:IXhqService_GetPathListAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPathListAccessResponse" message="tns:IXhqService_GetPathListAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanReadMember">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanReadMember" message="tns:IXhqService_CanReadMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanReadMemberResponse" message="tns:IXhqService_CanReadMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanWriteMember">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanWriteMember" message="tns:IXhqService_CanWriteMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanWriteMemberResponse" message="tns:IXhqService_CanWriteMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReadableMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetReadableMembers" message="tns:IXhqService_GetReadableMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetReadableMembersResponse" message="tns:IXhqService_GetReadableMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWriteableMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetWriteableMembers" message="tns:IXhqService_GetWriteableMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetWriteableMembersResponse" message="tns:IXhqService_GetWriteableMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleList">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetUserRoleList" message="tns:IXhqService_GetUserRoleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetUserRoleListResponse" message="tns:IXhqService_GetUserRoleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsUserInRole" message="tns:IXhqService_IsUserInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsUserInRoleResponse" message="tns:IXhqService_IsUserInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesWithReadAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithReadAccess" message="tns:IXhqService_GetRolesWithReadAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithReadAccessResponse" message="tns:IXhqService_GetRolesWithReadAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesWithWriteAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithWriteAccess" message="tns:IXhqService_GetRolesWithWriteAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithWriteAccessResponse" message="tns:IXhqService_GetRolesWithWriteAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/Ping" message="tns:IXhqService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/PingResponse" message="tns:IXhqService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSolutionAccessible">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsSolutionAccessible" message="tns:IXhqService_IsSolutionAccessible_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsSolutionAccessibleResponse" message="tns:IXhqService_IsSolutionAccessible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointCurrentData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCurrentData" message="tns:IXhqService_GetPointCurrentData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCurrentDataResponse" message="tns:IXhqService_GetPointCurrentData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAtValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAtValue" message="tns:IXhqService_GetPointAtValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAtValueResponse" message="tns:IXhqService_GetPointAtValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointActualValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointActualValue" message="tns:IXhqService_GetPointActualValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointActualValueResponse" message="tns:IXhqService_GetPointActualValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAverageValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAverageValue" message="tns:IXhqService_GetPointAverageValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAverageValueResponse" message="tns:IXhqService_GetPointAverageValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointCountValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCountValue" message="tns:IXhqService_GetPointCountValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCountValueResponse" message="tns:IXhqService_GetPointCountValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointDeltaValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointDeltaValue" message="tns:IXhqService_GetPointDeltaValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointDeltaValueResponse" message="tns:IXhqService_GetPointDeltaValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointFirstValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointFirstValue" message="tns:IXhqService_GetPointFirstValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointFirstValueResponse" message="tns:IXhqService_GetPointFirstValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointIntegralValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointIntegralValue" message="tns:IXhqService_GetPointIntegralValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointIntegralValueResponse" message="tns:IXhqService_GetPointIntegralValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLastValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointLastValue" message="tns:IXhqService_GetPointLastValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointLastValueResponse" message="tns:IXhqService_GetPointLastValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointMaximumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMaximumValue" message="tns:IXhqService_GetPointMaximumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMaximumValueResponse" message="tns:IXhqService_GetPointMaximumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointMinimumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMinimumValue" message="tns:IXhqService_GetPointMinimumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMinimumValueResponse" message="tns:IXhqService_GetPointMinimumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointSumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointSumValue" message="tns:IXhqService_GetPointSumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointSumValueResponse" message="tns:IXhqService_GetPointSumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkCurrentValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCurrentValues" message="tns:IXhqService_GetBulkCurrentValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCurrentValuesResponse" message="tns:IXhqService_GetBulkCurrentValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkAtValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAtValues" message="tns:IXhqService_GetBulkAtValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAtValuesResponse" message="tns:IXhqService_GetBulkAtValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkActualValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkActualValues" message="tns:IXhqService_GetBulkActualValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkActualValuesResponse" message="tns:IXhqService_GetBulkActualValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkAverageValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAverageValues" message="tns:IXhqService_GetBulkAverageValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAverageValuesResponse" message="tns:IXhqService_GetBulkAverageValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkCountValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCountValues" message="tns:IXhqService_GetBulkCountValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCountValuesResponse" message="tns:IXhqService_GetBulkCountValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkDeltaValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkDeltaValues" message="tns:IXhqService_GetBulkDeltaValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkDeltaValuesResponse" message="tns:IXhqService_GetBulkDeltaValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkFirstValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkFirstValues" message="tns:IXhqService_GetBulkFirstValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkFirstValuesResponse" message="tns:IXhqService_GetBulkFirstValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkLastValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkLastValues" message="tns:IXhqService_GetBulkLastValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkLastValuesResponse" message="tns:IXhqService_GetBulkLastValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkIntegralValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkIntegralValues" message="tns:IXhqService_GetBulkIntegralValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkIntegralValuesResponse" message="tns:IXhqService_GetBulkIntegralValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkMaximumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMaximumValues" message="tns:IXhqService_GetBulkMaximumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMaximumValuesResponse" message="tns:IXhqService_GetBulkMaximumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkMinimumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMinimumValues" message="tns:IXhqService_GetBulkMinimumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMinimumValuesResponse" message="tns:IXhqService_GetBulkMinimumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkSumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkSumValues" message="tns:IXhqService_GetBulkSumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkSumValuesResponse" message="tns:IXhqService_GetBulkSumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetTimeSeriesData" message="tns:IXhqService_GetTimeSeriesData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetTimeSeriesDataResponse" message="tns:IXhqService_GetTimeSeriesData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionData" message="tns:IXhqService_GetCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataResponse" message="tns:IXhqService_GetCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataWhere">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataWhere" message="tns:IXhqService_GetCollectionDataWhere_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataWhereResponse" message="tns:IXhqService_GetCollectionDataWhere_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataOrderBy">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataOrderBy" message="tns:IXhqService_GetCollectionDataOrderBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataOrderByResponse" message="tns:IXhqService_GetCollectionDataOrderBy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataFilter">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataFilter" message="tns:IXhqService_GetCollectionDataFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataFilterResponse" message="tns:IXhqService_GetCollectionDataFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnAverage">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnAverage" message="tns:IXhqService_GetCollectionColumnAverage_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnAverageResponse" message="tns:IXhqService_GetCollectionColumnAverage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateSolutionTreeNode">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/IXhqService/GenerateSolutionTreeNode" message="tns:IXhqService_GenerateSolutionTreeNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/IXhqService/GenerateSolutionTreeNodeResponse" message="tns:IXhqService_GenerateSolutionTreeNode_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XHQ_x0020_Web_x0020_Service">
+    <wsdl:operation name="GetRolesProvidingReadAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingReadAccess" message="tns:IXhqService_GetRolesProvidingReadAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingReadAccessResponse" message="tns:IXhqService_GetRolesProvidingReadAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesProvidingWriteAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingWriteAccess" message="tns:IXhqService_GetRolesProvidingWriteAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesProvidingWriteAccessResponse" message="tns:IXhqService_GetRolesProvidingWriteAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnCount">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnCount" message="tns:IXhqService_GetCollectionColumnCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnCountResponse" message="tns:IXhqService_GetCollectionColumnCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnMaximum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMaximum" message="tns:IXhqService_GetCollectionColumnMaximum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMaximumResponse" message="tns:IXhqService_GetCollectionColumnMaximum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnMinimum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMinimum" message="tns:IXhqService_GetCollectionColumnMinimum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnMinimumResponse" message="tns:IXhqService_GetCollectionColumnMinimum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnSum">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnSum" message="tns:IXhqService_GetCollectionColumnSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnSumResponse" message="tns:IXhqService_GetCollectionColumnSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionCount">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionCount" message="tns:IXhqService_GetCollectionCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionCountResponse" message="tns:IXhqService_GetCollectionCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalCollections">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetGlobalCollections" message="tns:IXhqService_GetGlobalCollections_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetGlobalCollectionsResponse" message="tns:IXhqService_GetGlobalCollections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolutionRoot">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetSolutionRoot" message="tns:IXhqService_GetSolutionRoot_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetSolutionRootResponse" message="tns:IXhqService_GetSolutionRoot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildPrimitiveMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildPrimitiveMembers" message="tns:IXhqService_GetChildPrimitiveMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildPrimitiveMembersResponse" message="tns:IXhqService_GetChildPrimitiveMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildComponentMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildComponentMembers" message="tns:IXhqService_GetChildComponentMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildComponentMembersResponse" message="tns:IXhqService_GetChildComponentMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildCollectionMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembers" message="tns:IXhqService_GetChildCollectionMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersResponse" message="tns:IXhqService_GetChildCollectionMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildCollectionMembersInfo">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersInfo" message="tns:IXhqService_GetChildCollectionMembersInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetChildCollectionMembersInfoResponse" message="tns:IXhqService_GetChildCollectionMembersInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChildMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetAllChildMembers" message="tns:IXhqService_GetAllChildMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetAllChildMembersResponse" message="tns:IXhqService_GetAllChildMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WritePointValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WritePointValue" message="tns:IXhqService_WritePointValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WritePointValueResponse" message="tns:IXhqService_WritePointValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteValuesToBackend">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WriteValuesToBackend" message="tns:IXhqService_WriteValuesToBackend_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/WriteValuesToBackendResponse" message="tns:IXhqService_WriteValuesToBackend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/InsertCollectionData" message="tns:IXhqService_InsertCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/InsertCollectionDataResponse" message="tns:IXhqService_InsertCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/UpdateCollectionData" message="tns:IXhqService_UpdateCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/UpdateCollectionDataResponse" message="tns:IXhqService_UpdateCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ReplaceCollectionData" message="tns:IXhqService_ReplaceCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ReplaceCollectionDataResponse" message="tns:IXhqService_ReplaceCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/DeleteCollectionData" message="tns:IXhqService_DeleteCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/DeleteCollectionDataResponse" message="tns:IXhqService_DeleteCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportModel">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModel" message="tns:IXhqService_ImportModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelResponse" message="tns:IXhqService_ImportModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportModelWithCredentials">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelWithCredentials" message="tns:IXhqService_ImportModelWithCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/ImportModelWithCredentialsResponse" message="tns:IXhqService_ImportModelWithCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshRoles">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRoles" message="tns:IXhqService_RefreshRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesResponse" message="tns:IXhqService_RefreshRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshRolesWithCredentials">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesWithCredentials" message="tns:IXhqService_RefreshRolesWithCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/RefreshRolesWithCredentialsResponse" message="tns:IXhqService_RefreshRolesWithCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXhqciCommandOutput">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetXhqciCommandOutput" message="tns:IXhqService_GetXhqciCommandOutput_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetXhqciCommandOutputResponse" message="tns:IXhqService_GetXhqciCommandOutput_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPathListAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPathListAccess" message="tns:IXhqService_GetPathListAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPathListAccessResponse" message="tns:IXhqService_GetPathListAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanReadMember">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanReadMember" message="tns:IXhqService_CanReadMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanReadMemberResponse" message="tns:IXhqService_CanReadMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanWriteMember">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanWriteMember" message="tns:IXhqService_CanWriteMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/CanWriteMemberResponse" message="tns:IXhqService_CanWriteMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReadableMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetReadableMembers" message="tns:IXhqService_GetReadableMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetReadableMembersResponse" message="tns:IXhqService_GetReadableMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWriteableMembers">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetWriteableMembers" message="tns:IXhqService_GetWriteableMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetWriteableMembersResponse" message="tns:IXhqService_GetWriteableMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleList">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetUserRoleList" message="tns:IXhqService_GetUserRoleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetUserRoleListResponse" message="tns:IXhqService_GetUserRoleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRole">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsUserInRole" message="tns:IXhqService_IsUserInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsUserInRoleResponse" message="tns:IXhqService_IsUserInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesWithReadAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithReadAccess" message="tns:IXhqService_GetRolesWithReadAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithReadAccessResponse" message="tns:IXhqService_GetRolesWithReadAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesWithWriteAccess">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithWriteAccess" message="tns:IXhqService_GetRolesWithWriteAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetRolesWithWriteAccessResponse" message="tns:IXhqService_GetRolesWithWriteAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/Ping" message="tns:IXhqService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/PingResponse" message="tns:IXhqService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSolutionAccessible">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsSolutionAccessible" message="tns:IXhqService_IsSolutionAccessible_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/IsSolutionAccessibleResponse" message="tns:IXhqService_IsSolutionAccessible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointCurrentData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCurrentData" message="tns:IXhqService_GetPointCurrentData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCurrentDataResponse" message="tns:IXhqService_GetPointCurrentData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAtValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAtValue" message="tns:IXhqService_GetPointAtValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAtValueResponse" message="tns:IXhqService_GetPointAtValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointActualValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointActualValue" message="tns:IXhqService_GetPointActualValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointActualValueResponse" message="tns:IXhqService_GetPointActualValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAverageValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAverageValue" message="tns:IXhqService_GetPointAverageValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointAverageValueResponse" message="tns:IXhqService_GetPointAverageValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointCountValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCountValue" message="tns:IXhqService_GetPointCountValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointCountValueResponse" message="tns:IXhqService_GetPointCountValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointDeltaValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointDeltaValue" message="tns:IXhqService_GetPointDeltaValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointDeltaValueResponse" message="tns:IXhqService_GetPointDeltaValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointFirstValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointFirstValue" message="tns:IXhqService_GetPointFirstValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointFirstValueResponse" message="tns:IXhqService_GetPointFirstValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointIntegralValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointIntegralValue" message="tns:IXhqService_GetPointIntegralValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointIntegralValueResponse" message="tns:IXhqService_GetPointIntegralValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLastValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointLastValue" message="tns:IXhqService_GetPointLastValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointLastValueResponse" message="tns:IXhqService_GetPointLastValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointMaximumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMaximumValue" message="tns:IXhqService_GetPointMaximumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMaximumValueResponse" message="tns:IXhqService_GetPointMaximumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointMinimumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMinimumValue" message="tns:IXhqService_GetPointMinimumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointMinimumValueResponse" message="tns:IXhqService_GetPointMinimumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointSumValue">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointSumValue" message="tns:IXhqService_GetPointSumValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetPointSumValueResponse" message="tns:IXhqService_GetPointSumValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkCurrentValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCurrentValues" message="tns:IXhqService_GetBulkCurrentValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCurrentValuesResponse" message="tns:IXhqService_GetBulkCurrentValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkAtValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAtValues" message="tns:IXhqService_GetBulkAtValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAtValuesResponse" message="tns:IXhqService_GetBulkAtValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkActualValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkActualValues" message="tns:IXhqService_GetBulkActualValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkActualValuesResponse" message="tns:IXhqService_GetBulkActualValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkAverageValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAverageValues" message="tns:IXhqService_GetBulkAverageValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkAverageValuesResponse" message="tns:IXhqService_GetBulkAverageValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkCountValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCountValues" message="tns:IXhqService_GetBulkCountValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkCountValuesResponse" message="tns:IXhqService_GetBulkCountValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkDeltaValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkDeltaValues" message="tns:IXhqService_GetBulkDeltaValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkDeltaValuesResponse" message="tns:IXhqService_GetBulkDeltaValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkFirstValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkFirstValues" message="tns:IXhqService_GetBulkFirstValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkFirstValuesResponse" message="tns:IXhqService_GetBulkFirstValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkLastValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkLastValues" message="tns:IXhqService_GetBulkLastValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkLastValuesResponse" message="tns:IXhqService_GetBulkLastValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkIntegralValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkIntegralValues" message="tns:IXhqService_GetBulkIntegralValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkIntegralValuesResponse" message="tns:IXhqService_GetBulkIntegralValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkMaximumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMaximumValues" message="tns:IXhqService_GetBulkMaximumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMaximumValuesResponse" message="tns:IXhqService_GetBulkMaximumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkMinimumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMinimumValues" message="tns:IXhqService_GetBulkMinimumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkMinimumValuesResponse" message="tns:IXhqService_GetBulkMinimumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBulkSumValues">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkSumValues" message="tns:IXhqService_GetBulkSumValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetBulkSumValuesResponse" message="tns:IXhqService_GetBulkSumValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetTimeSeriesData" message="tns:IXhqService_GetTimeSeriesData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetTimeSeriesDataResponse" message="tns:IXhqService_GetTimeSeriesData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionData">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionData" message="tns:IXhqService_GetCollectionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataResponse" message="tns:IXhqService_GetCollectionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataWhere">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataWhere" message="tns:IXhqService_GetCollectionDataWhere_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataWhereResponse" message="tns:IXhqService_GetCollectionDataWhere_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataOrderBy">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataOrderBy" message="tns:IXhqService_GetCollectionDataOrderBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataOrderByResponse" message="tns:IXhqService_GetCollectionDataOrderBy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionDataFilter">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataFilter" message="tns:IXhqService_GetCollectionDataFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionDataFilterResponse" message="tns:IXhqService_GetCollectionDataFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionColumnAverage">
+      <wsdl:input wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnAverage" message="tns:IXhqService_GetCollectionColumnAverage_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.xhq.siemens.com/XHQ_x0020_Web_x0020_Service/GetCollectionColumnAverageResponse" message="tns:IXhqService_GetCollectionColumnAverage_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

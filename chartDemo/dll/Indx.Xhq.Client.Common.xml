@@ -1,0 +1,2043 @@
+<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>Indx.Xhq.Client.Common</name>
+	</assembly>
+	<members>
+		<member name="T:com.indx.xhq.solution.SolError">
+			<summary>The <c>SolError</c> is the base error class for XHQ Solution
+ Server packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolError.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolError.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolError.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolError.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.solution.SolException">
+			<summary>The <c>SolException</c> is the base error class for XHQ Solution
+ Server packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolException.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolException.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolException.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.solution.SolException.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.util.IllegalConversionException">
+			<summary>The <c>IllegaConversionException</c> is the class of illegal conversion
+ operations with <c>VariantValue</c> instances.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.IllegalConversionException.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.IllegalConversionException.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.IllegalConversionException.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new exception with the specified detail message and
+ cause.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.util.Impersonator">
+			<summary>This class allows the caller to impersonate another user given the username
+ and password.  This impersonation is done at the OS thread level and can
+ be reverted to the original credentials at any time.
+ <para/>
+ The following code gives an example of how to use impersonation.
+ 
+ <para/>
+ <c>String user = &quot;joeshmoe@CORPORATION.COM&quot;;</c><br />
+ <c>String pw = &quot;SomePassord!&quot;;</c><br />
+ <c>Impersonator ip = Impersonator.getImpersonator( user, pw );</c><br/>
+ <c>// impersonate joeshmoe</c><br/>
+ <c>ip.impersonate();</c><br/>
+ <c>// ... </c><br/>
+ <c>// Do actions as joeshmoe</c><br/>
+ <c>// ... </c><br/>
+ <c>// Revert to original user </c><br/>
+ <c>ip.revert();</c><br/>
+ <c>// ... </c><br/>
+ <c>// Do actions as original user</c><br/>
+ <c>// ... </c><br/>
+ <c>// Repeate impersonate/revert as desired</c><br/>
+ <c>ip.impersonate();</c><br/>
+ <c>// ...</c><br/>
+ <c>ip.revert();</c><br/>
+ <c>// Discard the impersonation credetials</c><br/>
+ <c>ip.discard();</c><br/><para><c>Since:</c> XHQ 4.5 SP1</para>
+</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.getImpersonator(System.String,System.String)">
+			<summary>Get an impersonation object for the given user name and password. Neither
+ the username nor the password are stored by this object. These paramaters
+ are only used to establish credentials.</summary>
+			<param name="username">username for impersonation context</param>
+			<param name="password">password for impersonation context</param>
+			<returns>an <c>Impersonator</c> instance</returns>
+			<exception cref="T:com.indx.xhq.XhqException">if there is problem creating an impersonation context</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.impersonate">
+			<summary>Impersonate with the established context on the current thread.</summary>
+			<exception cref="T:com.indx.xhq.XhqException">if there is problem impersonating</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.revert">
+			<summary>Revert to original credentials on the current thread.</summary>
+			<exception cref="T:com.indx.xhq.XhqException">if there is problem reverting</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.discard">
+			<summary>Discard the impersonation credentials and render the instance useless.</summary>
+			<exception cref="T:com.indx.xhq.XhqException">if there is problem during the discard</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.getUserPrincipalName">
+			<summary>Returns the user (account) name associated with the currently executing
+ thread. If the name cannot be obtained, the method returns
+ <c>null</c>.</summary>
+			<returns>the username in User Principal Name format or null</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Impersonator.getStandardUserName">
+			<summary>Returns the user (account) name associated with the currently executing
+ thread. If the name cannot be obtained, the method returns
+ <c>null</c>.</summary>
+			<returns>the username in &quot;down-level&quot; (domain\\name) format or null</returns>
+		</member>
+		<member name="T:com.indx.xhq.util.logging.XhqLogger">
+			<summary>Use this class to obtain a <c>Logger</c> instance pre-configured for
+ use in an XHQ application.  See <c>XhqLogManager</c> for details on
+ how to configure a Logger for use in your own XHQ application.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.logging.XhqLogger.#ctor(System.String,System.String)">
+			<summary>Constructor.</summary>
+			<param name="name">A name for the logger.  This should
+				be a dot-separated name and should normally
+				be based on the package name or class name
+				of the subsystem, such as java.net
+				or javax.swing</param>
+			<param name="resourceBundleName">name of ResourceBundle to be used for
+          localizing messages for this logger.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.logging.XhqLogger.getLogger(System.String)">
+			<summary>Find or create a logger for a named subsystem.  If a logger has
+ already been created with the given name it is returned.  Otherwise
+ a new logger is created.
+ <para/>
+ If a new logger is created its log level will be configured
+ based on the LogManager configuration and it will configured
+ to also send logging output to its parent&apos;s handlers.  It will
+ be registered in the LogManager global namespace.
+ </summary>
+			<param name="name">A name for the logger.  This should
+				be a dot-separated name and should normally
+				be based on the package name or class name
+				of the subsystem, such as java.net
+				or javax.swing</param>
+			<returns>a suitable Logger</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.logging.XhqLogger.getLogger(System.String,System.String)">
+			<summary>Find or create a logger for a named subsystem.  If a logger has
+ already been created with the given name it is returned.  Otherwise
+ a new logger is created.
+ <para/>
+ If a new logger is created its log level will be configured
+ based on the LogManager and it will configured to also send logging
+ output to its parent loggers Handlers.  It will be registered in
+ the LogManager global namespace.
+ 
+ <para/>
+ If the named Logger already exists and does not yet have a
+ localization resource bundle then the given resource bundle
+ name is used.  If the named Logger already exists and has
+ a different resource bundle name then an IllegalArgumentException
+ is thrown.
+ </summary>
+			<param name="name">A name for the logger.  This should
+				be a dot-separated name and should normally
+				be based on the package name or class name
+				of the subsystem, such as java.net
+				or javax.swing</param>
+			<param name="resourceBundleName">name of ResourceBundle to be used for
+          localizing messages for this logger.</param>
+			<returns>a suitable Logger</returns>
+			<exception cref="T:java.util.MissingResourceException">if the named ResourceBundle cannot be
+ found.</exception>
+			<exception cref="T:java.lang.IllegalArgumentException">if the Logger already exists and uses
+		   a different resource bundle name.</exception>
+		</member>
+		<member name="T:com.indx.xhq.util.logging.XhqLogManager">
+			<summary><c>XhqLogManager</c> enhances <c>java.util.logging.LogManager</c>
+ with a pre-configured FileHandler and Formatter which is added to the root
+ <c>Logger</c> instance.  Use this class in place of <c>LogManager
+ </c>.
+ <para/>
+ Use the JVM arg <c>
+ -Djava.util.logging.config.file=<i>path to my.properties file</i></c> to
+ configure logging properties.  This file defines default JDK <c>Handler
+ </c> properties.  See the Java API documentation to learn how to
+ configure JDK logging properties.
+ </summary>
+		</member>
+		<member name="M:com.indx.xhq.util.logging.XhqLogManager.#ctor">
+			<summary>Protected constructor.  This is protected so that container applications
+ (such as J2EE containers) can subclass the object.  It is non-public as
+ it is intended that there only be one <c>LogManager</c> object,
+ whose value is retrieved by calling <c>Logmanager.getLogManager()
+ </c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.logging.XhqLogManager.getLogManager">
+			<summary></summary>
+			<returns>the global LogManager object.</returns>
+		</member>
+		<member name="T:com.indx.xhq.util.Quality">
+			<summary>The Quality class represents the data quality as defined by the
+ OPC Foundation (www.opcfoundation.org).  This class simplifies the
+ use of OPC quality by obscuring the rather complex bit encoding
+ rules that are specified.
+ <para/>
+ OPC defines quality encoding of a 16-bit (short) integer as:
+ 
+ <blockquote> 
+ &quot;The low 8 bits of the Quality flags are currently defined in the form
+ of three bit fields; Quality, Substatus and Limit status. The 8 Quality
+ bits are arranged as follows:
+ <code>
+ QQSSSSLL
+ </code>
+ The high 8 bits of the Quality Word are available for vendor specific use.
+ If these bits are used, the standard OPC Quality bits must still be set
+ as accurately as possible to indicate what assumptions the client can
+ make about the returned data. In addition it is the responsibility of
+ any client interpreting vendor specific quality information to insure
+ that the server providing it uses the same &apos;rules&apos; as the client.&quot;
+ </blockquote> 
+ <para/>
+ One particularly confusing part of the specification is the quality
+ (<c>QQ</c>) and substatus (<c>SSSS</c>) are always combined.
+ However, the limit (<c>LL</c>) can change independently of
+ the quality/substatus portion. This class allows one to test for overall
+ quality (<c>GOOD</c>, <c>BAD</c>, <c>UNCERTAIN</c>),
+ a particular quality/substatus or the limit.
+ <para/>
+ The following names are used to refer to the various fields in the encoding:
+ <br/>Quality Word - the entire 16 bits
+ <br/>Quality - the Quality (<c>QQ</c>) field
+ <br/>Status - the combined Quality and Substatus (<c>QQSSSS</c>) fields
+ <br/>Limit - the Limit (<c>LL</c>) field
+ 
+ <para/>
+ Additionally, the XHQ System defines extended substatus codes and other
+ informational bits in the vendor specific top byte of the quality word.
+ The format is as follows:
+ <code>
+ 0HRRRXXX
+ </code>
+ Where
+ <list type="bullet">
+ <item><c>H</c> indicates history mode</item>
+ <item><c>R</c> is reserved for future use</item>
+ <item><c>X</c> is an XHQ substatus extension</item>
+ </list> 
+ All XHQ substatus are based on the closest standard OPC substatus.  For
+ example, the XHQ quality: BAD, Non-existent (<c>0000001 000000100</c>)
+ is based on the OPC quality: BAD, Configuration Error
+ (<c>00000000 00000100</c>).  So, OPC clients will show somewhat
+ meaningful qualities even without knowing the XHQ-specific substatus codes.
+ </summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Quality._quality">
+			<summary>The OPC Foundtion specified quality encoding.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.MASK_QUALITY">
+			<summary>Internally used mask for quality (good, bad or uncertain)</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.MASK_STATUS">
+			<summary>Internally used mask for the status part alone</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.MASK_XHQ_STATUS">
+			<summary>Internally used mask for the extended XHQ status part alone</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.MASK_LIMIT">
+			<summary>Internally used mask for the limit field.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.MASK_NON_OPC">
+			<summary>Internally used mask for non-OPC portion of quality;</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD">
+			<summary>Indicates that the value is not useful. The substatus bits must be
+ examined for specific reasons.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN">
+			<summary>Indicates that the value is uncertain for reasons indicated by the
+ substatus.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.GOOD">
+			<summary>Indicates that the value is good.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.XHQ_HISTORY_MODE">
+			<summary>XHQ defined: indicates that the value is in history mode.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_CONFIGURATION_ERROR">
+			<summary>Indicates there is a server specific problem with the configuration.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_NOT_CONNECTED">
+			<summary>Indicates that the input is not logically connected.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_DEVICE_FAILURE">
+			<summary>Indicates a device failure.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_SENSOR_FAILURE">
+			<summary>Indicates a sensor failure had been detected.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_LAST_KNOWN_VALUE">
+			<summary>Indicates that communications have failed. However, the last
+ known value is available.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_COMM_FAILURE">
+			<summary>Indicates that communications have failed. There is no last
+ known value is available.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_OUT_OF_SERVICE">
+			<summary>Indicates that the block is off scan or otherwise locked: for example,
+ by a configuration builder.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_WAITING_ON_INITIAL_DATA">
+			<summary>Indicates that data has not yet been delivered for the point.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_NON_EXISTENT">
+			<summary>XHQ defined status: indicates that the requested data does not exist.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_NOT_SUPPORTED">
+			<summary>XHQ defined status: indicates that the data request is not supported.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_ACCESS_DENIED">
+			<summary>XHQ defined status: indicates that access to the data is denied.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_NOT_CONFIGURED">
+			<summary>XHQ defined status: indicates that the member is not configured.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_UOM_CONVERSION_FAILURE">
+			<summary>XHQ defined status: indicates that value failed to convert to a different unit of measure.<para><c>Since:</c> XHQ 4.5.1</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_CONNECTOR_NOT_RUNNING">
+			<summary>XHQ defined status: indicates that the connector is not running.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_NOT_INITIALIZED">
+			<summary>XHQ defined status: indicates that the value is not yet initialized.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.BAD_XHQ_CALCULATION_ERROR">
+			<summary>XHQ defined status: indicates that the calculated value is in error.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN_LAST_USABLE_VALUE">
+			<summary>Uncertain substatus indicating that whatever was writing this value has
+ stopped doing so.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN_SENSOR_NOT_ACCURATE">
+			<summary>Uncertain substatus indicating that the sensor is not accurate</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN_ENGINEERING_UNITS_EXCEEDED">
+			<summary>Indicates that the value is outside the limits defined for this parameter.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN_SUB_NORMAL">
+			<summary>Indicates that the value is derived from multiple sources and has
+ less than the required number of good sources</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.UNCERTAIN_XHQ_CALCULATION_UNRELIABLE">
+			<summary>XHQ defined status: indicates that the calculated value may not be reliable.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.GOOD_LOCAL_OVERRIDE">
+			<summary>Indicates that the input has been disconnected and a manually entered
+ value has been forced.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.LIMIT_OK">
+			<summary>Indicates that the value is free to move up or down.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.LIMIT_LOW">
+			<summary>Indicates that the value has pegged at some lower limit.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.LIMIT_HIGH">
+			<summary>Indicates that the value has pegged at some high limit.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Quality.LIMIT_CONSTANT">
+			<summary>Indicates that the value is a constant and cannot move.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.#ctor">
+			<summary>Default constructor.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.#ctor(System.Int16)">
+			<summary>Constructs a <c>Quality</c> instance with an initial setting.</summary>
+			<param name="qualityWord">The OPC quality encoding.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.#ctor(System.Byte)">
+			<summary>Constructs a <c>Quality</c> instance with an initial XHQ encoding.</summary>
+			<param name="qualityByte">The XHQ quality encoding.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.#ctor(com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>Quality</c> by copying another.</summary>
+			<param name="quality">A previously constructed <c>Quality</c> object.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.getQualityWord">
+			<summary>Accessor that returns the entire quality encoding.</summary>
+			<returns>the OPC encoded quality</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.setQualityWord(System.Int16)">
+			<summary>Mutator to set the quality, substatus and limit.</summary>
+			<param name="qualityWord">The new quality setting.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equals(System.Object)">
+			<summary>Returns <c>true</c>, if the comparator is a
+ <c>Quality</c> object with same quality encoding.</summary>
+			<param name="o">the object with which to compare.</param>
+			<returns>the result of the comparison.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsQuality(System.Int16)">
+			<summary>Tests against the given quality (<c>QQ</c>)
+ idependent of substatus, limit or vendor-specific quality flags.
+ Only the <c>QQ</c> bits are used to make the comparison.</summary>
+			<param name="quality">The quality without substatus (<c>QQ</c>)
+                 against which to compare.</param>
+			<returns>The quality field comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsQuality(System.Int16,System.Int16)">
+			<summary>Tests against the given quality (<c>QQ</c>)
+ idependent of substatus, limit or vendor-specific quality flags.
+ Only the <c>QQ</c> bits are used to make the comparison.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<param name="quality">The quality without substatus (<c>QQ</c>)
+                     against which to compare.</param>
+			<returns>The quality field comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsStatus(System.Int16)">
+			<summary>Tests against the given quality/substatus idependent of limits.
+ Only the <c>QQSSSS</c> bits are used to make the comparison.</summary>
+			<param name="status">The quality/substatus against which to compare.</param>
+			<returns>The quality substatus comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsStatus(System.Int16,System.Int16)">
+			<summary>Tests against the given quality/substatus idependent of limits.
+ Only the <c>QQSSSS</c> bits are used to make the comparison.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<param name="status">The quality/substatus against which to compare.</param>
+			<returns>The quality substatus comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.setLimit(System.Byte)">
+			<summary>Mutator to set the limit (<c>LL</c>) without
+ affecting quality or substatus.</summary>
+			<param name="limit">The limit flag.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.setLimit(System.Int16,System.Byte)">
+			<summary>Sets the limit (<c>LL</c>) without affecting quality or substatus.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<param name="limit">The limit.</param>
+			<returns>the manipulated quality encoding.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsLimit(System.Byte)">
+			<summary>Tests the limit independent of the quality and substatus.
+ Only the <c>LL</c> bits are used to make the comparison.</summary>
+			<returns>The quality status comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsLimit(System.Int16,System.Byte)">
+			<summary>Tests the limit independent of the quality and substatus.
+ Only the <c>LL</c> bits are used to make the comparison.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<returns>The quality status comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isGood">
+			<summary>Tests the overall quality for <c>GOOD</c>, regardless of substatus
+ and limit.</summary>
+			<returns><c>true</c> if the quality is <c>GOOD</c>,
+         <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isGood(System.Int16)">
+			<summary>Tests the overall quality for <c>GOOD</c>, regardless of substatus
+ and limit.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<returns><c>true</c> if the quality is <c>GOOD</c>,
+                     <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isBad">
+			<summary>Tests the overall quality for <c>BAD</c>, regardless of substatus
+ and limit.</summary>
+			<returns><c>true</c> if the quality is <c>BAD</c>,
+         <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isBad(System.Int16)">
+			<summary>Tests the overall quality for <c>BAD</c>, regardless of substatus
+ and limit.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<returns><c>true</c> if the quality is <c>BAD</c>,
+                     <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isUncertain">
+			<summary>Tests the overall quality for <c>UNCERTAIN</c>, regardless
+ of substatus and limit.</summary>
+			<returns><c>true</c> if the quality is <c>UNCERTAIN</c>,
+         <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isUncertain(System.Int16)">
+			<summary>Tests the overall quality for <c>UNCERTAIN</c>, regardless
+ of substatus and limit.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<returns><c>true</c> if the quality is
+                     <c>UNCERTAIN</c>,
+                     <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isHistoryMode">
+			<summary>Test for XHQ-specific history mode quality.</summary>
+			<returns><c>true</c> if the quality is in history mode,
+         <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.isHistoryMode(System.Int16)">
+			<summary>Test for XHQ-specific history mode quality.</summary>
+			<param name="quality">The OPC-compatible quality encoding.</param>
+			<returns><c>true</c> if the quality is in history mode,
+         <c>false</c> otherwise.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.toString">
+			<summary>Format a hexadecimal number represting the quality.</summary>
+			<returns>The string representation of the quality.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.toString(System.Int16)">
+			<summary>Format a hexadecimal number represting the quality.</summary>
+			<param name="quality">The OPC-compatible quality encoding.</param>
+			<returns>The string representation of the quality.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.combine(com.indx.xhq.util.Quality)">
+			<summary>Combines the quality with the argument to create a new quality.
+ In general the rules for combining qualities are as follows:
+ <code>
+ BAD + any = BAD
+ UNCERTAIN + non-BAD = UNCERTAIN
+ GOOD + GOOD = GOOD
+ </code>
+ Substatus and limit statuses are not combined.</summary>
+			<param name="quality">The <c>Quality</c> to combine with this.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.combine(System.Int16)">
+			<summary>Combines the quality with the argument to create a new quality.
+ In general the rules for combining qualities are as follows:
+ <code>
+ BAD + any = BAD
+ UNCERTAIN + non-BAD = UNCERTAIN
+ GOOD + GOOD = GOOD
+ </code>
+ Substatus and limit statuses are not combined.</summary>
+			<param name="qualityWord">The quality to combine with this.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.combine(System.Int16,System.Int16)">
+			<summary>Combines two qualities and computes the result. In general the rules
+ for combining qualities are as follows:
+ <code>
+ BAD + any = BAD
+ UNCERTAIN + non-BAD = UNCERTAIN
+ GOOD + GOOD = GOOD
+ </code>
+ Substatus and limit statuses are not combined.</summary>
+			<param name="qualityWord1">One of the quality words to be combined.</param>
+			<param name="qualityWord2">One of the quality words to be combined.</param>
+			<returns>The combined quality.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.decode(System.Byte)">
+			<summary>Decodes an XHQ-defined quality byte value into a <c>Quality</c>
+ object that uses the OPC standard.</summary>
+			<param name="qval">encoded quality</param>
+			<returns>new <c>Quality</c> object</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsExtendedStatus(System.Int16)">
+			<summary>Tests against the given quality/substatus idependent of limits.
+ Only the <c>XXXQQSSSS</c> bits are used to make the comparison.</summary>
+			<param name="status">The non-OPC bits/quality against which to compare.</param>
+			<returns>The quality substatus comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.equalsExtendedStatus(System.Int16,System.Int16)">
+			<summary>Tests against the given quality/substatus idependent of limits.
+ Only the <c>XXXQQSSSS</c> bits are used to make the comparison.</summary>
+			<param name="qualityWord">The OPC-compatible quality encoding.</param>
+			<param name="status">The non-OPC bits/quality against which to compare.</param>
+			<returns>The quality substatus comparison result.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.xhqStatus(System.Int16)">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.encode(com.indx.xhq.util.Quality)">
+			<summary>Encodes a <c>Quality</c> object into an XHQ-defined quality
+ byte value that uses a variation of the OPC standard.</summary>
+			<param name="q">the quality to encode</param>
+			<returns>the encoded quality value as a <c>byte</c></returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Quality.encode(System.Int16)">
+			<summary>Encodes a <c>Quality</c> object into an XHQ-defined quality
+ byte value that uses a variation of the OPC standard.</summary>
+			<param name="quality">the OPC quality word to encode</param>
+			<returns>the encoded quality value as a <c>byte</c></returns>
+		</member>
+		<member name="T:com.indx.xhq.util.QualityFormat">
+			<summary>The QualityFormat class is used to help format <c>Quality</c>
+ values into localized strings.  This class can be used to both format
+ a quality into a string and to parse a formatted quality string into
+ a <c>Quality</c> object.</summary>
+			<seealso cref="T:com.indx.xhq.util.Quality">com.indx.xhq.util.Quality</seealso>
+		</member>
+		<member name="M:com.indx.xhq.util.QualityFormat.#ctor">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.util.QualityFormat.format(com.indx.xhq.util.Quality)">
+			<summary>Return a localized string representing the verbose quality of the
+ given argument.</summary>
+			<param name="q">Quality instance to format</param>
+			<returns>localized text quality representation</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.QualityFormat.formatShort(com.indx.xhq.util.Quality)">
+			<summary>Return a localized string representing the general (terse) quality of the
+ given argument.</summary>
+			<param name="q">Quality instance to format</param>
+			<returns>localized text general quality representation</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.QualityFormat.parse(System.String)">
+			<summary>Return the encoded quality of the formatted quality string.
+ <para/>The following format is used when parsing:
+ <code>
+ general[,substatus[,limit][,history]]
+ </code>
+ </summary>
+			<param name="qstr">formatted quality to parse</param>
+			<returns>encoded <c>Quality</c> or <c>null</c>
+ if the string is malformatted.</returns>
+		</member>
+		<member name="T:com.indx.xhq.util.TimeInterval">
+			<summary>The TimeInterval class represents time intervals in milliseconds.
+ The number of milliseconds may be negative.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.TimeInterval._msecs">
+			<summary>The difference in milliseconds between two points in time.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.#ctor">
+			<summary>Default constructor - initialized 0 milliseconds.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.#ctor(System.Int64)">
+			<summary>Constructs a <c>TimeInterval</c> with the specified
+ time interval in milliseconds.</summary>
+			<param name="msecs">The difference in milliseconds between two points in time.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.#ctor(com.indx.xhq.util.TimeInterval)">
+			<summary>Copy constructor. Constructs a <c>TimeInterval</c> based
+ on previously created <c>TimeInterval</c> object.</summary>
+			<param name="ti">Another <c>TimeInterval</c> object.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.#ctor(System.String)">
+			<summary>Constructs a <c>TimeInterval</c> based on a string representation
+ of the form
+ <para/>
+ days:hours:minutes:seconds:milliseconds
+ 
+ <para/>
+ For intervals less than a day in length, the &quot;days&quot; token may be omitted
+ from the string. Likewise, for intervals less than an hour in length,
+ the &quot;days&quot; and &quot;hours&quot; tokens may be omitted. Similar remarks apply to
+ intervals less than a minute in length and intervals less than a
+ second in length.
+ 
+ <para/>
+ If a given token in the string is negative, then the period of time that
+ that token represents is subtracted from the overall length of the
+ interval created. Tokens may &apos;overflow&apos;. For example, the &quot;minutes&quot;
+ token may be equal to 67, and if so, this is treated the same as if the
+ &quot;hours&quot; token were incremented by one. Note also that if a string
+ representation has a leading negative sign, that sign applies only to
+ leading token in the representation. It does not imply that the overall
+ interval is negative. For example, &quot;-1:67:000&quot; represents an interval 7
+ seconds in length: milliseconds are eplicitly zero, the 67 second
+ seconds token overflows to increment the minutes token by one (making it
+ equal to zero) and leaves the seconds token set to 7.
+ </summary>
+			<param name="strRep">A string representation of a tme interval.</param>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if the string cannot be
+ parsed as a time interval.</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.equals(System.Object)">
+			<summary>Returns <c>true</c>, if the comparator is a
+ <c>TimeInterval</c> object with same number of milliseconds.</summary>
+			<param name="o">the object with which to compare.</param>
+			<returns>the result of the comparison.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.compareTo(com.indx.xhq.util.TimeInterval)">
+			<summary></summary>
+			<seealso cref="M:java.lang.Comparable.compareTo(System.Object)">java.lang.Comparable.compareTo(System.Object)</seealso>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.getMilliseconds">
+			<summary>Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
+ represented by this Date object.</summary>
+			<returns>The time interval in milliseconds.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.setTimeInterval(System.Int64)">
+			<summary>Sets the time interval to the specified number of milliseconds.</summary>
+			<param name="msecs">The number of milliseconds in the interval.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.difference(com.indx.xhq.util.Timestamp,com.indx.xhq.util.Timestamp)">
+			<summary>Computes the time interval (difference) between <c>t0</c>
+ and <c>t1</c>.  The calculation is analagous to
+ <c>t1 - t0</c>.</summary>
+			<param name="t1">A timestamp (not necessarily at or after <c>t0</c>).</param>
+			<param name="t0">A timestamp (not necessarily at or before <c>t1</c>).</param>
+			<returns>A new time interval.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.TimeInterval.toString">
+			<summary>Represents this time interval as a String of the form:
+ <para/>
+ days:hours:minutes:seconds:milliseconds
+ 
+ <para/>
+ For intervals less than a day in length, the &quot;days&quot; token is omitted
+ from the string. Likewise, for intervals less than an hour in length,
+ the &quot;days&quot; and &quot;hours&quot; tokens are omitted. Similar remarks apply to
+ intervals less than a minute in length and intervals less than a
+ second in length.
+ 
+ <para/>
+ If the total number of milliseconds in the interval is negative, then
+ the token representing the coarsest units will be negative and all other
+ tokens will represent <em>positive</em> contributors to be <em>added</em>
+ to the total duration of the interval.
+ </summary>
+			<returns>The String representation of this time interval.</returns>
+		</member>
+		<member name="T:com.indx.xhq.util.Timestamp">
+			<summary>The <c>Timestamp</c> class represents a point in time in milliseconds
+ measured from the standard epoch begenning at January 1, 1970 00:00:00 GMT.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Timestamp.DefaultFormat">
+			<summary>Default format used for string encoding</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.Timestamp.AlternateFormat">
+			<summary>Alternate format used for string encoding</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Timestamp._msecs">
+			<summary>The time in milliseconds from the beginning of the epoch.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Timestamp.s_formatter1">
+			<summary></summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Timestamp.s_formatter2">
+			<summary></summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Timestamp.tsfmt1">
+			<summary></summary>
+		</member>
+		<member name="F:com.indx.xhq.util.Timestamp.tsfmt2">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor">
+			<summary>Constructs a <c>Timestamp</c> at zero-time.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor(com.indx.xhq.util.Timestamp)">
+			<summary>Constructs a <c>Timestamp</c> from the timestamp
+ input parameter.</summary>
+			<param name="timestamp">The time in milliceconds since January 1, 1970, 00:00:00 GMT.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor(System.Int64)">
+			<summary>Constructs a <c>Timestamp</c> with the specified
+ time in milliseconds from the beginning of the epoch.</summary>
+			<param name="msecs">The time in milliceconds since January 1, 1970, 00:00:00 GMT.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor(java.util.Date)">
+			<summary>Constructs a <c>Timestamp</c> with the specified
+ standard <c>java.util.Date</c> object.</summary>
+			<param name="date">The timestamp in the form of a <c>Date</c></param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor(System.String)">
+			<summary>Constructs a <c>Timestamp</c> with the specified
+ string representation. As a rule, for the non-null
+ Timestamp t, t.equals(new Timestamp(t.toString())).</summary>
+			<param name="strRep">The string representation of a time.</param>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if the string cannot be
+ parsed as a time.</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.#ctor(System.String,java.util.TimeZone)">
+			<summary>Constructs a <c>Timestamp</c> with the specified
+ string representation with respect to the given time zone.</summary>
+			<param name="strRep">The string representation of a time.</param>
+			<param name="tz">The time zone to consider when converting to a Date</param>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if the string cannot be
+ parsed as a time.</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.equals(System.Object)">
+			<summary>Returns <c>true</c>, if the comparator is a
+ <c>Timestamp</c> object with same number of
+ milliseconds since the beginning of the epoch.</summary>
+			<param name="o">the object with which to compare.</param>
+			<returns>the result of the comparison.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.compareTo(com.indx.xhq.util.Timestamp)">
+			<summary></summary>
+			<seealso cref="M:java.lang.Comparable.compareTo(System.Object)">java.lang.Comparable.compareTo(System.Object)</seealso>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.now">
+			<summary>Returns a <c>Timestamp</c> representing the current
+ time.</summary>
+			<returns>A new <c>Timestamp</c> object for &quot;now&quot;.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.getMilliseconds">
+			<summary>Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
+ represented by this Date object.</summary>
+			<returns>The timestamp value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.setTimestamp(com.indx.xhq.util.Timestamp)">
+			<summary>Sets the timestamp to the specified time in milliseconds
+ from the beginning of the epoch.</summary>
+			<param name="timestamp">The time in milliceconds since January 1, 1970, 00:00:00 GMT.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.setTimestamp(System.Int64)">
+			<summary>Sets the timestamp to the specified time in milliseconds
+ from the beginning of the epoch.</summary>
+			<param name="msecs">The time in milliceconds since January 1, 1970, 00:00:00 GMT.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.setTimestamp(java.util.Date)">
+			<summary>Constructs a <c>Timestamp</c> with the specified
+ standard <c>java.util.Date</c> object.</summary>
+			<param name="date">The timestamp in the form of a <c>Date</c></param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.adjust(com.indx.xhq.util.TimeInterval)">
+			<summary>Adjusts the timestamp by the difference specified by the time
+ interval parameter.</summary>
+			<param name="interval">A time interval by which to adjust the timestamp.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.adjust(System.Int64)">
+			<summary>Adjusts the timestamp by the difference specified by the time
+ interval parameter.</summary>
+			<param name="msecs">A time interval in milliseconds.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.toString">
+			<summary>Formats a timestamp string in a compact format.</summary>
+			<returns>A string representation of the timestamp.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.toStringAlternate">
+			<summary>Formats a timestamp string in an alternate compact format.<para><c>Since:</c> XHQ 4.5.1</para>
+</summary>
+			<returns>A string representation of the timestamp.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.toString(System.Int64)">
+			<summary>Formats a timestamp string in a compact format.</summary>
+			<param name="msecs">The time in milliseconds.</param>
+			<returns>A string representation of the timestamp.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.Timestamp.toStringAlternate(System.Int64)">
+			<summary>Formats a timestamp string in an alternate compact format.<para><c>Since:</c> XHQ 4.5.1</para>
+</summary>
+			<param name="msecs">The time in milliseconds.</param>
+			<returns>A string representation of the timestamp.</returns>
+		</member>
+		<member name="T:com.indx.xhq.util.VariantValue">
+			<summary>The VariantValue class encapsulates a value of a specific data type in a
+ common format that allows generic manipulation and handling.
+ <para/>
+ The supported data types are defined by the <c>VVT_*</c>-named
+ statics fields of this class. These fields are intentionally named to
+ differentiate them from <c>VARIANT</c> definitions of other vendors.
+ </summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JNULL">
+			<summary>Indicates that the type is not defined.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JBOOLEAN">
+			<summary>The data type of the associated value is <c>boolean</c></summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JINT">
+			<summary>The data type of the associated value is <c>int</c>.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JLONG">
+			<summary>The data type of the associated value is <c>long</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JFLOAT">
+			<summary>The data type of the associated value is <c>float</c>.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JDOUBLE">
+			<summary>The data type of the associated value is <c>double</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JDECIMAL">
+			<summary>The data type of the associated value is <c>BigDecimal</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JTIMESTAMP">
+			<summary>The data type of the associated value is <c>Timestamp</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JINTERVAL">
+			<summary>The data type of the associated value is <c>TimeInterval</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JSTRING">
+			<summary>The data type of the associated value is <c>String</c>.
+ The length of Strings may be as long as 4000 characters.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JTEXT">
+			<summary>The data type of the associated value is <c>String</c>.
+ The length of Strings may be a long as 32K characters.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JARRAY">
+			<summary>The data type of the associated value is an array of the base type.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JBOOLEAN_ARRAY">
+			<summary>The data type of the associated value is <c>boolean[]</c></summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JINT_ARRAY">
+			<summary>The data type of the associated value is <c>int[]</c>.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JLONG_ARRAY">
+			<summary>The data type of the associated value is <c>long[]</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JFLOAT_ARRAY">
+			<summary>The data type of the associated value is <c>float[]</c>.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JDOUBLE_ARRAY">
+			<summary>The data type of the associated value is <c>double[]</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JDECIMAL_ARRAY">
+			<summary>The data type of the associated value is <c>BigDecimal[]</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JTIMESTAMP_ARRAY">
+			<summary>The data type of the associated value is <c>Timestamp[]</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JINTERVAL_ARRAY">
+			<summary>The data type of the associated value is <c>TimeInterval[]</c>.<para><c>Since:</c> XHQ4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JSTRING_ARRAY">
+			<summary>The data type of the associated value is <c>String[]</c>.
+ The length of Strings may be as long as 4000 characters.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_JTEXT_ARRAY">
+			<summary>The data type of the associated value is <c>String[]</c>.
+ The length of Strings may be as long as 32K characters.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VariantValue.VVT_TYPEMASK">
+			<summary>Mask for base type.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VariantValue._value">
+			<summary>The variably-typed value. The data type of the value is defined by the
+ <c>type</c> field.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VariantValue._type">
+			<summary>The actual data type of the associated value. This may be set to any of
+ the <c>VVT_*</c> fields defined for this class.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor">
+			<summary>Constructs a VariantValue with no value and no type.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Boolean)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>boolean</c> value and assigns the data type to
+ <c>VVT_JBOOLEAN</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Int32)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>int</c> value and assigns the data type to
+ <c>VVT_JINT</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Int64)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>long</c> value and assigns the data type to
+ <c>VVT_JINT</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Single)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>float</c> value and assigns the data type to
+ <c>VVT_JFLOAT</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Double)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>double</c> value and assigns the data type to
+ <c>VVT_JDOUBLE</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(java.math.BigDecimal)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>BigDecimal</c> value and assigns the data type to
+ <c>VVT_JDECIMAL</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(com.indx.xhq.util.Timestamp)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>Timestamp</c> value and assigns the data type to
+ <c>VVT_JTIMESTAMP</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(com.indx.xhq.util.TimeInterval)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>TimeInterval</c> value and assigns the data type to
+ <c>VVT_JINTERVAL</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.String)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>String</c> value and assigns the data type to
+ <c>VVT_JSTRING</c>. String-length may not exceed
+ 4K.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.String,System.Boolean)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>String</c> value and assigns the data type to
+ <c>VVT_JSTRING</c> or <c>VVT_JTEXT</c> (if the
+ String-length is to exceed 4K).<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+			<param name="extended">True if the String value is to exceed 4K
+                 in length false otherwise.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Boolean[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>boolean[]</c> value and assigns the data type to
+ <c>VVT_JBOOLEAN_ARRAY</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Int32[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>int[]</c> value and assigns the data type to
+ <c>VVT_JINT_ARRAY</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Int64[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>long[]</c> value and assigns the data type to
+ <c>VVT_JLONG_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Single[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>float[]</c> value and assigns the data type to
+ <c>VVT_JFLOAT_ARRAY</c>.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.Double[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>double[]</c> value and assigns the data type to
+ <c>VVT_JDOUBLE_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(java.math.BigDecimal[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>BigDecimal[]</c> value and assigns the data type to
+ <c>VVT_JDECIMAL_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(com.indx.xhq.util.Timestamp[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>Timestamp[]</c> value and assigns the data type to
+ <c>VVT_JTIMESTAMP_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(com.indx.xhq.util.TimeInterval[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>TimeInterval[]</c> value and assigns the data type to
+ <c>VVT_JINTERVAL_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.String[])">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>String[]</c> value and assigns the data type to
+ <c>VVT_JSTRING_ARRAY</c>. String-length may not exceed
+ 4K.</summary>
+			<param name="initVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(System.String[],System.Boolean)">
+			<summary>Constructs a <c>VariantValue</c> with the specified
+ <c>String[]</c> value and assigns the data type to
+ <c>VVT_JSTRING_ARRAY</c> or <c>VVT_JTEXT_ARRAY</c>
+ (if the String-length is to exceed 4K).<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="initVal">The initial value of the variant.</param>
+			<param name="extended">True if the String value is to exceed 4K
+                 in length false otherwise.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.#ctor(com.indx.xhq.util.VariantValue)">
+			<summary>Constructs a <c>VariantValue</c> by copying argument.</summary>
+			<param name="varval">The <c>VariantValue</c> object to copy.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.equals(System.Object)">
+			<summary>Returns <c>true</c>, if the comparator is a
+ <c>TimeInterval</c> object with same number of microseconds.</summary>
+			<param name="o">The object with which to compare.</param>
+			<returns>the result of the comparison.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getType">
+			<summary>Returns the data type of the <c>VariantValue</c>.</summary>
+			<returns>The data type.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.isArray">
+			<summary>Indicates if the type is an array or not.</summary>
+			<returns>array indicator</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Boolean)">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>boolean</c> value and assigns the data type to
+ <c>VVT_JBOOLEAN</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Int32)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>int</c>
+ value and assigns the data type to <c>VVT_JINT</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Int64)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>long</c>
+ value and assigns the data type to <c>VVT_JLONG</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Single)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>float</c>
+ value and assigns the data type to <c>VVT_JFLOAT</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Double)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>double</c>
+ value and assigns the data type to <c>VVT_JDOUBLE</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(java.math.BigDecimal)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>BigDecimal</c>
+ value and assigns the data type to <c>VVT_JDECIMAL</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(com.indx.xhq.util.Timestamp)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>Timestamp</c>
+ value and assigns the data type to <c>VVT_JTIMESTAMP</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(com.indx.xhq.util.TimeInterval)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>TimeInterval</c>
+ value and assigns the data type to <c>VVT_JINTERVAL</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.String)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>String</c>
+ value and assigns the data type to <c>VVT_JSTRING</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.String,System.Boolean)">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>String</c>
+ value and assigns the data type to <c>VVT_JSTRING</c> or
+ <c>VVT_JTEXT</c> (if the String-length may exceed 4K).<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+			<param name="extended">True if the String value is to exceed 4K
+                 in length false otherwise.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Boolean[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>boolean[]</c> value and assigns the data type to
+ <c>VVT_JBOOLEAN_ARRAY</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Int32[])">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>int[]</c>
+ value and assigns the data type to <c>VVT_JINT_ARRAY</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Int64[])">
+			<summary>Sets the <c>VariantValue</c> to the specified <c>long[]</c>
+ value and assigns the data type to <c>VVT_JLONG_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Single[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>float[]</c> value and assigns the data type to
+ <c>VVT_JFLOAT_ARRAY</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.Double[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>double[]</c> value and assigns the data type to
+ <c>VVT_JDOUBLE_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(java.math.BigDecimal[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>BigDecimal[]</c> value and assigns the data type to
+ <c>VVT_JDECIMAL_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(com.indx.xhq.util.Timestamp[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>Timestamp[]</c> value and assigns the data type to
+ <c>VVT_JTIMESTAMP_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(com.indx.xhq.util.TimeInterval[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>TimeInterval[]</c> value and assigns the data type to
+ <c>VVT_JINTERVAL_ARRAY</c>.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.String[])">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>String[]</c> value and assigns the data type to
+ <c>VVT_JSTRING_ARRAY</c>.</summary>
+			<param name="newVal">The initial value of the variant.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(System.String[],System.Boolean)">
+			<summary>Sets the <c>VariantValue</c> to the specified
+ <c>String[]</c> value and assigns the data type to
+ <c>VVT_JSTRING_ARRAY</c> or <c>VVT_JTEXT_ARRAY</c>
+ (if the String-length may exceed 4K).<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The initial value of the variant.</param>
+			<param name="extended">True if the String values are to exceed 4K
+                 in length, false otherwise.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setValue(com.indx.xhq.util.VariantValue)">
+			<summary>Sets the value to a copy of the <c>VariantValue</c> parameter.</summary>
+			<param name="varval">The <c>VariantValue</c> to copy.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.booleanValue">
+			<summary>Returns a <c>boolean</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>boolean</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.intValue">
+			<summary>Returns a <c>int</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>int</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.longValue">
+			<summary>Returns a <c>long</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>int</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.floatValue">
+			<summary>Returns a <c>float</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>float</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.doubleValue">
+			<summary>Returns a <c>double</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>double</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.decimalValue">
+			<summary>Returns a <c>BigDecimal</c> value for the
+ <c>VariantValue</c> after any necessary data type coersion.</summary>
+			<returns>The <c>BigDecimal</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.timestampValue">
+			<summary>Returns a <c>Timestamp</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>Timestamp</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.intervalValue">
+			<summary>Returns a <c>TimeInterval</c> value for the
+ <c>VariantValue</c> after any necessary data type coersion.</summary>
+			<returns>The <c>TimeInterval</c> value.</returns>
+			<exception cref="T:com.indx.xhq.util.IllegalConversionException">if trying to convert an array to a scalar value</exception>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.stringValue">
+			<summary>Returns a <c>String</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>String</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.textValue">
+			<summary>Returns a <c>String</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>String</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.booleanArray">
+			<summary>Returns a <c>boolean[]</c> value for the
+ <c>VariantValue</c> after any necessary data type coersion.</summary>
+			<returns>The <c>boolean[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.intArray">
+			<summary>Returns a <c>int[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>int[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.longArray">
+			<summary>Returns a <c>int[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>int[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.floatArray">
+			<summary>Returns a <c>float[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>float[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.doubleArray">
+			<summary>Returns a <c>double[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>double[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.decimalArray">
+			<summary>Returns a <c>BigDecimal[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>BigDecimal[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.timestampArray">
+			<summary>Returns a <c>Timestamp[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>Timestamp[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.intervalArray">
+			<summary>Returns a <c>TimeInterval[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>TimeInterval[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.stringArray">
+			<summary>Returns a <c>String[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>String[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.textArray">
+			<summary>Returns a <c>String[]</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>String[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.toString">
+			<summary>Returns a <c>String</c> value for the <c>VariantValue</c>
+ after any necessary data type coersion.</summary>
+			<returns>The <c>String</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawBooleanValue">
+			<summary>Returns the <c>boolean</c> value regardless of type.</summary>
+			<returns>The <c>boolean</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawBooleanValue(System.Boolean)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>boolean</c> argument.</summary>
+			<param name="newVal">The new <c>boolean</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawBooleanArray">
+			<summary>Returns the <c>boolean[]</c> value regardless of type.</summary>
+			<returns>The <c>boolean[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawBooleanArray(System.Boolean[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>boolean[]</c> argument.</summary>
+			<param name="newVal">The new <c>boolean[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawIntValue">
+			<summary>Returns the <c>int</c> value regardless of type.</summary>
+			<returns>The <c>int</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawIntValue(System.Int32)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>int</c> argument.</summary>
+			<param name="newVal">The new <c>int</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawIntArray">
+			<summary>Returns the <c>int[]</c> value regardless of type.</summary>
+			<returns>The <c>int[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawIntArray(System.Int32[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>int[]</c> argument.</summary>
+			<param name="newVal">The new <c>int[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawLongValue">
+			<summary>Returns the <c>long</c> value regardless of type.</summary>
+			<returns>The <c>long</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawLongValue(System.Int64)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>int</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>int</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawLongArray">
+			<summary>Returns the <c>long[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>long[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawLongArray(System.Int64[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>long[]</c> argument.</summary>
+			<param name="newVal">The new <c>int[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawFloatValue">
+			<summary>Returns the <c>float</c> value regardless of type.</summary>
+			<returns>The <c>float</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawFloatValue(System.Single)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields for the
+ <c>float</c> argument.</summary>
+			<param name="newVal">The new <c>float</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawFloatArray">
+			<summary>Returns the <c>float[]</c> value regardless of type.</summary>
+			<returns>The <c>float[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawFloatArray(System.Single[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>float[]</c> argument.</summary>
+			<param name="newVal">The new <c>float[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawDoubleValue">
+			<summary>Returns the <c>double</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>double</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawDoubleValue(System.Double)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>double</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>double</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawDoubleArray">
+			<summary>Returns the <c>double[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>double[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawDoubleArray(System.Double[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>double[]</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>double[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawDecimalValue">
+			<summary>Returns the <c>BigDecimal</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>BigDecimal</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawDecimalValue(java.math.BigDecimal)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>BigDecimal</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>BigDecimal</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawDecimalArray">
+			<summary>Returns the <c>BigDecimal[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>BigDecimal[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawDecimalArray(java.math.BigDecimal[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>BigDecimal[]</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>float[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawTimestampValue">
+			<summary>Returns the <c>Timestamp</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>Timestamp</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawTimestampValue(com.indx.xhq.util.Timestamp)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>Timestamp</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>Timestamp</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawTimestampArray">
+			<summary>Returns the <c>Timestamp[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>Timestamp[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawTimestampArray(com.indx.xhq.util.Timestamp[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>Timestamp[]</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>Timestamp[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawIntervalValue">
+			<summary>Returns the <c>TimeInterval</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>TimeInterval</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawIntervalValue(com.indx.xhq.util.TimeInterval)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>TimeInterval</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>TimeInterval</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawIntervalArray">
+			<summary>Returns the <c>TimeInterval[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>TimeInterval[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawIntervalArray(com.indx.xhq.util.TimeInterval[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>TimeInterval[]</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>TimeInterval[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawStringValue">
+			<summary>Returns the <c>String</c> value regardless of type.</summary>
+			<returns>The <c>String</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawStringValue(System.String)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>String</c> argument.</summary>
+			<param name="newVal">The new <c>String</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawStringArray">
+			<summary>Returns the <c>String[]</c> value regardless of type.</summary>
+			<returns>The <c>String[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawStringArray(System.String[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>String[]</c> argument.</summary>
+			<param name="newVal">The new <c>String[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawTextValue">
+			<summary>Returns the <c>String</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>String</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawTextValue(System.String)">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>String</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>String</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getRawTextArray">
+			<summary>Returns the <c>String[]</c> value regardless of type.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<returns>The <c>String[]</c> value.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.setRawTextArray(System.String[])">
+			<summary>Sets the <c>value</c> and <c>type</c> fields
+ for the <c>String[]</c> argument.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="newVal">The new <c>String[]</c> value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VariantValue.getDataTypeName">
+			<summary>Returns the data type name for the value.</summary>
+		</member>
+		<member name="T:com.indx.xhq.util.VTQ">
+			<summary>The <c>VTQ</c> is a Value/Timestamp/Quality container used to bundle
+ the fundamental pieces of information necessary to transport meaningful data
+ representations from on place to another.
+ <para/>
+ <c>VTQ</c> derives from the <c>VariantValue</c> class and so
+ can be treated as a value directly.
+ </summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.NO_EXPIRATION">
+			<summary>Value has no expiration date.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_NONE">
+			<summary>No defined source of value.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_CONNECTOR">
+			<summary>Value comes from an input connector to a backend data source.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_EXPRESSION">
+			<summary>Value comes from the result of a server-side expression evaluation.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_CALCULATION">
+			<summary>Value comes from calculation engine function execution.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_USER">
+			<summary>Value comes from user input.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_EXTERNAL">
+			<summary>Value comes from an external data source.</summary>
+		</member>
+		<member name="P:com.indx.xhq.util.VTQ.SRC_CLIENTEXPR">
+			<summary>Value comes from the result of a client-side expression evaluation.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._timestamp">
+			<summary>The timestamp of the <c>VTQ</c> packet in milliseconds.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._expirationInterval">
+			<summary>The expiration interval of the <c>VTQ</c> packet in milliseconds.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._quality">
+			<summary>The OPC Foundation specified quality encoding of the <c>VTQ</c>.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._description">
+			<summary>The description associated with the value/member.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._units">
+			<summary>The engineering units of the value.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._sourceType">
+			<summary>The type of the source of the value.</summary>
+		</member>
+		<member name="F:com.indx.xhq.util.VTQ._sourceName">
+			<summary>The name of the source of the value.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor">
+			<summary>Default constructor. Value is initialized to a <c>VVT_JNULL</c>
+ type, the timestamp is set to the beginning of the epoch
+ (January 1, 1970 00:00:00 GMT), and the quality is set to
+ <c>BAD</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.VariantValue)">
+			<summary>Value constructor. Value is initialized to the given input,
+ the timestamp is set to the beginning of the epoch
+ (January 1, 1970 00:00:00 GMT), and the quality is set to
+ <c>BAD</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.VTQ)">
+			<summary>Copy constructor.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.VariantValue,System.Int64,System.Int16)">
+			<summary>Constructs a <c>VTQ</c> with fully specified value, timestamp
+ and quality.</summary>
+			<param name="value">The value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c> in milliseconds.</param>
+			<param name="quality">The quality of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.VariantValue,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified value, timestamp
+ and quality.</summary>
+			<param name="value">The value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.Boolean,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>boolean</c>
+ value, timestamp and quality.</summary>
+			<param name="value">The <c>boolean</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.Int32,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>int</c> value,
+ timestamp and quality.</summary>
+			<param name="value">The <c>int</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.Int64,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>long</c> value,
+ timestamp and quality.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>long</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.Single,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>float</c>
+ value, timestamp and quality.</summary>
+			<param name="value">The <c>float</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.Double,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>double</c>
+ value, timestamp and quality.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>double</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(java.math.BigDecimal,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>BigDecimal</c>
+ value, timestamp and quality.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>BigDecimal</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.Timestamp,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>Timestamp</c>
+ value, timestamp and quality.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>Timestamp</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(com.indx.xhq.util.TimeInterval,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>TimeInterval</c>
+ value, timestamp and quality.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>TimeInterval</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.String,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>String</c>
+ value, timestamp and quality. String-length is limited to 4K.</summary>
+			<param name="value">The <c>String</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.#ctor(System.String,com.indx.xhq.util.Timestamp,com.indx.xhq.util.Quality,System.Boolean)">
+			<summary>Constructs a <c>VTQ</c> with fully specified <c>String</c>
+ value, timestamp and quality. If the specified flag is true, the
+ String length is allowed to be up to 32K in length. Otherwise, it is
+ limited to 4K.<para><c>Since:</c> XHQ 4.0</para>
+</summary>
+			<param name="value">The <c>String</c> value of the <c>VTQ</c>.</param>
+			<param name="timestamp">The timestamp of the <c>VTQ</c>
+                  (<c>null</c> means &quot;now&quot;).</param>
+			<param name="quality">The quality of the <c>VTQ</c>
+                  (<c>null</c> means <c>Quality.GOOD</c>).</param>
+			<param name="extended">Flag to indicate whether String-length can exceed 4K.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.initAttributes">
+			<summary>Initializes fields other that <c>_value</c>,
+ <c>_timestamp</c> and <c>_quality</c> to
+ default value.  This method is called by the constructors
+ to ensure that all fields are initialized.
+ Note that <c>_expirationInterval</c> is set to
+ * <c>NO_EXPIRATION</c>.
+ Subclass should override this method and call the super class
+ implmentation, if necessary.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.equals(System.Object)">
+			<summary>Returns <c>true</c>, if the comparator is a <c>VTQ</c> object
+ with same value, timestamp and quality.</summary>
+			<param name="o">the object with which to compare.</param>
+			<returns>the result of the comparison.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getTimestamp">
+			<summary>Returns the timestamp of the <c>VTQ</c>.</summary>
+			<returns>The timestamp of the <c>VTQ</c>.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setTimestamp(com.indx.xhq.util.Timestamp)">
+			<summary>Sets the timestamp of the <c>VTQ</c>.  Passing <c>null</c>
+ to this mutator causes the timestamp of the <c>VTQ</c> to be
+ set to &quot;now&quot;.</summary>
+			<param name="timestamp">The new timestamp of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getQuality">
+			<summary>Returns the quality of the <c>VTQ</c>.</summary>
+			<returns>The quality of the <c>VTQ</c>.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setQuality(com.indx.xhq.util.Quality)">
+			<summary>Sets the quality of the <c>VTQ</c>.  Passing <c>null</c>
+ to this mutator causes the quality of the <c>VTQ</c> to be
+ set to <c>Quality.GOOD</c>.</summary>
+			<param name="quality">The new quality of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setTimestamp(System.Int64)">
+			<summary>Convenience mutator to set the timestamp of the <c>VTQ</c>
+ with a numeric milliseconds parameter.</summary>
+			<param name="msecs">The timestamp in milliseconds.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setQuality(System.Int16)">
+			<summary>Convenience mutator to set the quality of the <c>VTQ</c> to
+ a numeric quality value.</summary>
+			<param name="quality">The quality as a <c>short</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getDescription">
+			<summary>Returns the description member of the component (or null if
+ the component does not have a defined Description member)</summary>
+			<returns>the description or null</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setDescription(System.String)">
+			<summary>Sets the description of the <c>VTQ</c>.</summary>
+			<param name="description">The new description of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getUnits">
+			<summary>Returns the engineering units member of the component (or null if
+ the component does not have a defined Units member)</summary>
+			<returns>the engineering units or null</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setUnits(System.String)">
+			<summary>Sets the engineering units of the <c>VTQ</c>. No conversions
+ are performed when engineering units are set.  The <c>VTQ</c>
+ has no behavior associated with engineering units, it is only a
+ descriptive field.</summary>
+			<param name="units">The new engineering units of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getExpiration">
+			<summary>Returns the expiration timestamp of the <c>VTQ</c>.</summary>
+			<returns>The expiration timestamp of the <c>VTQ</c>.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getExpirationInterval">
+			<summary>Returns the expiration interval of the <c>VTQ</c>.</summary>
+			<returns>The expiration interval of the <c>VTQ</c>.</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setExpirationInterval(com.indx.xhq.util.TimeInterval)">
+			<summary>Sets the expiration interval of the <c>VTQ</c>.  Passing
+ <c>null</c> to this mutator causes the expiration timestamp
+ of the <c>VTQ</c> to be set to &quot;no expiration&quot;.</summary>
+			<param name="interval">The new expiration interval of the <c>VTQ</c>.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getSourceName">
+			<summary>Returns the name of the value&apos;s source.</summary>
+			<returns>the source name or null</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setSourceName(System.String)">
+			<summary>Sets the source name of the value.</summary>
+			<param name="name">The new source name of the <c>VTQ</c>&apos;s value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.getSourceType">
+			<summary>Returns the type of the value&apos;s source.</summary>
+			<returns>the source type (<c>VTQ.SRC_</c>*)</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.setSourceType(System.Byte)">
+			<summary>Sets the source type of the value. The source type can be
+ any one of the (<c>VTQ.SRC_</c>*) constants.</summary>
+			<param name="type">The new source type of the <c>VTQ</c>&apos;s value.</param>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.toString">
+			<summary>Formats the VTQ in a simple string representation.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.VTQ.dump">
+			<summary></summary>
+		</member>
+		<member name="T:com.indx.xhq.util.XhqVersionInfo">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.#ctor(com.indx.xhq.util.XhqVersionInfo)">
+			<summary>Construct an instance with an interanl</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.#ctor(net.indx.clientapi.XHQVersionInfo)">
+			<summary></summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.compareTo(com.indx.xhq.util.XhqVersionInfo)">
+			<summary>Compare version and build numbers (distribution number is ignored).</summary>
+			<returns>-1 if version/build is older
+          0 if version/build matches or
+          1 if version/build is newer</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.compareVersion(com.indx.xhq.util.XhqVersionInfo)">
+			<summary>Compare version numbers (ignore build and distribution number).</summary>
+			<returns>-1 if version is older
+          0 if version matches or
+          1 if version is newer</returns>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.isServicePack">
+			<summary>Indicates whether or not the version is a Service Pack.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.isAlternateDistribution">
+			<summary>Indicates whether or not the version is an alternate to the standard build.
+ This is also known as &quot;Buddy Build&quot;.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getMajor">
+			<summary>Return the MAJOR version number.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getMinor">
+			<summary>Return the MINOR version number.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getMicro">
+			<summary>Return the MICRO or Service Pack version number.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getBuild">
+			<summary>Return the BUILD version number.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getDistribution">
+			<summary>Returns the alternat build distribution number.
+ Also known as the &quot;Buddy Build&quot; number.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getVersionString">
+			<summary>Return the standard version string in the form:
+    MAJOR.MINOR[.MICRO]</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getMarketingVersion">
+			<summary>Return the standard marketing version string in the form:
+    MAJOR.MINOR[ SP MICRO], Build BUILD</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getBuildDate">
+			<summary>Return the build date associated with the version.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getProduct">
+			<summary>Return the product name associated with the version.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getModule">
+			<summary>Return the module name associated with the version.
+ Note: this may return null if the module information is not supplied.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.getBuildNotes">
+			<summary>Return the build notes, if any are available.
+ Note: this may return null if the notes are not supplied.</summary>
+		</member>
+		<member name="M:com.indx.xhq.util.XhqVersionInfo.toString">
+			<summary></summary>
+		</member>
+		<member name="T:com.indx.xhq.XhqError">
+			<summary>The <c>XhqError</c> is the base error class for Xhq packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.XhqError.#ctor">
+			<summary>Constructs a new error with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.XhqError.#ctor(System.String)">
+			<summary>Constructs a new error with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.XhqError.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new error with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this error&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.XhqError.#ctor(System.Exception)">
+			<summary>Constructs a new error with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="T:com.indx.xhq.XhqException">
+			<summary>The <c>XhqException</c> is the base exception class for Xhq packages.</summary>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.#ctor">
+			<summary>Constructs a new exception with <c>null</c> as its detail message.
+ The cause is not initialized, and may subsequently be initialized by a
+ call to <c>initCause()</c>.</summary>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.#ctor(System.String)">
+			<summary>Constructs a new exception with the specified detail message.  The
+ cause is not initialized, and may subsequently be initialized by
+ a call to <c>initCause()</c>.</summary>
+			<param name="message">the detail message. The detail message is saved for
+          later retrieval by the <c>getMessage()</c> method.</param>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.#ctor(System.String,System.Exception)">
+			<summary>Constructs a new exception with the specified detail message and
+ cause.  <para/>Note that the detail message associated with
+ <c>cause</c> is <i>not</i> automatically incorporated in
+ this exception&apos;s detail message.</summary>
+			<param name="message">the detail message (which is saved for later retrieval
+         by the <c>getMessage()</c> method).</param>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.#ctor(System.Exception)">
+			<summary>Constructs a new exception with the specified cause and a detail
+ message of <c>null</c> or <c>cause.toString()</c> (which
+ typically contains the class and detail message of <c>cause</c>).
+ This constructor is useful for exceptions that are little more than
+ wrappers for other throwables (for example, <c>
+ java.security.PrivilegedActionException)</c>.</summary>
+			<param name="cause">the cause (which is saved for later retrieval by the
+         <c>getCause()</c> method).  (A <c>null</c> value is
+         permitted, and indicates that the cause is nonexistent or
+         unknown.)</param>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.getMessageChain">
+			<summary>Returns the detail messages of this exception &amp; each of the causes
+ on a separate line.</summary>
+			<returns>the message string</returns>
+		</member>
+		<member name="M:com.indx.xhq.XhqException.getMessage(System.Exception)">
+			<summary></summary>
+		</member>
+	</members>
+</doc>

@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PopUp.Master.cs" Inherits="TemplatePdoAspx.MasterPages.PopUp" %>
+<%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>Pdo</title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/timeline.css" rel="stylesheet" />
+   <link href="../Assets/css/sb-admin-2.css" rel="stylesheet" />
+   <!--<link href="../Assets/css/plugins/morris.css" rel="stylesheet" />-->
+   <link href="../Assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link href="../Assets/css/plugins/dataTables.bootstrap.css" rel="stylesheet" />
+   <script src="../Assets/js/jquery-1.11.0.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+    body {
+    background-color: #fff;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.page-header {
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 6px;
+}
+.panel-body {
+    padding: 0;
+}
+
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 5px;
+    border-color: #ddd;
+}
+
+</style>
+</head>
+
+<body>
+    <form id="form2" runat="server">
+    <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+    
+        <asp:ContentPlaceHolder ID="cphBody" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+        <!-- jQuery Version 1.11.0 -->
+        
+        
+        <!-- Bootstrap Core JavaScript -->
+       
+        <script src="../Assets/js/bootstrap.min.js"></script>
+        <script src="../Assets/js/plugins/metisMenu/metisMenu.min.js"></script>
+        
+        <!-- Morris Charts JavaScript -->
+        <script src="../Assets/js/plugins/morris/raphael.min.js"></script>
+        <!--<script src="../Assets/js/plugins/morris/morris.min.js"></script>
+        <script src="../Assets/js/plugins/morris/morris-data.js"></script>-->
+        
+        <script src="../Assets/js/plugins/dataTables/jquery.dataTables.js"></script>
+        <script src="../Assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+        <script src="../Assets/js/sb-admin-2.js"></script>
+
+        </form>
+</body>
+
+</html>

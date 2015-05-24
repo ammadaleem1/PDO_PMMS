@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OSIsoft.PISDK.Controls.PISDKCtrlDlg</name>
+    </assembly>
+    <members>
+        <member name="T:OSIsoft.PISDK.Controls.Connections">
+            <summary>
+            This class provides methods to open a connection to a PIServer.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.#ctor">
+            <summary>
+            Creates a new Connection object
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login">
+            <summary>
+            Login with default arguments
+            </summary>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login(PISDK.Server)">
+            <summary>
+            Login to a specified server
+            </summary>
+            <param name="PIServer">Server name</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login(PISDK.Server,System.String)">
+            <summary>
+            Login to a specified server as a user
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login(PISDK.Server,System.String,System.String)">
+            <summary>
+            Login to a specified server as a user with a password
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <param name="Password">password</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login(PISDK.Server,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Login to a specified server as a user with a password.
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <param name="Password">password</param>
+            <param name="Override">Override current open connection if needed</param>
+            <param name="ForceShow">Show login dialog</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2">
+            <summary>
+            Login with default arguments
+            </summary>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2(PISDK.Server)">
+            <summary>
+            Login to a specified server
+            </summary>
+            <param name="PIServer">Server name</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2(PISDK.Server,System.String)">
+            <summary>
+            Login to a specified server as a user
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2(PISDK.Server,System.String,System.String)">
+            <summary>
+            Login to a specified server as a user with a password
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <param name="Password">password</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2(PISDK.Server,System.String,System.String,System.String)">
+            <summary>
+            Login to a specified server as a user with a password
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <param name="Password">password</param>
+            <returns>The server</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.Login2(PISDK.Server,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Login to a specified server as a user with a password and member type.
+            </summary>
+            <param name="PIServer">Server name</param>
+            <param name="PIUser">User name</param>
+            <param name="Password">password</param>
+            <param name="Override">Override current open connection if needed</param>
+            <param name="ForceShow">Show login dialog</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.ShowConnectionDialog">
+            <summary>
+             Show login connection dialog with default arguments
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.ShowConnectionDialog(System.Boolean)">
+            <summary>
+             Show connection dialog with ReadOnly argument
+            </summary>
+            <param name="ReadOnly">Is the dialog read only?</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.ShowConnectionDialog(System.Boolean,System.Int16)">
+            <summary>
+             Show connection dialog
+            </summary>
+            <param name="ReadOnly">Is the dialog read only?</param>
+            <param name="Modal">Is Modal?</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.SwitchMember(PISDK.Server)">
+            <summary>
+            Force failover on a server
+            </summary>
+            <param name="collective">the server</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.SwitchMember(PISDK.Server,System.String)">
+            <summary>
+            Force failover on a server
+            </summary>
+            <param name="collective">the server</param>
+            <param name="connectionPreference">Type of member</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.SwitchMember(PISDK.Server,System.String,System.String)">
+            <summary>
+            Force failover on a server
+            </summary>
+            <param name="collective">the server</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.AllowCollectiveMemberOpen(System.Boolean)">
+            <summary>
+            Allow user to open collective members?
+            </summary>
+            <param name="AllowOpen">true if open is allowed</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Connections.OpenPrimary(PISDK.Server,System.String,System.String)">
+            <summary>
+            Open primary node of the specified collective
+            </summary>
+            <param name="collective"></param>
+            <param name="Username"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PickListClickEventHandler">
+            <summary>
+            Selected server changed event delegate.
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PickListKeyDownEventHandler">
+            <summary>
+            Key down event delegate
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.PickListKeyUpEventHandler">
+            <summary>
+            Key up event delegate
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.ServPickList">
+            <summary>
+            .NET version of the PIServer picklist control interface
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ServPickList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ServPickList.#ctor">
+            <summary>
+            Returns a new instance of this class
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ServPickList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ServPickList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.ServPickList.picklistClick">
+            <summary>
+            Selected server changed event
+            </summary>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.ServPickList.picklistKDown">
+            <summary>
+            Keydown event
+            </summary>
+        </member>
+        <member name="E:OSIsoft.PISDK.Controls.ServPickList.picklistKUp">
+            <summary>
+            Key up events
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.SelectedServer">
+            <summary>
+            Currently selected server
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.SelectedServerName">
+            <summary>
+            Currently selected server name
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.ConnectOnSelect">
+            <summary>
+            Connect to server when selected
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.ShowCollectiveMembers">
+            <summary>
+            Shoe collective members
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.BuildDate">
+            <summary>
+            Build date of the control
+            </summary>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.ServPickList.version">
+            <summary>
+            Version of the control
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.ErrEventArgs">
+            <summary>
+            Event arguments for "Error" events
+            <seealso cref="T:OSIsoft.PISDK.Controls.ErrEventHandler"/>
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ErrEventArgs.time">
+            <summary>
+            Time the error occured
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ErrEventArgs.sender">
+            <summary>
+            The class/control/method that sent this error
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ErrEventArgs.message">
+            <summary>
+            full error message and description
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ErrEventArgs.origin">
+            <summary>
+            Detailed info about the origin (method or equivalent)
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.ErrEventArgs.errCode">
+            <summary>
+            COM error code
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ErrEventArgs.#ctor">
+            <summary>
+            default conctructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ErrEventArgs.#ctor(System.Exception)">
+            <summary>
+            Creates a new instance of error event arguments
+            </summary>
+            <param name="ex">Exception</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.ErrEventArgs.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            C
+            </summary>
+            <param name="sndr">Sender</param>
+            <param name="msg">Error message</param>
+            <param name="orgn">Origin of the error</param>
+            <param name="errc">Error code</param>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.ErrEventHandler">
+            <summary>
+            Event delegate for "Error" events
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.Utility">
+            <summary>
+            Collection of shared utility methods. These are all static methods/
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.getServerVersion(PISDK.Server,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Get server version in numeric format, i.e.
+            Major, minor, build and release (3.4.371.42)
+            This method will npt catch errors, it is callers responsibility to handle them.
+            </summary>
+            <param name="piServer">Server object</param>
+            <param name="pMajorVer">major</param>
+            <param name="pMinorVer">minor</param>
+            <param name="pBuildNbr">build</param>
+            <param name="pReleaseNbr">release</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.getHelpFile">
+            <summary>
+            Get help file name + path based on the windir\PIPC.ini definitions
+            </summary>
+            <returns>full pathname of the PISDK Controls and Dialogs helpfile</returns>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.Utility.TypeNameArray">
+            <summary>
+            A list of types (names) that that are supported by some
+            PISDK object/value editors. The list includes simple
+            types (numeric,string,date) and most of the PISDK objects
+            that implement IPIPersist interface.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.getObjectInfo(System.Object,PITimeServer.PITimeZoneInfo,System.String@,System.String@,System.Boolean@)">
+            <summary>
+            Common utility that returns the type and name for a given object. 
+            This can be used for simple objects, value types and most of the 
+            PISDK objects that implement IPIPersist interface. 
+            </summary>
+            <param name="theObj">The object</param>
+            <param name="tzInfo">Server timezone if using server time (pass null for localtime)</param>
+            <param name="objName">Name if available, empty string if not</param>
+            <param name="objValue">Value text if applicable, empty string is not.</param>
+            <param name="valueIsEditable">Value can be editied directly (converts to string).</param> 
+            <returns>The type. Empty string if lookup failed</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.getObjectValueFromString(System.String,System.Object,System.String,PITimeServer.PITimeZoneInfo)">
+            <summary>
+            Attempts to correctly cast a string, usually from user, to an object value based
+            on a proposed object type (string). The caller can pass a "reference" or "orginal"
+            value that will be returned if the cast/conversion to new type fails. Doesn't
+            cover all possible types but tries to handle standard value types and PISDK types 
+            that implement the "persist" interface.
+            There is no error/exception handling so the caller should catch the errors. This behavior
+            is intentional.
+            </summary>
+            <param name="objVal">New value as string</param>
+            <param name="theObj">The orginal/reference object orvalue</param>
+            <param name="proposedType">The new type</param>
+            <param name="tzInfo">Server timezone if using server time (pass null for localtime)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.isMemberServer(System.String)">
+            <summary>
+            Check if specified server is member of a collective.
+            Collective members have a special name (collective\member)
+            </summary>
+            <param name="servName">The name of the server to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.openServerByName(PISDK.PISDKClass,System.String)">
+            <summary>
+            Open the server for a given name. This is called before an attemp is
+            made to just access the server without explicitly opening it. If the
+            server requires a login, then such an attempt would fail.
+            The following formats are recognized:
+            - CollectiveName\memberName
+            - \\ServerName\PointName
+            - \\CollectiveName\\MemberName\PointName
+            </summary>
+            <param name="servername">Name of the server</param>
+            <returns>Valid Server object if connection established</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.Utility.getNameForServer(PISDK.Server)">
+            <summary>
+            Returns the name of this server. The name is the servername for normal servers
+            but is "collective\member" for collective member servers.
+            </summary>
+            <param name="serv">Server to check</param>
+            <returns>The internal name of this </returns>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.DAndDData">
+            <summary>
+            Class that implements the special clipboard data formats used during copy/paste and 
+            drag/drop. This is a shallow class on top of the native DataObject.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DAndDData.RegisterClipboardFormat(System.String)">
+            <summary>
+            DEFINE unmanaged method for registering new clipboard formats
+            </summary>
+            <param name="lpString">Format string</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DAndDData.GetData(System.String)">
+            <summary>
+            Get data from clipboard
+            </summary>
+            <param name="format">Clipboard/data format to get</param>
+            <returns>Clipboard data for the specified format</returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DAndDData.GetDataPresent(System.String)">
+            <summary>
+            Check if clipboard has data for this format
+            </summary>
+            <param name="format">Format string</param>
+            <returns></returns>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.DAndDData.SetData(System.String,System.Object)">
+            <summary>
+            Set clipboard data in specified format
+            </summary>
+            <param name="format">Format string</param>
+            <param name="data">The data object</param>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.DAndDFormats">
+            <summary>
+            Clipboard format definitions for full pathnames and persistence strings
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.DAndDFormats.PATHNAMES">
+            <summary>
+            Defines the full pathname format
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.DAndDFormats.PERSISTENCE">
+            <summary>
+            Defines the persistence string format
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.TagSearch">
+            <summary>
+            Exposes the public methods of the Tagsearch COM object as native .NET methods
+            Note to implementers: Make this class global/class variable if you want
+            the tagsearch to remeber the settings between showings.
+            For detailed documentation for tagsearch, please see the documentation for
+            the COM version.
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.TagSearch.#ctor">
+            <summary>
+            Default (empty) constructor
+            </summary>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.TagSearch.showTagSearch(System.String[],OSIsoft.PISDK.Controls.SearchOptions)">
+            <summary>
+            Show tagSearch dialog
+            </summary>
+            <param name="selectedServers">List of selected server names</param>
+            <param name="options">Search Options</param>
+        </member>
+        <member name="M:OSIsoft.PISDK.Controls.TagSearch.showAliasSearch(System.Object,OSIsoft.PISDK.Controls.SearchOptions)">
+            <summary>
+            Show alias search dialog. 
+            This is the same as tagsearch but "alias" search tab activated.
+            </summary>
+            <param name="searchContex">Search context</param>
+            <param name="options">Search options</param>
+            <returns></returns>
+        </member>
+        <member name="P:OSIsoft.PISDK.Controls.TagSearch.expandCollectives">
+            <summary>
+            Specifies a value that determines if PI Collectives are expanded to show members
+            </summary>
+        </member>
+        <member name="T:OSIsoft.PISDK.Controls.SearchOptions">
+            <summary>
+            Tag search options enumeration
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.SearchOptions.DisableServerPickList">
+            <summary>
+            Disables the use of the server picklist control
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.SearchOptions.SingleSelect">
+            <summary>
+            Allows single select (one tag) only
+            </summary>
+        </member>
+        <member name="F:OSIsoft.PISDK.Controls.SearchOptions.DisableSearchContext">
+            <summary>
+            Disables the search context
+            </summary>
+        </member>
+    </members>
+</doc>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

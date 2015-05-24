@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5349620e-db7c-4302-8bb8-175bf57fbc00" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://mus-ws-111:900/WellTestServiceGateway.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WellTestServiceGateway.xsd" MetadataType="Schema" ID="4a4b0f10-7dab-4b08-88a6-03119dcd7984" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd3" />
+    <MetadataFile FileName="WellTestServiceGateway1.xsd" MetadataType="Schema" ID="98aac3a7-958f-4a16-83ad-6c116e62a6e9" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd4" />
+    <MetadataFile FileName="WellTestServiceGateway2.xsd" MetadataType="Schema" ID="7163364c-c255-45cb-b0be-92c430ea931c" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd5" />
+    <MetadataFile FileName="WellTestServiceGateway3.xsd" MetadataType="Schema" ID="9a730a4d-6667-4b77-8105-d02531f4a22d" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd6" />
+    <MetadataFile FileName="WellTestServiceGateway.disco" MetadataType="Disco" ID="ede1e4ad-f664-445b-b827-2b4521a49741" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?disco" />
+    <MetadataFile FileName="WellTestServiceGateway4.xsd" MetadataType="Schema" ID="2faf73d2-d612-493c-98ef-eb38b46d4b17" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd0" />
+    <MetadataFile FileName="WellTestServiceGateway.wsdl" MetadataType="Wsdl" ID="2ab4e9eb-d9a0-42f4-940a-57c7f8a95599" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?wsdl" />
+    <MetadataFile FileName="WellTestServiceGateway5.xsd" MetadataType="Schema" ID="153581e4-5e11-4780-9a81-4e5271b248f9" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd1" />
+    <MetadataFile FileName="WellTestServiceGateway6.xsd" MetadataType="Schema" ID="41e96e19-fe7b-49b1-b5ce-d74e94fc0354" SourceId="1" SourceUrl="http://mus-ws-111:900/WellTestServiceGateway.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

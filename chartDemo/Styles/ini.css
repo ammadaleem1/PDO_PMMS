@@ -1,0 +1,44 @@
+body
+{
+	text-align: center;
+	margin: 0 auto;
+}
+/*#box
+{
+	width: 150px;
+	height: 150px;
+	background: #FFF;
+	border: red dotted 5px;
+	text-align: center;
+	position: absolute;
+	margin-left: -75px;
+	margin-top: -75px;
+	left: 50%;
+	top: 50%;
+	z-index: 20;
+	display: none;
+}*/
+
+#box
+{
+        width: 150px;
+        height: 150px;
+        /*background: #FFF;
+        border: red dotted 5px;*/
+        text-align: center;
+        position: fixed;
+        margin-left: -75px;
+        margin-top: -75px;
+        left: 50%;
+        top: 50%;
+        z-index: 20;
+        display: none;
+}
+
+#screen
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*background: #000;*/
+}

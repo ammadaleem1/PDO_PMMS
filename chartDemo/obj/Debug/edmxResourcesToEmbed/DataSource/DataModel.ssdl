@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PMMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PMMSModelStoreContainer">
+    <EntitySet Name="InstFuncHierarchy" EntityType="PMMSModel.Store.InstFuncHierarchy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeterNote" EntityType="PMMSModel.Store.MeterNote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeterNoteCategory" EntityType="PMMSModel.Store.MeterNoteCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MFMAxisData" EntityType="PMMSModel.Store.MFMAxisData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MFMGVF" EntityType="PMMSModel.Store.MFMGVF" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MFMPoints" EntityType="PMMSModel.Store.MFMPoints" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PlantHierarchy" EntityType="PMMSModel.Store.PlantHierarchy" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MeterNote_MeterNoteCategory" Association="PMMSModel.Store.FK_MeterNote_MeterNoteCategory">
+      <End Role="MeterNoteCategory" EntitySet="MeterNoteCategory" />
+      <End Role="MeterNote" EntitySet="MeterNote" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="InstFuncHierarchy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Instr_Data_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Area" Type="nvarchar" MaxLength="255" />
+    <Property Name="Old_Station" Type="nvarchar" MaxLength="255" />
+    <Property Name="Station" Type="nvarchar" MaxLength="255" />
+    <Property Name="Functional location" Type="nvarchar" MaxLength="255" />
+    <Property Name="Equipment" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mech_Eqpt_no" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cleaned_Mech_Eqpt_no" Type="nvarchar" MaxLength="255" />
+    <Property Name="Instrument_Type_Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="MainClass" Type="nvarchar" MaxLength="250" />
+    <Property Name="SubClass1" Type="nvarchar" MaxLength="250" />
+    <Property Name="SubClass2" Type="nvarchar" MaxLength="250" />
+    <Property Name="Measurement_Class_1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Measurement_Class_2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tag_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="Service" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gen_Inst_Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Inst_Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Manufacturer" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Model_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Inst_Serial_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Inst_Size" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Inst_Range_Min" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Inst_Range_Max" Type="nvarchar" MaxLength="255" />
+    <Property Name="MG_Units_of_Measurement" Type="nvarchar" MaxLength="255" />
+    <Property Name="OND_Task_Force_Remarks" Type="nvarchar" MaxLength="255" />
+    <Property Name="Proc_Remarks" Type="nvarchar" MaxLength="255" />
+    <Property Name="PEFS_DWG_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="PDO_Remarks" Type="nvarchar" MaxLength="255" />
+    <Property Name="PDO_ST_Final_Review_Report" Type="nvarchar" MaxLength="255" />
+    <Property Name="Inst_Datasheet_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unit_Number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Function_Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Loop_Number" Type="float" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="255" />
+    <Property Name="Loop_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Process_Function_Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="IO_Type_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="PITag" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cluster" Type="nvarchar" MaxLength="100" />
+    <Property Name="Vortex_Type_of_Element" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Meter_Size" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Meter_Size_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Body_Size" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Body_Size_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_End_Connection" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_End_Connection_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Body_Connection_Rating" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Body_Conn_R_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Inst_R_Mn_Cuttoff_Flow" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Inst_R_Mx_Meas_Flow" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Inst_R_Flow_Unit" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Acc_Instr_R_Mn_Flow" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Acc_Instr_R_Mx_Flow" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Acc_Instr_R_Flow_Unit" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Cali_R_DCS_Disp_R_Min" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Cali_R_DCS_Disp_R_Max" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Cali_R_DCS_Disp_R_Unit" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Materials_Housing" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Materials_Body" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Materials_Sensor" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Materials_Shedder" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Pressure_Drop_Min" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Pressure_Drop_Normal" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Pressure_Drop_Max" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Pressure_Drop_Unit" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Str_pipe_req_Upstream" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Str_pipe_req_Dnstream" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Reference_Drawing" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_K_Fact_Stamped_mtr_bdy" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_K_Factor_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Accuracy" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Accuracy_ref_to" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Linearity" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Linearity_ref_to" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Local_Remt_Trans_T_No" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Power_Supply" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Cable_Type" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Local_Display" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Local_Display_Units" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Hydrostatic_Test" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Trans_Sec_Var_Tag_N" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Sec_Var_Description" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Trans_Tert_Var_T_N" Type="nchar" MaxLength="10" />
+    <Property Name="Vortex_Tert_Var_Description" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MeterNote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeterNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="LastModifiedDate" Type="datetime" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MeterNoteCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MFMAxisData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MinValue" Type="bigint" Nullable="false" />
+    <Property Name="MaxValue" Type="bigint" Nullable="false" />
+    <Property Name="LogBase" Type="int" Nullable="false" />
+    <Property Name="Axis" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MeterName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFMGVF">
+    <Key>
+      <PropertyRef Name="GVFID" />
+    </Key>
+    <Property Name="GVFID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeterName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="GVF" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFMPoints">
+    <Key>
+      <PropertyRef Name="MFMPointsID" />
+    </Key>
+    <Property Name="MFMPointsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeterName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="MeasurementSection" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="PointGas" Type="int" Nullable="false" />
+    <Property Name="PointOil" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlantHierarchy">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="nvarchar(max)" />
+    <Property Name="ParentID" Type="int" />
+  </EntityType>
+  <Association Name="FK_MeterNote_MeterNoteCategory">
+    <End Role="MeterNoteCategory" Type="PMMSModel.Store.MeterNoteCategory" Multiplicity="1" />
+    <End Role="MeterNote" Type="PMMSModel.Store.MeterNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeterNoteCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MeterNote">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
