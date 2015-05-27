@@ -21,8 +21,12 @@
 .col-lg-12 {
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
+    padding-right: 0px;
     padding-left: 0px;
+}
+.row
+{
+   margin:0px 
 }
 </style>
 <div class="col-lg-12">
