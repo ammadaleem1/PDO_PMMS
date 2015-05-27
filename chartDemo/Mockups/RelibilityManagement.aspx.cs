@@ -13,12 +13,14 @@ namespace chartDemo.Mockups
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[] { new DataColumn("ID"), new DataColumn("MeterName"), new DataColumn("Date",typeof(DateTime)), new DataColumn("Status") });
+            dt.Columns.AddRange(new DataColumn[] { new DataColumn("ID"), new DataColumn("MeterName"), new DataColumn("Date", typeof(DateTime)), new DataColumn("Status"), new DataColumn("MTBF"), new DataColumn("MTTR") });
             DataRow dr = dt.NewRow();
             dr["ID"] = "1";
             dr["MeterName"] = "ABC";
             dr["Date"] = DateTime.Now;
             dr["Status"] = "Active";
+            dr["MTBF"] = "20";
+            dr["MTTR"] = "20";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
@@ -26,6 +28,8 @@ namespace chartDemo.Mockups
             dr["MeterName"] = "ABC";
             dr["Date"] = DateTime.Now;
             dr["Status"] = "Fail";
+            dr["MTBF"] = "20";
+            dr["MTTR"] = "20";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
@@ -33,6 +37,8 @@ namespace chartDemo.Mockups
             dr["MeterName"] = "ABC";
             dr["Date"] = DateTime.Now;
             dr["Status"] = "Active";
+            dr["MTBF"] = "20";
+            dr["MTTR"] = "20";
             dt.Rows.Add(dr);
 
             dr = dt.NewRow();
@@ -40,6 +46,8 @@ namespace chartDemo.Mockups
             dr["MeterName"] = "ABC";
             dr["Date"] = DateTime.Now;
             dr["Status"] = "Fail";
+            dr["MTBF"] = "20";
+            dr["MTTR"] = "20";
             dt.Rows.Add(dr);
 
             dt.AcceptChanges();

@@ -43,10 +43,12 @@
     </style>
 </head>
 <body>
-    <div id="page-wrapper">
+   <div id="page-wrapper">
    
     <form id="form1" runat="server">
          <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+    
+   
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Relibility Management</h1>
@@ -56,52 +58,82 @@
         
     <div class="row">
         <div class="col-lg-6">
-                <div class="form-group">
-                    <label>Current Status</label>
+            <div class="form-group">
+                  <h3>
+                    <asp:Label ID="lbl" runat="server" Text="Instrument Name"></asp:Label>
+                   </h3> 
+            </div>
+            <div class="form-group">
+                    <label>Current Status:</label>
+                    <asp:Label ID="lblCurrentAlert" runat="server" CssClass="btn btn-xs btn-warning" Text="Kindly enter the Activation Date for current status"></asp:Label>
+                    <%-- Active
                      <button type="button" class="btn btn-success">
                                     <i class="fa fa-check"></i>
                                 </button>
-                    Connected
+                  --%>
             </div>
             <div class="form-group">
-                    <label>Select Date</label>
-                    <telerik:raddatepicker id="rdDate" width="100%" runat="server" cssclass="form-control">
+                    <label>Device Activation Date:</label>
+                    <telerik:raddatepicker id="rdDate" width="31%" runat="server" cssclass="form-control">
                     </telerik:raddatepicker>
             </div>
+           
+            <div class="col-lg-6" style="padding-left:0px;">
             <div class="form-group">
-                    <label>MTBF</label>
-                    <asp:TextBox ID="txtMTBF" runat="server" CssClass="form-control" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtMTBF" Display="Dynamic">Required</asp:RequiredFieldValidator>
+                    <label>Total Failure Hours:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </label>
+                    <asp:Label ID="lblTotalFailHour" runat="server" Text="20" CssClass="form-control" style="display:inline; width:14%;" />
             </div>
+            <br />
             <div class="form-group">
-                    <label>MTTR</label>
-                    <asp:TextBox ID="txtMTTR" runat="server" CssClass="form-control" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtMTTR" Display="Dynamic">Required</asp:RequiredFieldValidator>
+                    <label>Total Working Hours:&nbsp;&nbsp; &nbsp;&nbsp; </label>
+                    <asp:Label ID="lblTotalWorkHour" runat="server" Text="20" CssClass="form-control" style="display:inline; width:14%;"  />
             </div>
+            <br />
             <div class="form-group">
-                   <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="buttongradient" />
+                    <label>Total No. of Failures:&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+                    <asp:Label ID="lblNoFailures" runat="server" Text="20" CssClass="form-control" style="display:inline; width:14%;"/>
             </div>
+            </div>
+                       
         </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                    <asp:RadioButton ID="RadioButton1" runat="server" /><label>MTBF:</label>
+                    <asp:Label ID="lblMTBF" runat="server" Text="20" CssClass="form-control" style="display:inline; width:20%; padding: 8px 16px; font-size:18px; font-weight:bold;" />
+           &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RadioButton ID="RadioButton2" runat="server" /><label>MTTR:</label>
+                    <asp:Label ID="lblMTTR" runat="server" Text="20" CssClass="form-control form-control" style="display:inline; width:20%; padding: 8px 16px; font-size:18px; font-weight:bold;"  />
+                     <br />
+                     <br />
+                     <br /> 
+            <asp:Label ID="Label1" runat="server" CssClass="btn btn-xs btn-info" style="margin-left:140px;" Text="Select MTTR/MTBF for chart rendering"></asp:Label>
 
-     
-<div class="col-lg-12">
+            </div>
+                     
+            <asp:Image ID="imgChart" runat="server" ImageUrl="~/Assets/images/mschart25.png" />
+        </div>
+        
+        </div>
+    <div class="col-lg-12">
+<hr />
 <telerik:RadGrid ID="gvRelData" runat="server" PageSize="25" Width="100%" AllowPaging="True" AllowSorting="true" Skin="WebBlue" AllowFilteringByColumn="true" AutoGenerateColumns="false">
 <MasterTableView DataKeyNames="ID" HeaderStyle-Font-Names="helvetica" Font-Names="helvetica"  HeaderStyle-Font-Size="Medium" HeaderStyle-Font-Bold="true">
     <Columns>
     <telerik:GridBoundColumn DataField="MeterName" HeaderText="Meter Name"></telerik:GridBoundColumn>
     <telerik:GridBoundColumn DataField="Date" HeaderText="Date"></telerik:GridBoundColumn>
     <telerik:GridBoundColumn DataField="Status" HeaderText="Status"></telerik:GridBoundColumn>
+    <telerik:GridBoundColumn DataField="MTBF" HeaderText="MTBF"></telerik:GridBoundColumn>
+    <telerik:GridBoundColumn DataField="MTTR" HeaderText="MTTR"></telerik:GridBoundColumn>
     </Columns>
     <NoRecordsTemplate>
            <div style="text-align:center;">No records found.</div>
     </NoRecordsTemplate>
 </MasterTableView>
 </telerik:RadGrid>
-    </div>
-
-  </div>
- </div>
-             <!-- Bootstrap Core JavaScript -->
+</div>
+    
+   
+        <!-- Bootstrap Core JavaScript -->
        
         <script src="../Assets/js/bootstrap.min.js"></script>
         <script src="../Assets/js/plugins/metisMenu/metisMenu.min.js"></script>
@@ -115,5 +147,7 @@
         <script src="../Assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
         <script src="../Assets/js/sb-admin-2.js"></script>
     </form>
+
+    </div>
 </body>
 </html>
